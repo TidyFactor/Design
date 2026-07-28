@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 TidyFactor Design `v1.0.0`
+# 🎨 TidyFactor Design `v1.1.0`
 ## Code-Native Interactive Prototyping Engine & Design System Suite (An AI-Era Figma Alternative)
 
 **The official interactive prototyping starter for the TidyFactor Ecosystem.**
@@ -10,7 +10,7 @@
 [![RTL Ready](https://img.shields.io/badge/RTL-Native%20Arabic-emerald.svg?style=for-the-badge)](README.ar.md)
 [![Zero Build](https://img.shields.io/badge/Build-Zero%20Step-purple.svg?style=for-the-badge)](#-architecture--zero-build-design-system)
 
-[✨ Live Demo](https://alwkala.com/tidyfactor-design/) • [🚀 Quick Start](#-quick-start--usage-guide) • [⚡ Slash Commands](#-universal-15-slash-commands) • [📖 Read in Arabic (بالعربية)](README.ar.md)
+[✨ Live Demo](https://alwkala.com/tidyfactor-design/) • [🚀 Quick Start](#-quick-start--usage-guide) • [⚡ Slash Commands](#-universal-16-slash-commands) • [📖 Read in Arabic (بالعربية)](README.ar.md)
 
 </div>
 
@@ -27,7 +27,23 @@ Unlike traditional page builders or unorganized prototypes, visual consistency a
 
 ---
 
-## 📺 Visual Showcase & Interactive Architecture
+## 📺 Visual Showcase & Prototype Surface Gallery
+
+### 🌙 Dark Theme Interactive Prototype Surface (Hero)
+![Dark Theme Surface](assets/dark.png)
+
+### ☀️ Light Theme Catalog & Dashboard Surface
+![Light Theme Surface](assets/light.png)
+
+### 📰 Content & Article Publishing Surface
+![Blog Surface](assets/blog.png)
+
+### 🎬 Video Showcase & Interactive Overlay Surface
+![Video Surface](assets/video.png)
+
+---
+
+## 📁 Prototype System Architecture
 
 ```
 my-prototype/
@@ -42,21 +58,23 @@ my-prototype/
 │   ├── index.html        ← Landing page markup ONLY
 │   ├── dashboard.html    ← App dashboard markup ONLY
 │   └── pricing.html      ← Pricing table markup ONLY
+├── scripts/              ← Python Power Tools (palette extraction, BG removal, WebP compression)
 ├── proto-nav.js          ← Dev-only floating prototype toolbar (switch screens/states)
 └── brand.json            ← Single source of truth for identity & tokens
 ```
 
 ---
 
-## 🚀 Quick Start & CLI Flags
+## 🚀 Quick Start & Usage Guide
 
 Published on NPM as [**`@alwkala/tidyfactor-design`**](https://www.npmjs.com/package/@alwkala/tidyfactor-design).
 
 ### Interactive & Non-Interactive Scaffold:
 
 ```bash
-# Interactive execution (Real terminal TTY with menu picker)
+# Interactive execution (via scoped package or shorthand alias)
 npx @alwkala/tidyfactor-design
+# or: npx tidyfactor-design
 
 # Specify CSS Foundation (--foundation=native|tailwind|daisyui|hybrid)
 npx @alwkala/tidyfactor-design my-proto --foundation=native
@@ -75,31 +93,33 @@ npx @alwkala/tidyfactor-design my-design-system --yes
 
 ```bash
 npx @alwkala/tidyfactor-design add-skill
+# or: npx tidyfactor-design add-skill
 ```
 
 ---
 
-## ⚡ Universal 15 Slash Commands
+## ⚡ Universal 16 Slash Commands & Python Power Tools
 
-When working with any Agentic IDE (Google Antigravity, Claude Code, Cursor, Windsurf, Roo Code, Cline, etc.), the following **15 modular commands** are available:
+When working with any Agentic IDE (Google Antigravity, Claude Code, Cursor, Windsurf, Roo Code, Cline, etc.), the following **16 modular commands** are available:
 
-| Command | Purpose & Function | Reference Spec |
-| :--- | :--- | :--- |
-| `init` | **Primary Scaffold** — Scaffold design system, tokens, foundation choice & initial screen | `references/commands/init.md` |
-| `school` | **Design Direction** — Select design movement (Brutalism, Glassmorphism, Swiss, Luxury, Minimal) | `references/commands/school.md` |
-| `tokens` | **Design Tokens** — Manage `tokens.css` & `brand.json` single source of truth | `references/commands/tokens.md` |
-| `palette` | **Palette Extraction** — Extract colors & WCAG AA contrast scores via `extract_palette.py` | `references/commands/palette.md` |
-| `components` | **Component Library** — Build reusable component classes in `components.css` | `references/commands/components.md` |
-| `page` | **Marketing Screen** — Add a new content/marketing page (markup-only) | `references/commands/page.md` |
-| `dashboard` | **App Screen** — Add a new app or dashboard screen with data surfaces & shells | `references/commands/dashboard.md` |
-| `motion` | **Animation Layer** — Micro-interactions, scroll-reveals & choreography in `motion.js` | `references/commands/motion.md` |
-| `states` | **Component States** — Define hover, active, loading, empty, error & success states | `references/commands/states.md` |
-| `flow` | **Prototype Flow** — Wire clickable screen navigation toolbar (`proto-nav.js`) | `references/commands/flow.md` |
-| `i18n` | **RTL & Modesty** — Arabic/English typography (El Messiri/Tajawal), RTL layout & modesty rules | `references/commands/i18n.md` |
-| `audit` | **Consistency Check** — Read-only audit of design token compliance & quality bar | `references/commands/audit.md` |
-| `clone` | **Clone Design** — Extract design system & tokens from reference site or screenshots | `references/commands/clone.md` |
-| `retrofit` | **Unify Prototype** — Retrofit a drifted multi-page project under one design system | `references/commands/retrofit.md` |
-| `deploy` | **Export & Preview** — Local preview server, asset optimization & presentation export | `references/commands/deploy.md` |
+| Command | Purpose & Function | Integrated Power Tool | Reference Spec |
+| :--- | :--- | :--- | :--- |
+| `init` | **Primary Scaffold** — Scaffold design system, tokens, foundation choice & initial screen | Template Auto-Cleaner | `references/commands/init.md` |
+| `school` | **Design Direction** — Select design movement (Brutalism, Glassmorphism, Swiss, Luxury, Minimal) | — | `references/commands/school.md` |
+| `tokens` | **Design Tokens** — Manage `tokens.css` & `brand.json` single source of truth | — | `references/commands/tokens.md` |
+| `palette` | **Palette Extraction** — Extract colors & WCAG 2.1 AA contrast scores | `scripts/extract_palette.py` | `references/commands/palette.md` |
+| `assets` | **Asset Processing** — AI BG removal, WebP compression & image inspection | `scripts/remove_backgrounds.py`, `scripts/optimize_images.py` | `references/commands/assets.md` |
+| `components` | **Component Library** — Build reusable component classes in `components.css` | Section Header Map | `references/commands/components.md` |
+| `page` | **Marketing Screen** — Add a new content/marketing page (markup-only) | — | `references/commands/page.md` |
+| `dashboard` | **App Screen** — Add a new app or dashboard screen with data surfaces & shells | — | `references/commands/dashboard.md` |
+| `motion` | **Animation Layer** — Micro-interactions, scroll-reveals & choreography in `motion.js` | — | `references/commands/motion.md` |
+| `states` | **Component States** — Define hover, active, loading, empty, error & success states | — | `references/commands/states.md` |
+| `flow` | **Prototype Flow** — Wire clickable screen navigation toolbar (`proto-nav.js`) | — | `references/commands/flow.md` |
+| `i18n` | **RTL & Modesty** — Arabic/English typography (El Messiri/Tajawal), RTL layout & modesty rules | — | `references/commands/i18n.md` |
+| `audit` | **Consistency Check** — Read-only audit of design tokens, alpha channels & quality | `scripts/check_alpha.py`, `scripts/test_build.py` | `references/commands/audit.md` |
+| `clone` | **Clone Design** — Extract design system & tokens from reference site or screenshots | — | `references/commands/clone.md` |
+| `retrofit` | **Unify Prototype** — Retrofit a drifted multi-page project under one design system | — | `references/commands/retrofit.md` |
+| `deploy` | **Export & Preview** — Local preview server, asset minification & presentation export | `scripts/minify_assets.py`, `scripts/build.py` | `references/commands/deploy.md` |
 
 ---
 

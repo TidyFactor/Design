@@ -11,9 +11,10 @@
 |---|---|
 | **Unified Tool Name** | `tidyfactor-design` |
 | **NPM Package** | [`@alwkala/tidyfactor-design`](https://www.npmjs.com/package/@alwkala/tidyfactor-design) |
-| **CLI Execution Command** | `npx @alwkala/tidyfactor-design` |
+| **CLI Execution Command** | `npx @alwkala/tidyfactor-design` or `npx tidyfactor-design` |
+| **Skill Injection Command** | `npx @alwkala/tidyfactor-design add-skill` or `npx tidyfactor-design add-skill` |
 | **GitHub Repository** | [alwkala/tidyfactor-design](https://github.com/alwkala/tidyfactor-design) |
-| **Version** | `1.0.0` |
+| **Version** | `1.1.0` |
 | **Category** | Prototyping & Design Systems |
 | **Output** | Code-native interactive HTML/CSS/JS prototype system |
 | **Commercial Partner** | [Alwkala](https://alwkala.com) |
@@ -37,10 +38,10 @@ A **code-native, AI-era alternative to Figma**. Builds interactive HTML/CSS/JS p
 
 ---
 
-## 15 Skill Commands
+## 16 Skill Commands
 
 ```
-init · school · tokens · palette · components · page · dashboard
+init · school · tokens · palette · assets · components · page · dashboard
 motion · states · flow · i18n · audit · clone · retrofit · deploy
 ```
 

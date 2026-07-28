@@ -197,6 +197,15 @@ function main() {
     }
   }
 
+  // Auto-cleanup leftover .template.* stubs from target root
+  try {
+    for (const file of fs.readdirSync(targetPath)) {
+      if (file.includes('.template.')) {
+        fs.unlinkSync(path.join(targetPath, file));
+      }
+    }
+  } catch (e) {}
+
   console.log(chalk.green('\n  ✅ Project scaffolded successfully!'));
   console.log('');
   console.log(`  ${chalk.bold('Next Steps:')}`);

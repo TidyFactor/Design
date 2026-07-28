@@ -12,7 +12,7 @@ const AGENTS_SKILL_DIR = path.join(ROOT, '.agents', 'skills', 'tidyfactor-design
 const CLAUDE_SKILL_DIR = path.join(ROOT, '.claude-skill');
 
 const REQUIRED_COMMANDS = [
-  'init', 'school', 'tokens', 'palette', 'components', 'page', 'dashboard',
+  'init', 'school', 'tokens', 'palette', 'assets', 'components', 'page', 'dashboard',
   'motion', 'states', 'flow', 'i18n', 'audit', 'clone', 'retrofit', 'deploy'
 ];
 

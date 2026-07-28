@@ -1,7 +1,7 @@
 {
-  "$schema": "https://alwkala.com/schemas/brand.json",
   "identity": {
     "name": "TidyFactor Design System",
+    "version": "1.1.0",
     "latinName": "TidyFactor Design System",
     "tagline": "Code-Native Interactive Prototyping Engine",
     "logo": {

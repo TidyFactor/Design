@@ -1,32 +1,33 @@
-name: Release & Publish TidyFactor Design
+name: Release & Publish TidyFactor Design Skill
 
 on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  packages: write
 
 jobs:
-  build-and-release:
+  release:
+    name: Build, Validate & Publish
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Validate Skill Structure
+      - name: Setup Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Skill Validation Check
         run: node tools/validate-skill.js --sync
 
-      - name: Build Skill Packages
+      - name: Package Distributable Skill Archive
         run: node tools/build-skill.js
 
       - name: Create GitHub Release
@@ -34,8 +35,7 @@ jobs:
         with:
           files: |
             dist/tidyfactor-design.skill
-          draft: false
-          prerelease: false
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
