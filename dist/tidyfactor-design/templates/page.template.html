@@ -1,0 +1,40 @@
+<!--
+  TidyFactor Design — Page Template
+  Rules enforced by the `page`/`audit` commands:
+    - No <style> block, no style="..." attributes.
+    - No inline <script> logic — only src-linked shared files.
+    - Every class used must exist in design-system/components.css
+      (or the chosen foundation's component library).
+-->
+<!doctype html>
+<html lang="{{LOCALE}}" dir="{{DIR}}" data-theme="brand">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{PAGE_TITLE}}</title>
+  <meta name="description" content="{{PAGE_DESCRIPTION}}" />
+
+  <!-- CSS Foundation include(s) — exactly one of the four, per project decision -->
+  <!-- Native / Hybrid: -->
+  <link rel="stylesheet" href="../design-system/tokens.css" />
+  <link rel="stylesheet" href="../design-system/base.css" />
+  <link rel="stylesheet" href="../design-system/components.css" />
+  <!-- Tailwind / daisyUI foundations: see references/foundations/*.md for the
+       matching <script src="https://cdn.tailwindcss.com"> (+ daisyUI link)
+       block instead of / alongside the above. -->
+</head>
+<body>
+
+  <!-- Page content: composed entirely from design-system/components.css
+       classes (or the chosen foundation's components). -->
+
+  <main>
+    {{PAGE_CONTENT}}
+  </main>
+
+  <!-- Shared behavior only — never a page-specific inline script -->
+  <script src="../design-system/motion.js"></script>
+  <script src="../design-system/interactions.js"></script>
+  <script src="../proto-nav.js"></script>
+</body>
+</html>

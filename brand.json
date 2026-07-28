@@ -1,0 +1,35 @@
+{
+  "$schema": "https://alwkala.com/schemas/brand.json",
+  "identity": {
+    "name": "TidyFactor Design System",
+    "latinName": "TidyFactor Design System",
+    "tagline": "Code-Native Interactive Prototyping Engine",
+    "logo": {
+      "svg": "assets/logo.svg",
+      "png": "assets/logo.png"
+    }
+  },
+  "colors": {
+    "primary": "#4F46E5",
+    "secondary": "#06B6D4",
+    "accent": "#F59E0B",
+    "neutralDark": "#0F172A",
+    "neutralLight": "#F8FAFC",
+    "paper": "#FFFFFF",
+    "ink": "#0F172A",
+    "inkSoft": "#64748B"
+  },
+  "typography": {
+    "headings": {
+      "arabic": "El Messiri",
+      "latin": "Outfit",
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Tajawal:wght@300;400;500;700&display=swap"
+    },
+    "body": {
+      "arabic": "Tajawal",
+      "latin": "Inter"
+    }
+  },
+  "foundation": "native",
+  "school": "minimalist"
+}

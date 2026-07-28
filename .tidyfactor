@@ -1,0 +1,17 @@
+{
+  "ecosystem": "tidyfactor",
+  "track": "design",
+  "name": "tidyfactor-design",
+  "version": "1.0.0",
+  "npmPackage": "@alwkala/tidyfactor-design",
+  "github": "https://github.com/alwkala/tidyfactor-design",
+  "skillFile": "../tidyfactor-design.skill",
+  "category": "design-system",
+  "type": "interactive-prototyping",
+  "outputs": ["design-system/", "pages/"],
+  "foundations": ["native", "tailwind", "daisyui", "hybrid"],
+  "commands": ["init", "school", "tokens", "palette", "components", "page", "dashboard", "motion", "states", "flow", "i18n", "audit", "clone", "retrofit", "deploy"],
+  "visionRef": "../TidyFactor-VISION.md",
+  "sibling": ["tidyfactor-html", "tidyfactor-php", "tidyfactor-js", "tidyfactor-htmx", "tidyfactor-cinematic"],
+  "commercialPartner": "alwkala"
+}

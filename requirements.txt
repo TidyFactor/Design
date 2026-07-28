@@ -1,0 +1,5 @@
+# TidyFactor Design — Python Tooling Suite Dependencies
+# Used for AI background removal (rembg), asset optimization (Pillow), and palette extraction.
+
+rembg>=2.0.50
+pillow>=10.0.0

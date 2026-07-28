@@ -1,0 +1,58 @@
+{
+  "name": "@alwkala/tidyfactor-design",
+  "version": "1.0.0",
+  "description": "Interactive code-native prototyping engine and design system suite for TidyFactor Ecosystem",
+  "main": "bin/create-kit.js",
+  "bin": {
+    "tidyfactor-design": "bin/create-kit.js",
+    "create-design-kit": "bin/create-kit.js",
+    "add-design-skill": "bin/add-skill.js"
+  },
+  "scripts": {
+    "test": "node ./bin/create-kit.js --help",
+    "validate": "node tools/validate-skill.js --sync",
+    "build:skill": "node tools/build-skill.js",
+    "build:all": "npm run validate && npm run build:skill"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alwkala/tidyfactor-design.git"
+  },
+  "keywords": [
+    "tidyfactor",
+    "tidyfactor-design",
+    "design-system",
+    "prototyping",
+    "figma-alternative",
+    "code-native",
+    "agentic-ai",
+    "antigravity",
+    "claude-skill",
+    "design-tokens",
+    "components"
+  ],
+  "author": "Alwkala <hello@alwkala.com> (https://alwkala.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alwkala/tidyfactor-design/issues"
+  },
+  "homepage": "https://alwkala.com/tidyfactor-design",
+  "dependencies": {},
+  "files": [
+    ".agents/",
+    ".claude-skill/",
+    "bin/",
+    "memory/",
+    "templates/",
+    "references/",
+    "tools/",
+    "AGENTS.md",
+    "VISION.md",
+    "SKILL-REGISTRY.md",
+    ".tidyfactor",
+    "brand.json",
+    "LICENSE",
+    "README.md",
+    "README.ar.md"
+  ]
+}
