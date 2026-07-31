@@ -5,6 +5,26 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-07-31
+
+### Added & Enhanced
+- **Context-Engineered Architecture Refactor**:
+  - Re-architected `SKILL.md` into a ~37-line dispatcher table (~350 tokens initial load) complying 100% with `tidyfactor-skill-architect` rules.
+  - Modularized commands into `references/commands/`, single-outcome workflows into `references/workflows/`, operational rules into `references/memory/` and `memory/`, and human-facing manifesto into `references/memory/philosophy.md`.
+- **Anti-Slop & Pre-Emit Self-Critique Control (Rule 8)**:
+  - Added **Pre-Emit Self-Critique Scoring (1–5 on 6 Axes)**: *Philosophy (P)*, *Hierarchy (H)*, *Execution (E)*, *Specificity (S)*, *Restraint (R)*, *Variety (V)*. Scores < 3 trigger an automatic revision pass. Output is stamped: `/* Pre-emit critique: P5 H4 E5 S4 R5 V5 */`.
+  - Added **16 Named AI Anti-Pattern Tells** to `memory/06-quality-bar.md` (Purple-gradient hero, Inter-everywhere, 3-column feature grid, Card-in-card, Gradient headline, Side-stripe card, Full-viewport centered hero, Pure black/white, Default-attractor sameness, Specimen fall-through, AI nav, AI footer, Aurora-blob background, Floating-orb decoration, Italic headers, Lazy-loaded LCP).
+  - Added Gate 46 (No Invented Metrics) and Gate 47 (No Re-Drawn Fake Chrome).
+- **Three-Dial System & Brand Voice Schema**:
+  - Added dynamic 1–10 configuration dials (`designVariance`, `motionIntensity`, `visualDensity`) and 4-context voice definitions (`voice.professional`, `voice.casual`, `voice.error`, `voice.success`) to `brand.json` schema.
+- **Advanced Reverse-Engineering Pipeline**:
+  - Upgraded `references/workflows/clone-prototype.md` & `references/commands/clone.md` with Interaction Model declarations (`scroll-driven`, `click-driven`, `hover-driven`), Multi-State computed CSS diffing, 150-line complexity budget rule, and persistent component specs (`docs/research/components/*.md`).
+- **5-Layer AI Photography Prompt Construction**:
+  - Upgraded `references/commands/assets.md` with 5-layer photography prompt matrix (Subject, Environment, Lighting, Technical Photography, Post-Processing/Film Stock).
+- **4-Tier Whimsy & 8-State Demo Wrapper**:
+  - Added 4-tier Whimsy Taxonomy (`Subtle`, `Interactive`, `Discovery`, `Contextual`) to `references/commands/motion.md`.
+  - Added mandatory 8-State Demo Wrapper generation (`<Component>.preview.html` rendering `default`, `hover`, `focus`, `active`, `disabled`, `loading`, `error`, `success`) to `references/commands/components.md`.
+
 ## [1.1.0] - 2026-07-28
 
 ### Added & Enhanced

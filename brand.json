@@ -1,7 +1,7 @@
 {
   "identity": {
     "name": "TidyFactor Design System",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "latinName": "TidyFactor Design System",
     "tagline": "Code-Native Interactive Prototyping Engine",
     "logo": {
@@ -29,6 +29,12 @@
       "arabic": "Tajawal",
       "latin": "Inter"
     }
+  },
+  "voice": {
+    "professional": "Direct, precise, clear, task-focused for transactions and settings",
+    "casual": "Warm, encouraging, inviting for onboarding and feature discovery",
+    "error": "Empathetic, clear fix provided, zero blame",
+    "success": "Celebratory, concise, clear next step"
   },
   "foundation": "native",
   "school": "minimalist"

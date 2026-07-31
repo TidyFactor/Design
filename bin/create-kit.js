@@ -50,6 +50,30 @@ const FOUNDATIONS = [
     label: 'Hybrid Foundation',
     desc:  'daisyUI composite app widgets + Native CSS signature brand styling',
   },
+  {
+    name:  'shadcn',
+    emoji: '📦',
+    label: 'shadcn/ui Primitives',
+    desc:  'Tailwind v4 + Radix UI accessible primitive tokens & components',
+  },
+  {
+    name:  'pico',
+    emoji: '🌱',
+    label: 'Pico CSS v2',
+    desc:  'Semantic classless/lightweight CSS foundation for minimalist sites',
+  },
+  {
+    name:  'bootstrap',
+    emoji: '🅱️',
+    label: 'Bootstrap 5.3',
+    desc:  'Enterprise-ready CSS custom properties & native dark mode themes',
+  },
+  {
+    name:  'alpine',
+    emoji: '🏔️',
+    label: 'Alpine + Tailwind',
+    desc:  'Alpine.js micro-interactions + Tailwind v4 utility engine',
+  },
 ];
 
 const SCHOOLS = ['minimalist', 'brutalism', 'glassmorphism', 'neumorphism', 'swiss', 'luxury'];
@@ -106,7 +130,7 @@ function printHelp() {
   console.log(`  ${chalk.bold('Subcommands:')}`);
   console.log(`    ${chalk.cyan('add-skill')}       Inject Agent Skill, rules & memory into an existing workspace\n`);
   console.log(`  ${chalk.bold('Options:')}`);
-  console.log(`    ${chalk.cyan('--foundation=<name>')} Select CSS foundation (native|tailwind|daisyui|hybrid)`);
+  console.log(`    ${chalk.cyan('--foundation=<name>')} Select CSS foundation (native|tailwind|daisyui|hybrid|shadcn|pico|bootstrap|alpine)`);
   console.log(`    ${chalk.cyan('--school=<name>')}     Select design school (minimalist|brutalism|glassmorphism|swiss|luxury)`);
   console.log(`    ${chalk.cyan('--palette=<image>')}   Extract brand color palette from logo/screenshot`);
   console.log(`    ${chalk.cyan('-y, --yes')}           Accept all defaults non-interactively`);
