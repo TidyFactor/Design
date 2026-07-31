@@ -156,18 +156,25 @@ function main() {
     ].join("\n")
   );
 
+  const pkg = require(path.join(ROOT, "package.json"));
+  const versionedOutFile = path.join(DIST_DIR, `${SKILL_NAME}-v${pkg.version}.skill`);
+
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   zipArchive(STAGE_DIR, OUT_FILE, DIST_DIR);
+  fs.copyFileSync(OUT_FILE, versionedOutFile);
 
   const sizeKb = (fs.statSync(OUT_FILE).size / 1024).toFixed(1);
   log(`done → ${path.relative(ROOT, OUT_FILE)} (${sizeKb} KB)`);
+  log(`✓ Created versioned archive → ${path.relative(ROOT, versionedOutFile)}`);
 
   // Auto-sync to Skills-LAB root if located inside Skills-LAB
   const skillLabRoot = path.resolve(ROOT, "..");
   const skillLabTarget = path.join(skillLabRoot, `${SKILL_NAME}.skill`);
+  const skillLabVersionedTarget = path.join(skillLabRoot, `${SKILL_NAME}-v${pkg.version}.skill`);
   if (path.basename(skillLabRoot) === "Skills-LAB") {
     fs.copyFileSync(OUT_FILE, skillLabTarget);
-    log(`✓ Updated Skills-LAB root archive → ${path.relative(ROOT, skillLabTarget)}`);
+    fs.copyFileSync(OUT_FILE, skillLabVersionedTarget);
+    log(`✓ Updated Skills-LAB root archives → ${SKILL_NAME}.skill & ${SKILL_NAME}-v${pkg.version}.skill`);
   }
 }
 

@@ -4,6 +4,13 @@ Build **interactive, code-native HTML/CSS/JS design prototypes** (Figma alternat
 
 ---
 
+## 🛠️ CLI Execution Modes (Human Terminal Wizard vs AI Agent Non-Interactive)
+
+- **Human Terminal Interactive Mode** (`npx @alwkala/tidyfactor-design`): Launches step-by-step interactive CLI wizard (`readline`) prompting human developers in terminal for target directory, CSS foundation, visual school, and optional brand image color extraction.
+- **AI Agent Non-Interactive Mode** (`npx @alwkala/tidyfactor-design -y` or `--foundation=... --school=...`): AI Agents bypass interactive terminal prompts by passing non-interactive flags (`-y` / `--yes`) or setting `AGENT_MODE=1` or `CI=1`.
+
+---
+
 ## ⚡ Skill & 24 Modular Slash Commands (7 Lifecycle Stages)
 
 This project exposes an Agentic Skill under `.agents/skills/tidyfactor-design/SKILL.md` (and `.claude-skill/SKILL.md`). The following 24 slash commands covering all 7 stages of the UI Design Lifecycle are supported:

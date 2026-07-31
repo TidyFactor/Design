@@ -5,6 +5,33 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.6] - 2026-08-01
+
+### 📦 Automated Versioned `.skill` Archive Build Pipeline
+- **Claude Code Skill Manager Parity**: Added `version: 1.3.6` to `SKILL.md` YAML frontmatter for native compatibility with Claude Code skill managers and Agentic IDEs.
+- **Automated Version-Tagged `.skill` Builds (`tools/build-skill.js`)**:
+  - Rebuilding the skill automatically generates both `tidyfactor-design.skill` (latest release) AND `tidyfactor-design-v1.3.6.skill` (version-tagged release artifact).
+  - Automatically syncs both versioned and unversioned `.skill` archives to `dist/` and `Skills-LAB/` root directory.
+
+## [1.3.5] - 2026-08-01
+
+### 💎 CLI UX Audit & Wizard Logic Polish (`tidyfactor-skill-architect`)
+- **Graceful Cancellation (`SIGINT`)**: Registered a `rl.on('SIGINT', ...)` trap in `bin/create-kit.js` to handle `Ctrl+C` cleanly with an exit message (`✖ Operation cancelled.`).
+- **Input Validation Loop**: Added validation loops to prompt steps so out-of-range numerical choices (e.g. `99`) display a clear warning instead of silent fallbacks.
+- **Visual Breadcrumbs**: Added progress indicators `[1/4]` through `[4/4]` and formatted checkmarks (`✓ Target Directory`, `✓ Foundation Selected`, `✓ Design School Selected`, `✓ Palette Image Locked`).
+- **Expanded Movement Menu**: Included all major visual design movements (`minimalist`, `brutalism`, `glassmorphism`, `neumorphism`, `swiss`, `luxury`, `bauhaus`, `industrial`, `bento`, `aurora`, `cyberpunk`, `claymorphism`) in the interactive CLI picker.
+- **RTL & Bilingual Badge**: Highlighted `🌐 RTL & Bilingual Ready (El Messiri / Tajawal)` in CLI header banner.
+
+## [1.3.4] - 2026-08-01
+
+### 🧙 Upgrade: Dual-Mode Interactive CLI Wizard & Agent Detection
+- **Added Human Terminal Interactive Wizard (`bin/create-kit.js`)**:
+  - Automatically triggers an interactive `readline` terminal wizard when running `npx @alwkala/tidyfactor-design` in a live human TTY terminal.
+  - Interactively prompts for: Target Directory, CSS Foundation (8 options), Visual Design School (12 options), and optional Brand Image Color Extraction path.
+- **Added Non-Interactive Agent & CI Detection (`isInteractiveTerminal()`)**:
+  - Bypasses terminal prompts instantly when AI Agent mode (`AGENT_MODE=1`), CI pipelines (`CI=1`), non-interactive TTY, or CLI flags (`--foundation=...`, `--school=...`, `-y`, `--yes`) are detected.
+- **Updated `AGENTS.md` Guidelines**: Documented dual-mode CLI execution guidelines.
+
 ## [1.3.3] - 2026-08-01
 
 ### 🛠️ Critical CLI & Template Scaffolding Upgrade

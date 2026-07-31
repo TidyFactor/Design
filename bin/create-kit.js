@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline');
 const { execSync } = require('child_process');
 
 /* Lightweight Zero-Dependency ANSI formatting */
@@ -19,7 +20,8 @@ const pkg = require(path.join(PACKAGE_ROOT, 'package.json'));
 
 /* Subcommand delegation */
 const firstArg = process.argv[2];
-if (firstArg === 'add-skill' || firstArg === 'add-design-skill' || firstArg === 'skill') {
+const SUBCOMMANDS_SKILL = new Set(['add-skill', 'add-design-skill', 'skill', 'install-skill']);
+if (firstArg && SUBCOMMANDS_SKILL.has(firstArg.toLowerCase())) {
   process.argv.splice(2, 1);
   require('./add-skill.js');
   process.exit(0);
@@ -76,8 +78,32 @@ const FOUNDATIONS = [
   },
 ];
 
-const SCHOOLS = ['minimalist', 'brutalism', 'glassmorphism', 'neumorphism', 'swiss', 'luxury'];
+const SCHOOLS = [
+  'minimalist',
+  'brutalism',
+  'glassmorphism',
+  'neumorphism',
+  'swiss',
+  'luxury',
+  'bauhaus',
+  'industrial',
+  'bento',
+  'aurora',
+  'cyberpunk',
+  'claymorphism'
+];
+
 const FOUNDATION_BY_NAME = new Map(FOUNDATIONS.map(f => [f.name, f]));
+
+function isInteractiveTerminal() {
+  return (
+    Boolean(process.stdin.isTTY) &&
+    Boolean(process.stdout.isTTY) &&
+    !process.env.CI &&
+    !process.env.AGENT_MODE &&
+    process.env.NO_PROMPT !== '1'
+  );
+}
 
 function parseCliArgs() {
   const args = process.argv.slice(2);
@@ -119,7 +145,8 @@ function printBanner() {
   console.log('');
   console.log(chalk.cyan('  ╔═══════════════════════════════════════════════════════╗'));
   console.log(chalk.cyan('  ║') + chalk.bold('  🎨  TidyFactor Design CLI  ') + chalk.dim(v.padEnd(7)) + '            ' + chalk.cyan('║'));
-  console.log(chalk.cyan('  ║') + chalk.dim('  Code-native interactive prototyping (Figma alternative)  ') + chalk.cyan('║'));
+  console.log(chalk.cyan('  ║') + chalk.dim('  Code-native UI design engine & anti-slop system suite   ') + chalk.cyan('║'));
+  console.log(chalk.cyan('  ║') + chalk.green('  🌐  RTL & Bilingual Ready (El Messiri / Tajawal)        ') + chalk.cyan('║'));
   console.log(chalk.cyan('  ╚═══════════════════════════════════════════════════════╝'));
   console.log('');
 }
@@ -132,11 +159,100 @@ function printHelp() {
   console.log(`    ${chalk.cyan('add-skill')}       Inject Agent Skill, rules & memory into an existing workspace\n`);
   console.log(`  ${chalk.bold('Options:')}`);
   console.log(`    ${chalk.cyan('--foundation=<name>')} Select CSS foundation (native|tailwind|daisyui|hybrid|shadcn|pico|bootstrap|alpine)`);
-  console.log(`    ${chalk.cyan('--school=<name>')}     Select design school (minimalist|brutalism|glassmorphism|swiss|luxury)`);
+  console.log(`    ${chalk.cyan('--school=<name>')}     Select design school (minimalist|brutalism|glassmorphism|swiss|luxury|bento|cyberpunk)`);
   console.log(`    ${chalk.cyan('--palette=<image>')}   Extract brand color palette from logo/screenshot`);
   console.log(`    ${chalk.cyan('-y, --yes')}           Accept all defaults non-interactively`);
   console.log(`    ${chalk.cyan('-v, --version')}       Display version number`);
   console.log(`    ${chalk.cyan('-h, --help')}          Display this help message\n`);
+}
+
+function askQuestion(rl, query) {
+  return new Promise((resolve) => rl.question(query, (ans) => resolve(ans.trim())));
+}
+
+async function runInteractiveWizard(targetDir, foundation, school, palette) {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  // Handle SIGINT (Ctrl+C) gracefully
+  rl.on('SIGINT', () => {
+    console.log(chalk.red('\n\n  ✖ Operation cancelled.\n'));
+    rl.close();
+    process.exit(0);
+  });
+
+  console.log(chalk.cyan('  🧙 Interactive TidyFactor Design Wizard\n'));
+
+  // 1. Target Directory Prompt
+  const dirAns = await askQuestion(rl, chalk.bold(`  [1/4] Target Directory [${targetDir}]: `));
+  if (dirAns) {
+    targetDir = dirAns;
+  }
+  console.log(chalk.green(`  ✓ Target Directory: ${targetDir}`));
+
+  // 2. CSS Foundation Prompt
+  console.log(chalk.bold('\n  [2/4] Select CSS Foundation:'));
+  FOUNDATIONS.forEach((f, idx) => {
+    const defaultTag = f.name === foundation ? chalk.green(' (default)') : '';
+    console.log(`     ${chalk.cyan(`[${idx + 1}]`)} ${f.emoji} ${f.label.padEnd(16)} — ${chalk.dim(f.desc)}${defaultTag}`);
+  });
+
+  let validFound = false;
+  while (!validFound) {
+    const foundAns = await askQuestion(rl, chalk.bold(`     Choose [1-${FOUNDATIONS.length}] (Enter for default): `));
+    if (!foundAns) {
+      validFound = true;
+    } else {
+      const foundIdx = parseInt(foundAns, 10) - 1;
+      if (!isNaN(foundIdx) && FOUNDATIONS[foundIdx]) {
+        foundation = FOUNDATIONS[foundIdx].name;
+        validFound = true;
+      } else {
+        console.log(chalk.yellow(`     ⚠ Invalid choice. Please select a number between 1 and ${FOUNDATIONS.length}.`));
+      }
+    }
+  }
+  const chosenF = FOUNDATION_BY_NAME.get(foundation);
+  console.log(chalk.green(`  ✓ Foundation Selected: ${chosenF.emoji} ${chosenF.label}`));
+
+  // 3. Design School Prompt
+  console.log(chalk.bold('\n  [3/4] Select Visual Design School:'));
+  SCHOOLS.forEach((s, idx) => {
+    const defaultTag = s === school ? chalk.green(' (default)') : '';
+    console.log(`     ${chalk.cyan(`[${idx + 1}]`.padEnd(5))} ${s.padEnd(16)}${defaultTag}`);
+  });
+
+  let validSchool = false;
+  while (!validSchool) {
+    const schoolAns = await askQuestion(rl, chalk.bold(`     Choose [1-${SCHOOLS.length}] (Enter for default): `));
+    if (!schoolAns) {
+      validSchool = true;
+    } else {
+      const schoolIdx = parseInt(schoolAns, 10) - 1;
+      if (!isNaN(schoolIdx) && SCHOOLS[schoolIdx]) {
+        school = SCHOOLS[schoolIdx];
+        validSchool = true;
+      } else {
+        console.log(chalk.yellow(`     ⚠ Invalid choice. Please select a number between 1 and ${SCHOOLS.length}.`));
+      }
+    }
+  }
+  console.log(chalk.green(`  ✓ Design School Selected: ${school}`));
+
+  // 4. Color Palette Extraction Prompt
+  const palAns = await askQuestion(rl, chalk.bold(`\n  [4/4] Path to brand logo/image to extract colors (optional, press Enter to skip): `));
+  if (palAns && fs.existsSync(palAns)) {
+    palette = palAns;
+    console.log(chalk.green(`  ✓ Palette Image Locked: ${palette}`));
+  } else if (palAns) {
+    console.log(chalk.yellow(`  ⚠ Image file "${palAns}" not found. Skipping extraction.`));
+  }
+
+  rl.close();
+  console.log('');
+  return { targetDir, foundation, school, palette };
 }
 
 function copyDirectory(src, dest) {
@@ -153,7 +269,7 @@ function copyDirectory(src, dest) {
   }
 }
 
-function main() {
+async function main() {
   const { targetDirArg, flags } = parseCliArgs();
 
   if (flags.version) {
@@ -171,6 +287,16 @@ function main() {
   let targetDir = targetDirArg || '.';
   let foundation = flags.foundation || 'native';
   let school = flags.school || 'minimalist';
+
+  // Interactive Wizard Trigger if live interactive terminal & no skip flags passed
+  const isInteractive = isInteractiveTerminal() && !flags.yes && !flags.foundation && !flags.school;
+  if (isInteractive) {
+    const wizardRes = await runInteractiveWizard(targetDir, foundation, school, flags.palette);
+    targetDir = wizardRes.targetDir;
+    foundation = wizardRes.foundation;
+    school = wizardRes.school;
+    flags.palette = wizardRes.palette;
+  }
 
   if (!FOUNDATION_BY_NAME.has(foundation)) {
     console.log(chalk.yellow(`⚠ Unknown foundation "${foundation}", falling back to "native".`));
