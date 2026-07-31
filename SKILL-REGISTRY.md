@@ -14,20 +14,21 @@
 | **CLI Execution Command** | `npx @alwkala/tidyfactor-design` or `npx tidyfactor-design` |
 | **Skill Injection Command** | `npx @alwkala/tidyfactor-design add-skill` or `npx tidyfactor-design add-skill` |
 | **GitHub Repository** | [alwkala/tidyfactor-design](https://github.com/alwkala/tidyfactor-design) |
-| **Version** | `1.1.0` |
-| **Category** | Prototyping & Design Systems |
+| **Version** | `1.3.1` |
+| **Category** | Full UI Design Lifecycle & Prototyping Engine |
 | **Output** | Code-native interactive HTML/CSS/JS prototype system |
 | **Commercial Partner** | [Alwkala](https://alwkala.com) |
+| **License** | [MIT License](LICENSE) |
 
 ---
 
 ## What This Skill Does
 
-A **code-native, AI-era alternative to Figma**. Builds interactive HTML/CSS/JS prototypes across all stages of development (Init, Convert, Improve, Audit, Flow, Retrofit, Deploy) while structurally guaranteeing visual consistency across all screens — zero per-page CSS/JS, zero inline `<style>` or `<script>` tags, zero build step.
+A **code-native, AI-era alternative to Figma and complete UI Design Lifecycle engine**. Supports all 7 stages of UI Design (Discovery, Foundation, Architecture, Components, Motion, Quality, Delivery) while structurally guaranteeing visual consistency across all screens — zero per-page CSS/JS, zero inline `<style>` or `<script>` tags, zero build step.
 
 ---
 
-## 4 Pluggable CSS Foundations
+## 8 Pluggable CSS Foundations
 
 | Foundation | Best For | Architecture |
 |---|---|---|
@@ -35,14 +36,23 @@ A **code-native, AI-era alternative to Figma**. Builds interactive HTML/CSS/JS p
 | `tailwind` | Utility-first workflows | Tailwind CDN + utility class mapping |
 | `daisyui` | Rapid composite components | Tailwind CDN + daisyUI plugin + themed variables |
 | `hybrid` | Signature brand + composite widgets | daisyUI composite widgets + Native brand classes |
+| `shadcn` | High accessibility & Radix primitives | Tailwind v4 + Radix UI accessible token mappings |
+| `pico` | Ultra-fast semantic minimalist sites | Semantic HTML5 tags styled without utility bloat |
+| `bootstrap` | Enterprise apps & dark mode themes | Enterprise CSS variables & `data-bs-theme="dark"` |
+| `alpine` | Client micro-interactions | Alpine.js reactive state (`x-data`) + Tailwind v4 |
 
 ---
 
-## 16 Skill Commands
+## 24 Skill Commands (7 Lifecycle Stages)
 
 ```
-init · school · tokens · palette · assets · components · page · dashboard
-motion · states · flow · i18n · audit · clone · retrofit · deploy
+1. Discovery:    study · brief
+2. Foundation:   init · brand · typography · school · tokens · palette · assets
+3. Architecture: layout · nav-footer · page · dashboard
+4. Components:   components · states
+5. Motion:       motion · flow · i18n
+6. Quality:      perf · audit · clone · retrofit
+7. Delivery:     handoff · deploy
 ```
 
 Full specs: `references/commands/`
@@ -57,16 +67,3 @@ To validate and rebuild the packaged skill archive (`tidyfactor-design.skill`):
 ```bash
 node tools/build-skill.js
 ```
-
----
-
-## Related Skills (TidyFactor Ecosystem)
-
-| Skill | Focus |
-|---|---|
-| `tidyfactor-html` | Static content sites |
-| `tidyfactor-php` | Full-stack PHP server-rendered |
-| `tidyfactor-js` | Framework-free SPAs |
-| `tidyfactor-htmx` | Server-driven interactivity |
-| `tidyfactor-cinematic` | Luxury scroll-driven landing pages |
-| **`tidyfactor-design`** | **Interactive prototyping & design systems** |

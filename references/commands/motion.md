@@ -1,48 +1,62 @@
-# Command: `motion` — Shared Animation & Choreography
+# Command: `motion` — Shared Animation, Choreography & Micro-Delight
 
-## Purpose
-One shared `motion.js` (+ motion tokens in `tokens.css`) so every page
-moves with the same character, instead of each page's animations feeling
-like a different designer built them.
+Runtime entry point for configuring global motion tokens, scroll-reveals, and micro-delight interactions in `motion.js` and `interactions.js`.
 
-## When to run it
-- Seeding the base entrance/scroll-reveal behavior during `init`.
-- A page feels static or the motion feels inconsistent with the rest of
-  the prototype.
-- User phrasing: "add scroll animations", "make this feel alive", `motion`.
+## 4-Tier Whimsy & Micro-Interaction Taxonomy
 
-## What it does
-1. Read `tokens.css`'s motion tokens (durations, easing curves) — every
-   animation in `motion.js` uses these, never a one-off duration/easing
-   typed inline.
-2. Apply the twelve animation principles adapted to UI (see
-   `memory/04-motion-principles.md`): anticipation (subtle pre-state before
-   a big reveal), staging (one focal change at a time, not everything
-   animating simultaneously), follow-through/overshoot for a natural feel
-   on entrance, ease-out for anything entering, ease-in for anything
-   leaving.
-3. Implement as shared, reusable behavior, not per-page scripts:
-   - Entrance choreography (IntersectionObserver-driven reveal, staggered
-     for lists/grids)
-   - Scroll-driven accents (subtle parallax/progress indicators — full
-     canvas-film scroll techniques belong to `tidyfactor-cinematic`, not
-     here)
-   - Hover/focus micro-interactions defined alongside the component in
-     `components.css`, triggered by CSS `:hover`/`:focus-visible` where
-     possible rather than JS
-4. Respect `prefers-reduced-motion` globally in `motion.js` — disable
-   scroll-driven and entrance effects, keep only opacity/color transitions,
-   on every page automatically (not opt-in per page).
+Incorporate purposeful micro-interactions across 4 operational tiers to give prototypes distinct brand character without sacrificing usability or accessibility:
 
-## Output convention
+1. **Tier 1: Subtle Whimsy (Default UI Feedback)**
+   - Micro-lifts on hover (`transform: translateY(-2px)`), smooth button scale on click, subtle focus ring glows.
+   - Defined in `tokens.css` and `components.css`.
+2. **Tier 2: Interactive Whimsy (Task Celebrations)**
+   - Sparkle animation on form validation, smooth checkmark draw on task completion, progress step rewards.
+   - Defined in `interactions.js`.
+3. **Tier 3: Discovery Whimsy (Exploration Rewards)**
+   - Subtle Easter eggs, custom keyboard shortcuts (`⌘+K`, `?` modal), hidden theme toggles.
+4. **Tier 4: Contextual Whimsy (Charming Microcopy & States)**
+   - Playful empty states with micro-illustrations, empathetic 404 error states, animated loading dot pulses.
+
+## Advanced Motion Recipes & Fixed Z-Stack Layers
+
+### Fixed Z-Stack Background Layers
+Implement 5 persistent background layers behind page content for ambient depth:
+- `#ambient` — Fullscreen background color, GSAP-tweened per section (`onEnter`/`onEnterBack`).
+- `#glow` — Soft radial lighting; opacity animates based on active section.
+- `#vignette` — Subtle edge darkening to direct visual focus toward center.
+- `#grain` — SVG fractal noise data-URI film grain overlay with low opacity.
+- `#progress` — Thin accent scroll-progress bar fixed at top of viewport.
+
+### Ambient Section Background Color Tweening
+```javascript
+ScrollTrigger.create({
+  trigger: section,
+  onEnter: () => gsap.to('#ambient', { backgroundColor: section.dataset.ambient, duration: 1.1 }),
+  onEnterBack: () => gsap.to('#ambient', { backgroundColor: section.dataset.ambient, duration: 1.1 })
+});
+```
+
+### Canvas Scroll-Film Engine
+For smooth video-like scroll reveals without H.264 playback stutter, draw pre-rendered frame sequences (`assets/seq/f000.jpg`) directly onto a fixed `<canvas>` element mapped to scroll progress.
+
+## Global Motion Rules
+
+1. **Token Discipline**: Every duration (`--duration-fast`, `--duration-base`) and easing curve (`--ease-out-quint`) must reference a CSS variable in `tokens.css`.
+2. **Accessibility & Reduced Motion**: `prefers-reduced-motion: reduce` must automatically disable keyframe translates and scale bounces across all pages, falling back to simple opacity fades.
+3. **Single Shared Script**: All interaction choreography lives inside `design-system/motion.js` and `design-system/interactions.js` — zero per-page JS scripts allowed.
+
+## Output Convention
+
 ```
 design-system/
-  motion.js       ← shared entrance/scroll/stagger behavior
-  tokens.css        ← --ease-*, --duration-* consumed by motion.js and components.css
+├── motion.js          ← Shared entrance reveals & scroll choreography
+├── interactions.js    ← Tier 1-4 micro-delight & component interactions
+└── tokens.css         ← Motion easings & duration tokens
 ```
 
 ## Checklist
-- [ ] Every animation references a motion token, none hardcoded
-- [ ] One focal change staged at a time on entrance, not simultaneous chaos
-- [ ] `prefers-reduced-motion` disables scroll/entrance effects globally
-- [ ] No per-page animation script — behavior lives in shared `motion.js`
+
+- [ ] Micro-interactions implemented across Tier 1-4 Whimsy taxonomy
+- [ ] Every motion duration/easing traces to a token in `tokens.css`
+- [ ] `prefers-reduced-motion` compliance enforced globally across all tiers
+- [ ] No per-page motion scripts exist in `pages/`

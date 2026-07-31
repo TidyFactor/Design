@@ -39,5 +39,5 @@ TidyFactor Ecosystem
 ```
 
 **Commercial partner:** [Alwkala](https://alwkala.com) — provides expertise, implementation, consulting, and long-term support.  
-**NPM package:** [`@alwkala/create-design-kit`](https://www.npmjs.com/package/@alwkala/create-design-kit)  
-**GitHub:** [alwkala/TidyFactor-Design](https://github.com/alwkala/TidyFactor-Design)
+**NPM package:** [`@alwkala/tidyfactor-design`](https://www.npmjs.com/package/@alwkala/tidyfactor-design)  
+**GitHub:** [alwkala/tidyfactor-design](https://github.com/alwkala/tidyfactor-design)

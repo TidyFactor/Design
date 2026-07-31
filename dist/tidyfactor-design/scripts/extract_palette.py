@@ -85,18 +85,36 @@ def main():
     print(f"  Accent:    {accent}")
     
     if args.json:
-        brand_data = {
-          "colors": {
-            "primary": primary,
-            "secondary": secondary,
-            "accent": accent,
-            "neutralDark": dark_bg,
-            "neutralLight": light_bg
-          }
-        }
+        brand_data = {}
+        if os.path.exists(args.json):
+            try:
+                with open(args.json, "r", encoding="utf-8") as f:
+                    brand_data = json.load(f)
+            except Exception:
+                brand_data = {}
+
+        if "colors" not in brand_data or not isinstance(brand_data["colors"], dict):
+            brand_data["colors"] = {}
+
+        # Handle brand.json v2 dual-mode schema if present
+        if "light" in brand_data["colors"] and isinstance(brand_data["colors"]["light"], dict):
+            brand_data["colors"]["light"]["primary"] = primary
+            brand_data["colors"]["light"]["secondary"] = secondary
+            brand_data["colors"]["light"]["accent"] = accent
+            if "dark" in brand_data["colors"] and isinstance(brand_data["colors"]["dark"], dict):
+                brand_data["colors"]["dark"]["secondary"] = secondary
+                brand_data["colors"]["dark"]["accent"] = accent
+        else:
+            # Fallback for flat structure
+            brand_data["colors"]["primary"] = primary
+            brand_data["colors"]["secondary"] = secondary
+            brand_data["colors"]["accent"] = accent
+            brand_data["colors"]["neutralDark"] = dark_bg
+            brand_data["colors"]["neutralLight"] = light_bg
+
         with open(args.json, "w", encoding="utf-8") as f:
             json.dump(brand_data, f, indent=2)
-        print(f"✓ Palette saved to: {args.json}")
+        print(f"✓ Palette updated in: {args.json}")
         
     if args.css:
         css_vars = f"""/* Auto-generated Design Tokens from {args.input} */

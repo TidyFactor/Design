@@ -5,6 +5,37 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2026-07-31
+
+### 🔧 Maintenance & Documentation Overhaul
+- **Fixed `brand.json` IDE Schema Warning**: Replaced `$schema` URL pointer with `"schemaVersion": "brand-core-v2"`.
+- **Refactored `scripts/extract_palette.py`**: Added safe read-and-merge logic so `--json brand.json` updates color tokens (`colors.light` & `colors.dark`) without overwriting or wiping other sections.
+- **License Standardization**: Standardized `LICENSE` file text to MIT License across all metadata.
+- **Documentation Overhaul**:
+  - Completely overhauled `README.md` and `README.ar.md` with visual surface screenshot embeds (`assets/light.png`, `assets/dark.png`, `dashboard_output.png`, `ecommerce_output.png`, `blog.png`, `media_output.png`).
+  - Added dedicated section explaining **TidyFactor Skill Methodology & 8/8 Governance Architecture** in both English and Arabic.
+  - Formatted 24 slash commands table across 7 UI Design Lifecycle stages.
+- **Rebuilt Distribution Archive**: Updated `dist/tidyfactor-design.skill` (95.1 KB).
+
+## [1.3.0] - 2026-07-31
+
+### 🚀 Major Architectural Evolution: Full UI Design Lifecycle Skill
+- **Evolved from Prototyping Engine to Full UI Design Lifecycle Engine**: Extended `tidyfactor-design` across all 7 design lifecycle stages (Discovery, Foundation, Architecture, Components, Motion, Quality, Delivery).
+- **Expanded Command Palette (16 → 24 Commands)**:
+  - **Discovery**: Added `study` (extract design DNA from URL/screenshot) and `brief` (3-question design context gate: Audience, Surface, Tone).
+  - **Foundation**: Added `brand` (scaffold/extract `brand.json` v2) and `typography` (7 mood-routed font pairings matrix).
+  - **Architecture**: Added `layout` (8 specialized surface layout archetypes) and `nav-footer` (N1–N9 nav catalog & Ft1–Ft8 footer catalog).
+  - **Quality**: Added `perf` (numeric asset performance budgets table).
+  - **Delivery**: Added `handoff` (developer design system spec export & component state matrix).
+- **Upgraded `brand.json` Schema (v2)**: Dual-mode `colors.light/dark` (16 semantic tokens each), `shadows.focusRing` with `color-mix()`, `motion` tokens, `iconography` rules, `components` token references, `localization.mirrorOnRtl`, and `accessibility` floor.
+- **Added 5 New Memory Reference Files**:
+  - `memory/11-brand-json-v2.md`
+  - `memory/12-typography-matrix.md`
+  - `memory/13-layout-archetypes.md`
+  - `memory/14-nav-footer-catalog.md`
+  - `memory/15-performance-budget.md`
+- **Quality Bar Additions**: Added anti-`mix-blend-mode` compositing rule (transparent PNG cutouts for animated hero assets) and strict numeric performance budget checks.
+
 ## [1.2.0] - 2026-07-31
 
 ### Added & Enhanced

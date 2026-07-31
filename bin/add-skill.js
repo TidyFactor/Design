@@ -63,7 +63,11 @@ function printHelp() {
   console.log(`    • ${chalk.cyan('native')}    (Native CSS)     — Pure CSS custom properties & semantic classes`);
   console.log(`    • ${chalk.cyan('tailwind')}  (Tailwind CDN)   — Utility-first class mapping`);
   console.log(`    • ${chalk.cyan('daisyui')}   (daisyUI CDN)    — Component library themed via tokens`);
-  console.log(`    • ${chalk.cyan('hybrid')}    (Hybrid)         — Composite app widgets + Native brand styling\n`);
+  console.log(`    • ${chalk.cyan('hybrid')}    (Hybrid)         — Composite app widgets + Native brand styling`);
+  console.log(`    • ${chalk.cyan('shadcn')}    (shadcn/ui)      — Primitive component token mappings`);
+  console.log(`    • ${chalk.cyan('pico')}      (Pico CSS v2)    — Minimalist semantic CSS foundation`);
+  console.log(`    • ${chalk.cyan('bootstrap')} (Bootstrap 5.3)  — Enterprise utility & component styling`);
+  console.log(`    • ${chalk.cyan('alpine')}    (Alpine + TW)    — Micro-interactions + Tailwind v4\n`);
 }
 
 function printSuccessSummary() {
@@ -73,21 +77,23 @@ function printSuccessSummary() {
   console.log(chalk.green('  ║') + chalk.bold(`  ✅  Design Skill Installed Successfully! (${v})`.padEnd(54)) + chalk.green('║'));
   console.log(chalk.green('  ╠═══════════════════════════════════════════════════════╣'));
   console.log(chalk.green('  ║') + `  📂  ${chalk.cyan('.agents/skills/tidyfactor-design/SKILL.md')}`.padEnd(62) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  📚  ${chalk.cyan('.agents/skills/tidyfactor-design/references/')}`.padEnd(62) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  🧰  ${chalk.cyan('memory/')} ${chalk.dim('(10 design memory files)')}`.padEnd(62) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  🎨  ${chalk.cyan('templates/')} ${chalk.dim('(CSS foundation templates)')}`.padEnd(62) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  📚  ${chalk.cyan('.agents/skills/tidyfactor-design/references/')} ${chalk.dim('(24 commands)')}`.padEnd(62) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  🧰  ${chalk.cyan('memory/')} ${chalk.dim('(15 design memory files)')}`.padEnd(62) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  🎨  ${chalk.cyan('templates/')} ${chalk.dim('(8 CSS foundation templates)')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ║') + `  🤖  ${chalk.cyan('.claude-skill/')} ${chalk.dim('(Claude Code wrapper)')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ║') + `  📄  ${chalk.cyan('AGENTS.md')} ${chalk.dim('(Workspace rules & routing table)')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ╠═══════════════════════════════════════════════════════╣'));
-  console.log(chalk.green('  ║') + chalk.bold('  🚀  Supported AI Agent Slash Commands:               ') + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  • ${chalk.cyan('init')}      — Scaffold design system & first page`.padEnd(60) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  • ${chalk.cyan('school')}    — Select design movement direction`.padEnd(60) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  • ${chalk.cyan('tokens')}    — Manage tokens.css & brand.json`.padEnd(60) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  • ${chalk.cyan('components')}— Build reusable component library`.padEnd(60) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  • ${chalk.cyan('page')} / ${chalk.cyan('dashboard')} — Add marketing/app screens`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + chalk.bold('  🚀  7 UI Design Lifecycle Stages Supported:           ') + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  1. ${chalk.cyan('Discovery')}    — study, brief`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  2. ${chalk.cyan('Foundation')}   — init, brand, typography, school, tokens`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  3. ${chalk.cyan('Architecture')} — layout, nav-footer, page, dashboard`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  4. ${chalk.cyan('Components')}   — components, states`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  5. ${chalk.cyan('Motion')}       — motion, flow, i18n`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  6. ${chalk.cyan('Quality')}      — perf, audit, clone, retrofit`.padEnd(60) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  7. ${chalk.cyan('Delivery')}     — handoff, deploy`.padEnd(60) + chalk.green('║'));
   console.log(chalk.green('  ╚═══════════════════════════════════════════════════════╝'));
   console.log('');
-  console.log(`  ${chalk.bold('✨ Your AI Agent is now fully empowered!')} ${chalk.dim('Prompt your agent with: "init"')}`);
+  console.log(`  ${chalk.bold('✨ Your AI Agent is now fully empowered!')} ${chalk.dim('Prompt your agent with: "study", "brief", or "init"')}`);
   console.log('');
 }
 

@@ -17,6 +17,28 @@ Incorporate purposeful micro-interactions across 4 operational tiers to give pro
 4. **Tier 4: Contextual Whimsy (Charming Microcopy & States)**
    - Playful empty states with micro-illustrations, empathetic 404 error states, animated loading dot pulses.
 
+## Advanced Motion Recipes & Fixed Z-Stack Layers
+
+### Fixed Z-Stack Background Layers
+Implement 5 persistent background layers behind page content for ambient depth:
+- `#ambient` — Fullscreen background color, GSAP-tweened per section (`onEnter`/`onEnterBack`).
+- `#glow` — Soft radial lighting; opacity animates based on active section.
+- `#vignette` — Subtle edge darkening to direct visual focus toward center.
+- `#grain` — SVG fractal noise data-URI film grain overlay with low opacity.
+- `#progress` — Thin accent scroll-progress bar fixed at top of viewport.
+
+### Ambient Section Background Color Tweening
+```javascript
+ScrollTrigger.create({
+  trigger: section,
+  onEnter: () => gsap.to('#ambient', { backgroundColor: section.dataset.ambient, duration: 1.1 }),
+  onEnterBack: () => gsap.to('#ambient', { backgroundColor: section.dataset.ambient, duration: 1.1 })
+});
+```
+
+### Canvas Scroll-Film Engine
+For smooth video-like scroll reveals without H.264 playback stutter, draw pre-rendered frame sequences (`assets/seq/f000.jpg`) directly onto a fixed `<canvas>` element mapped to scroll progress.
+
 ## Global Motion Rules
 
 1. **Token Discipline**: Every duration (`--duration-fast`, `--duration-base`) and easing curve (`--ease-out-quint`) must reference a CSS variable in `tokens.css`.

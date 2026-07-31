@@ -14,6 +14,10 @@ Before handing back any output, score the artifact on 6 axes:
 *Any score < 3 triggers an automatic revision pass. Output must be stamped:*
 `/* Pre-emit critique: P5 H4 E5 S4 R5 V5 */`
 
+## Compositing & Blend Rules
+- **The Blend Trap**: `mix-blend-mode` (multiply or screen) breaks on any element transformed by GSAP or CSS 3D transforms, creating a visible light/dark rectangle. Use background-removed transparent PNG cutouts (`rembg` + `Pillow`) for animated hero assets. Reserve `mix-blend-mode` strictly for static, untransformed imagery.
+
+
 ## Structural (highest severity — breaks the skill's core promise)
 - Any page has an inline `<style>` block or `style="..."` attribute.
 - Any page has a `<script>` block that isn't `src`-linked to a shared `design-system/*` file.

@@ -1,154 +1,45 @@
 ---
 name: tidyfactor-design
-description: TidyFactor Design track — an AI-era, code-native alternative to Figma. Builds professional, interactive HTML/CSS/JS prototypes page-by-page (marketing sites, dashboards/app screens) while structurally guaranteeing every page stays visually consistent — shared design-system files only (tokens.css, base.css, components.css, motion.js), zero per-page CSS/JS, zero build step. Standalone — no dependency on any other design/frontend skill. Pluggable CSS foundation chosen once per project (Native, Tailwind utility-first, daisyUI, or Hybrid), full Arabic/RTL and bilingual support (El Messiri/Tajawal, never Amiri), click-through prototype flows between pages. Trigger on "init", "school", "tokens", "palette", "assets", "components", "page", "dashboard", "motion", "states", "flow", "i18n", "audit", "clone", "retrofit", "deploy", or "build a design system", "prototype this website", "design a dashboard prototype", "Figma alternative", "نموذج أولي تفاعلي", "صمّم لوحة تحكم". Covers Init, Convert (clone), Improve (retrofit).
+description: TidyFactor Design track — code-native UI design lifecycle engine (Figma alternative). Supports all 7 stages of UI design (Discovery, Foundation, Architecture, Components, Motion, Quality, Delivery) with zero per-page CSS/JS and zero build step. Pluggable CSS foundations (Native, Tailwind utility-first, daisyUI, Hybrid, shadcn, Pico, Bootstrap, Alpine) and full Arabic/RTL support (El Messiri/Tajawal, never Amiri above 24px). Trigger on commands "study", "brief", "init", "brand", "typography", "school", "tokens", "palette", "assets", "layout", "nav-footer", "components", "page", "dashboard", "motion", "states", "flow", "i18n", "perf", "audit", "clone", "retrofit", "handoff", "deploy", or requests like "build a design system", "UI design lifecycle", "prototype this website", "Figma alternative", "نموذج أولي تفاعلي", "صمّم لوحة تحكم".
 ---
 
-# TidyFactor Design (Interactive Prototyping — a Figma Alternative)
+# TidyFactor Design (Code-Native UI Design Lifecycle Engine)
 
-Part of the TidyFactor skill library in spirit and command-library format (see
-`references/tidyfactor-vision.md`) — but **fully standalone**: it doesn't call
-into `frontend-design`, `tidyfactor-html`, or any other skill, and none of
-them call into it. Same philosophy, independent tool, different use case.
+A command dispatcher supporting the full UI design lifecycle—from initial discovery through developer handoff—with zero build steps and complete design system consistency.
 
-## What this is, precisely
+## Lifecycle Commands (24 Commands across 7 Stages)
 
-A **prototyping tool**, not a production-site builder: the deliverable is a
-professional-grade, clickable, animated HTML/CSS/JS prototype — for a
-marketing site of any kind, or for dashboard/app screens — built one page at
-a time, where **consistency across pages is structural, not reviewed-in**.
-No page may carry its own `<style>` block, its own `.css` file, or its own
-behavior script. Every visual and interactive decision is made once, lives in
-`design-system/`, and every page only *consumes* it.
+| Lifecycle Stage | User intent / Command | Command File | What it loads |
+|---|---|---|---|
+| **1. Discovery** | "Extract design DNA from reference URL/image" | `references/commands/study.md` | `memory/01-design-schools.md` + `memory/06-quality-bar.md` |
+| **1. Discovery** | "Establish 3-question design context brief" | `references/commands/brief.md` | `memory/01-design-schools.md` + `memory/13-layout-archetypes.md` |
+| **2. Foundation** | "Start brand-new design system / prototype" | `references/commands/init.md` | `references/workflows/init-prototype.md` + `references/memory/architecture.md` + `references/memory/foundations.md` |
+| **2. Foundation** | "Scaffold or manage brand.json v2 schema" | `references/commands/brand.md` | `memory/11-brand-json-v2.md` + `memory/02-design-tokens.md` |
+| **2. Foundation** | "Select mood-routed typography pairing" | `references/commands/typography.md` | `memory/12-typography-matrix.md` + `memory/08-arabic-bilingual.md` |
+| **2. Foundation** | "Choose design movement / visual direction" | `references/commands/school.md` | `memory/01-design-schools.md` |
+| **2. Foundation** | "Manage design tokens and brand colors" | `references/commands/tokens.md` | `memory/02-design-tokens.md` + `references/memory/architecture.md` |
+| **2. Foundation** | "Scaffold color palette from reference image" | `references/commands/palette.md` | `memory/02-design-tokens.md` |
+| **2. Foundation** | "Asset hygiene and image optimization" | `references/commands/assets.md` | `memory/10-python-tooling.md` |
+| **3. Architecture** | "Select macrostructure layout archetype" | `references/commands/layout.md` | `memory/13-layout-archetypes.md` + `references/memory/architecture.md` |
+| **3. Architecture** | "Choose navigation (N1-N9) and footer (Ft1-Ft8)" | `references/commands/nav-footer.md` | `memory/14-nav-footer-catalog.md` + `memory/06-quality-bar.md` |
+| **3. Architecture** | "Add a new content or marketing page" | `references/commands/page.md` | `references/workflows/init-prototype.md` + `memory/05-component-anatomy.md` |
+| **3. Architecture** | "Add a new dashboard or app screen" | `references/commands/dashboard.md` | `references/workflows/init-prototype.md` + `memory/05-component-anatomy.md` |
+| **4. Components** | "Manage shared UI components (8-state wrappers)" | `references/commands/components.md` | `memory/05-component-anatomy.md` + `references/memory/architecture.md` |
+| **4. Components** | "Define interactive component states" | `references/commands/states.md` | `memory/05-component-anatomy.md` |
+| **5. Motion** | "Add shared animations, recipes & ambient layers" | `references/commands/motion.md` | `memory/04-motion-principles.md` |
+| **5. Motion** | "Wire interactive prototype navigation" | `references/commands/flow.md` | `memory/09-prototype-flow.md` |
+| **5. Motion** | "Add Arabic/RTL or bilingual localization" | `references/commands/i18n.md` | `memory/08-arabic-bilingual.md` |
+| **6. Quality** | "Verify asset performance budgets & size limits" | `references/commands/perf.md` | `memory/15-performance-budget.md` |
+| **6. Quality** | "Audit structural consistency & quality bar" | `references/commands/audit.md` | `references/workflows/audit-prototype.md` + `memory/06-quality-bar.md` + `memory/07-consistency-contract.md` |
+| **6. Quality** | "Extract design system from external site" | `references/commands/clone.md` | `references/workflows/clone-prototype.md` + `memory/03-narrative-conversion.md` |
+| **6. Quality** | "Unify drifted prototype under design system" | `references/commands/retrofit.md` | `references/workflows/retrofit-prototype.md` + `memory/07-consistency-contract.md` |
+| **7. Delivery** | "Export developer handoff specs & token map" | `references/commands/handoff.md` | `memory/11-brand-json-v2.md` + `memory/05-component-anatomy.md` |
+| **7. Delivery** | "Local preview and deployment" | `references/commands/deploy.md` | `memory/06-quality-bar.md` |
 
-**When this is the right tool vs `tidyfactor-html`:** the brief is about
-exploring/proving a visual and interaction direction, fast, across many
-pages, before (or instead of) production engineering → this skill. The brief
-already has real content/data and needs to actually ship on free hosting
-→ `tidyfactor-html`. Neither depends on the other; a project can move from
-one to the other, but that's the user's call, never assumed.
+## Non-negotiable constraints
 
-## The locked architecture (non-negotiable, applies to every command)
-
-```
-project/
-  design-system/
-    tokens.css        ← single source of truth: color, type, space, radius, shadow, motion
-    base.css           ← reset + base element styles, inherited by every page
-    components.css       ← every reusable component class, one place only
-    utilities.css          ← optional, foundation-dependent (see foundations/)
-    motion.js               ← shared choreography: entrance, scroll-reveal, easing tokens
-    interactions.js          ← shared component behavior: dropdown, modal, tabs, toggles
-    brand.json
-  pages/
-    <page-name>.html    ← markup ONLY — no inline <style>, no inline <script> logic
-  proto-nav.js           ← shared, dev-only prototype toolbar (jump between pages/states)
-```
-
-A design decision that doesn't fit an existing `components.css` class is
-never solved by writing page-specific CSS — it's solved by extending
-`components.css` itself (see `page`/`components` commands), so the next page
-inherits it too.
-
-## Step 0 — Identify the mode (ask if not obvious)
-
-> "What are we doing?
-> 1. **Init** — start a brand-new prototype/design system from scratch
-> 2. **Convert** (`clone`) — extract a design direction from an existing
->    reference (site, screenshots) and rebuild it as our own token/component
->    system
-> 3. **Improve** (`retrofit`) — an existing prototype has drifted (per-page
->    CSS, inconsistent components) and needs to be unified"
-
-## Step 0b — Identify the CSS foundation (ask once, never mid-project)
-
-> "Which CSS foundation for this project?
-> 1. **Native** — hand-authored semantic component classes, zero dependency
-> 2. **Tailwind Utility** — Tailwind CDN, utility classes only, no component
->    layer
-> 3. **daisyUI** — Tailwind CDN + daisyUI plugin, full component library,
->    themed from our tokens
-> 4. **Hybrid** — daisyUI for composite components (tables, modals, forms) +
->    Native classes for signature/identity elements"
-
-Full detail on each in `references/foundations/`. Never mix foundations
-within one project — this is exactly as strict as `tidyfactor-html`'s
-componentization-method rule, for the same reason.
-
-## Command Index
-
-| Command | Purpose | Reference |
-|---|---|---|
-| `init` | One-pass foundation: mode + CSS foundation choice + school + tokens + brand.json + base components + first page | `references/commands/init.md` |
-| `school` | Choose and document a conscious design-movement direction | `references/commands/school.md` |
-| `tokens` | Design token system + `brand.json` — the single source of truth | `references/commands/tokens.md` |
-| `components` | Shared component library in `components.css` (+ daisyUI/Tailwind mapping per foundation) | `references/commands/components.md` |
-| `page` | Add a new marketing/content page — markup-only, zero drift | `references/commands/page.md` |
-| `dashboard` | Add a new app/dashboard screen — shell, data surfaces, states | `references/commands/dashboard.md` |
-| `motion` | Shared animation/interaction layer | `references/commands/motion.md` |
-| `states` | Interactive states per component (hover/active/empty/loading/error/success) | `references/commands/states.md` |
-| `flow` | Click-through prototype navigation between pages (present mode) | `references/commands/flow.md` |
-| `i18n` | Arabic/RTL, bilingual sites, El Messiri/Tajawal typography | `references/commands/i18n.md` |
-| `audit` | Structural consistency + quality-bar report (read-only) | `references/commands/audit.md` |
-| `clone` | Convert mode — extract a design system from an existing reference | `references/commands/clone.md` |
-| `retrofit` | Improve mode — unify a drifted prototype under one system | `references/commands/retrofit.md` |
-| `deploy` | Local preview / client presentation / export | `references/commands/deploy.md` |
-
-New commands follow `references/commands/_template.md`.
-
-## Command Sequencing & Phases
-
-1. **Phase 1 — Foundation (once).** `tokens` → `school` → `components` — in
-   that order: tokens exist before anything can reference them, the design
-   direction is chosen before components are styled, components exist before
-   any page is built.
-2. **Phase 2 — Build (repeats per page).** `page` or `dashboard` → `motion`
-   (as needed) → `states` (as needed) — the recurring loop for growing the
-   prototype.
-3. **Phase 3 — Assemble & present.** `flow` (once enough pages exist to
-   connect) → `i18n` (once, or per-locale) → `audit` (before every client
-   review) → `deploy` (always last).
-
-`clone` and `retrofit` are entry points, not phase members — `clone` hands
-off into Phase 1 once the target direction is agreed; `retrofit` runs `audit`
-first, then only the phases the findings require.
-
-## Running a single command
-1. Confirm mode (Step 0) and CSS foundation (Step 0b) — every command's
-   output shape depends on both.
-2. Read the matching reference file in full before acting.
-3. Confirm `design-system/tokens.css` and `components.css` exist and are
-   current before touching any page — a page built against a stale
-   component set is exactly the drift this skill exists to prevent.
-4. Execute one page/component/concern at a time.
-5. Report using that command's checklist.
-
-## Running a full mode end-to-end
-- **Init**: `init` alone runs Phase 1 plus the first page/screen in one pass.
-- **Convert**: `clone` first, then Phase 1→3 in full.
-- **Improve**: `audit` first (read-only), then only the phases the confirmed
-  findings require.
-
-## Hard constraints (apply to every command)
-- No page-level `.css`/`.js` files, ever. No inline `<style>`. No inline
-  `<script>` beyond a single `<script src="...">` tag set shared across all
-  pages.
-- No hardcoded hex/font/spacing value in any page when a token exists —
-  trace every visual value to `tokens.css` (or the foundation's theme
-  config, for daisyUI).
-- One CSS foundation per project — never mixed.
-- `prefers-reduced-motion` and a missing-asset fallback are non-negotiable
-  on every page.
-- Arabic support is a first-class capability, not an add-on: `html[dir]`
-  correctness, El Messiri (headings) + Tajawal (body), **never Amiri** —
-  see `references/commands/i18n.md` and `memory/08-arabic-bilingual.md`.
-- A design decision with no home in `components.css` gets added there via
-  `components` — never patched locally on the page that needed it.
-
-## Related skills
-- Needs the prototype turned into a shippable, data-driven static site →
-  `tidyfactor-html` (separate handoff, not a dependency).
-- Needs a real backend/database behind a dashboard screen designed here →
-  `tidyfactor-php-micro` / `tidyfactor-php-mono`.
-- A cinematic, single-product scroll-driven landing page specifically →
-  `tidyfactor-cinematic` (different technique — canvas film, not this
-  skill's multi-page component system).
+1. **Zero per-page CSS/JS**: Every visual token and component style lives inside `design-system/`. Pages contain markup only.
+2. **Single CSS Foundation**: Lock Native, Tailwind, daisyUI, Hybrid, shadcn, Pico, Bootstrap, or Alpine once per project; never mix foundations.
+3. **Typography Discipline**: Arabic display headings use El Messiri, body copy uses Tajawal. Never use Amiri for headings above 24px.
+4. **Reduced Motion**: `prefers-reduced-motion` compliance is required on all animated interactions.
+5. **Anti-Slop Bar**: Reject the 16 Named AI Anti-Pattern Tells and require Pre-Emit Self-Critique score stamps (`/* Pre-emit critique: P5 H4 E5 S4 R5 V5 */`).
