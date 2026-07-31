@@ -46,6 +46,30 @@ Route to `memory/01-design-schools.md` and lock one of:
 - **Editorial**: Magazine layout, strong hierarchy, serif typography
 - **Playful**: Rounded, vibrant, animated, friendly
 
+## The 9-Step Design Decision Tree Protocol (`memory/18-design-decision-engine.md`)
+
+Execute decisions sequentially to prevent random or clashing visual choices:
+
+```
+Step 1: Project Scope       → Determine surface type (marketing, dashboard, e-commerce, docs, spatial)
+Step 2: Industry Register   → Map domain (Corporate, SaaS, FinTech, AI, Healthcare, Education, Luxury, E-Commerce)
+Step 3: Audience Mode       → Classify user state (Inspire, Evaluate, Act, Learn)
+Step 4: Brand Personality   → Lock 3-5 tone adjectives (from memory/16-design-movements-guide.md)
+Step 5: Storytelling        → Choose archetype (Cinematic, Editorial, Documentary, Interactive)
+Step 6: UX Philosophy       → Lock core principles (Accessibility-first, Mobile-first, RTL-first, Dark Native)
+Step 7: Visual School       → Select Primary School & max 1 Secondary Influence from compatibility matrix
+Step 8: Token Generation    → Derive tokens.css & brand.json v2 based on Visual DNA & Color Palettes
+Step 9: Component Behavior  → Apply exact component shape, form, motion language, & executable signature
+```
+
+### Mandatory Constraint: Anti-"Design Soup" Rule
+Never combine more than:
+- **1 Primary School**
+- **1 Secondary Influence** (must be listed as `compatible` in the primary school's matrix)
+- **1 Motion Language**
+- **1 Storytelling Style**
+- **1 UX Philosophy Accent**
+
 ## Fit Test (3-Question Filter)
 
 After the context gate, run the fit test to confirm the right tool:

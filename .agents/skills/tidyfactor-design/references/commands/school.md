@@ -17,11 +17,7 @@ asks for them specifically).
 ## What it does
 1. Read the brief's subject matter, audience, and any stated visual
    references. If the brief pins down a direction, follow it exactly.
-2. Where the brief leaves it open, choose deliberately from
-   `memory/01-design-schools.md` (Swiss/International Typographic,
-   Bauhaus, Brutalism, Editorial/broadsheet, Minimalism, Glassmorphism,
-   Material, modern SaaS/Vercel-Linear style, or a justified hybrid) —
-   never by defaulting to whichever is most common in training data.
+2. Where the brief leaves it open, choose deliberately from `memory/16-design-movements-guide.md` (all 20 Visual Aesthetics & Design Movements: Swiss, Flat, Material, Minimalism, Brutalism/Neo-Brutalism, Bauhaus, Skeuomorphism, Glassmorphism, Maximalism, Industrial, Bento Box, Aurora Mesh, Neumorphism, Corporate Memphis, Cyberpunk, Claymorphism, Isometric, Kinetic Typography, Organic/Amorphous, Frutiger Aero/Y2K) and `memory/17-storytelling-industries-ux.md` (4 Storytelling Archetypes, 8 Industry Registers, 8 UX Philosophies) — never by defaulting to whichever is most common in training data.
 3. **Actively avoid** the three AI-design tells unless the brief calls for
    one specifically: warm-cream + terracotta serif, near-black + single
    acid accent, broadsheet-hairline-columns-everywhere applied

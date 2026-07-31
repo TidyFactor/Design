@@ -5,9 +5,39 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2026-08-01
+
+### 🧠 Major Upgrade: Design Decision Engine Architecture
+- **Added 9 Structural Decision Layers**: Transformed `tidyfactor-design` into a deterministic Design Decision Engine.
+- **Added `memory/18-design-decision-engine.md`**:
+  - **The 9-Step Decision Tree Protocol**: `Project Scope → Industry Register → Audience Mode → Brand Personality → Storytelling → UX Philosophy → Visual School → Tokens → Components`.
+  - **Enforced Anti-"Design Soup" Constraint Rule**: Hard limit capping mixing to 1 Primary School, 1 Compatible Secondary Influence, 1 Motion Language, 1 Storytelling Style, and 1 UX Philosophy Accent.
+  - **Executable Signature Element Specification**: Mandatory implementation of concrete HTML/CSS signature code for every movement.
+- **Structured All 20 Visual Movements (`memory/16-design-movements-guide.md`)**:
+  - Added YAML `confidence` ratings across 6 surface targets.
+  - Added `compatibility` lists (`compatible` vs `avoid`).
+  - Added `brandPersonality` tone keywords.
+  - Added 8-axis `visualDNA` vectors (`Grid`, `Typography`, `Geometry`, `Illustration`, `Motion`, `Texture`, `Photography`, `Depth`).
+  - Added concrete `componentBehaviour` specifications (`Buttons`, `Cards`, `Forms`, `Navigation`, `Search`).
+  - Added `motionLanguage` parameters (`Duration`, `Curve`, `Energy`, `Scroll`, `Hover`).
+  - Added `executableSignature` snippets.
+- **Added `memory/17-storytelling-industries-ux.md`**: Detailed guide for 4 Storytelling Archetypes, 8 Industry Registers, and 8 UX Philosophies.
+- **Updated Command Specs**: Integrated 9-step decision protocol into `references/commands/brief.md` and `references/commands/school.md`.
+- **Rebuilt Distribution Archive**: Updated `dist/tidyfactor-design.skill` (115.7 KB with 18 memory files).
+
 ## [1.3.1] - 2026-07-31
 
-### 🔧 Maintenance & Documentation Overhaul
+### 🧠 Evolution: Transformed into a Production Design Decision Engine
+- **Added Structured Metadata to All 20 Visual Movements (`memory/16-design-movements-guide.md`)**:
+  - `Confidence Matrix`: Surface suitability rating (`production`, `marketing`, `dashboard`, `landing`, `mobile`, `accessibility`).
+  - `Compatibility Matrix`: Explicit synergy lists (`compatible` vs `avoid`).
+  - `Brand Personality`: 4-6 tone keywords governing copy tone, media choices, and hover states.
+  - `Visual DNA Vector`: 8-point radar scale (`Grid`, `Typography`, `Geometry`, `Illustration`, `Motion`, `Texture`, `Photography`, `Depth`).
+  - `Component Behaviour`: Concrete shape/form specs for `Buttons`, `Cards`, `Forms`, `Navigation`, and `Search`.
+  - `Motion Language`: Concrete specs for `Duration`, `Curve`, `Energy`, `Scroll`, and `Hover`.
+  - `Executable Signature Element`: Concrete HTML/CSS implementation snippet for the school's signature tell.
+- **Added 9-Step Design Decision Tree Protocol (`memory/18-design-decision-engine.md`)**: Sequential decision flow: `Project → Industry → Audience → Brand Personality → Storytelling → UX Philosophy → Visual School → Tokens → Components`.
+- **Enforced Anti-"Design Soup" Constraint**: Hard limit capping mixing to 1 Primary School, 1 Compatible Secondary Influence, 1 Motion Language, 1 Storytelling Style, and 1 UX Philosophy Accent.
 - **Fixed `brand.json` IDE Schema Warning**: Replaced `$schema` URL pointer with `"schemaVersion": "brand-core-v2"`.
 - **Refactored `scripts/extract_palette.py`**: Added safe read-and-merge logic so `--json brand.json` updates color tokens (`colors.light` & `colors.dark`) without overwriting or wiping other sections.
 - **License Standardization**: Standardized `LICENSE` file text to MIT License across all metadata.
@@ -15,7 +45,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Completely overhauled `README.md` and `README.ar.md` with visual surface screenshot embeds (`assets/light.png`, `assets/dark.png`, `dashboard_output.png`, `ecommerce_output.png`, `blog.png`, `media_output.png`).
   - Added dedicated section explaining **TidyFactor Skill Methodology & 8/8 Governance Architecture** in both English and Arabic.
   - Formatted 24 slash commands table across 7 UI Design Lifecycle stages.
-- **Rebuilt Distribution Archive**: Updated `dist/tidyfactor-design.skill` (95.1 KB).
+- **Rebuilt Distribution Archive**: Updated `dist/tidyfactor-design.skill` (115.7 KB).
 
 ## [1.3.0] - 2026-07-31
 

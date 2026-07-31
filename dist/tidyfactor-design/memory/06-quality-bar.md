@@ -19,6 +19,7 @@ Before handing back any output, score the artifact on 6 axes:
 
 
 ## Structural (highest severity — breaks the skill's core promise)
+- **Anti-Design-Soup Violation**: Combining more than 1 Primary School, 1 Secondary Influence, 1 Motion Language, 1 Storytelling Style, or 1 UX Philosophy on a single page (unless explicitly requested).
 - Any page has an inline `<style>` block or `style="..."` attribute.
 - Any page has a `<script>` block that isn't `src`-linked to a shared `design-system/*` file.
 - A value (color, font-size, spacing, radius, shadow) appears as a literal in any page without tracing to a token.

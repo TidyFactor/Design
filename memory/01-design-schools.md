@@ -1,13 +1,33 @@
-# Design Schools & Movements — Reference for `school`
+# Design Schools & Movements — Quick Calibration Index
 
-A working palette of directions, not an exhaustive art-history survey. Each
-entry: what it looks like, when it fits, what to avoid.
+For complete operational rules, visual tokens, typography pairings, color systems, CSS rules, shadow styles, and anti-patterns across all 20 visual aesthetics, see:
+👉 **[`memory/16-design-movements-guide.md`](16-design-movements-guide.md)** (All 20 Visual Movements & Design Tokens)  
+👉 **[`memory/17-storytelling-industries-ux.md`](17-storytelling-industries-ux.md)** (4 Storytelling Archetypes, 8 Industry Registers, 8 UX Philosophies)  
+👉 **[`memory/18-design-decision-engine.md`](18-design-decision-engine.md)** (9-Step Decision Tree & Anti-Design-Soup Constraint)
 
-## Swiss / International Typographic Style
-Grid-driven, sans-serif (Helvetica/Akzidenz-family spirit), objective,
-generous negative space, asymmetric but rigorously aligned layouts. Fits:
-institutional, editorial, technical/precision brands. Avoid: applying the
-grid so rigidly the content feels bureaucratic rather than clear.
+---
+
+## 🎨 20 Visual Aesthetics At-A-Glance Index
+1. **Swiss Style**: Objective 12-column grid, sans-serif, high contrast.
+2. **Flat Design**: 2D vector, zero shadows, vibrant color blocks.
+3. **Material Design**: Paper/ink depth, elevation shadows, touch ripples.
+4. **Minimalism**: Extreme negative space, typography focal point.
+5. **Brutalism & Neo-Brutalism**: Hard 4px black offset shadows, 2px borders, pop colors.
+6. **Bauhaus**: Primary color geometry (red/blue/yellow), form follows function.
+7. **Skeuomorphism**: Tactile real-world textures, inner bevels, realistic depth.
+8. **Glassmorphism**: Translucent frosted panels (`backdrop-filter: blur`), spatial layers.
+9. **Maximalism**: Collage layering, kinetic typography, energetic multi-color.
+10. **Industrial Style**: Monospaced data density, blueprint grids, telemetry dots.
+11. **Bento Box UI**: Compartmentalized modular masonry grids, `rounded-2xl` tiles.
+12. **Aurora UI**: Luminescent mesh gradients (`blur(60px)`), dark aura spotlights.
+13. **Neumorphism**: Extruded surface shadows (`inset` + drop), monochromatic grounds.
+14. **Corporate Memphis**: Friendly geometric characters, pastel panels, soft pills.
+15. **Cyberpunk & Vaporwave**: Pitch black grounds, neon cyan/magenta, monospaced HUD.
+16. **Claymorphism**: Soft 3D clay volumes, warm inner light reflections, rounded shapes.
+17. **Isometric Design**: 30° 2D parallel projection vector worlds.
+18. **Kinetic Typography**: Text as the animated hero visual (`clamp()` font scales).
+19. **Organic / Amorphous UI**: Fluid blob shapes (`border-radius: 60% 40% ...`), natural tones.
+20. **Frutiger Aero & Y2K**: Glossy glass buttons, lens flares, vibrant sky blue/lime gradients.
 
 ## Bauhaus
 Geometric shapes as structural/decorative elements, primary-plus-black
