@@ -79,7 +79,12 @@ def main():
     cr_on_dark = contrast_ratio(colors[0], (15, 23, 42))
     cr_on_light = contrast_ratio(colors[0], (248, 250, 252))
     
-    print(f"✓ Extracted Palette from {args.input}:")
+    if sys.platform == "win32":
+        try:
+            sys.stdout.reconfigure(encoding='utf-8')
+        except Exception:
+            pass
+    print(f"[OK] Extracted Palette from {args.input}:")
     print(f"  Primary:   {primary} (WCAG Contrast vs Dark: {cr_on_dark:.2f}:1, Light: {cr_on_light:.2f}:1)")
     print(f"  Secondary: {secondary}")
     print(f"  Accent:    {accent}")

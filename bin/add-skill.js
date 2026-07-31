@@ -78,7 +78,7 @@ function printSuccessSummary() {
   console.log(chalk.green('  ╠═══════════════════════════════════════════════════════╣'));
   console.log(chalk.green('  ║') + `  📂  ${chalk.cyan('.agents/skills/tidyfactor-design/SKILL.md')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ║') + `  📚  ${chalk.cyan('.agents/skills/tidyfactor-design/references/')} ${chalk.dim('(24 commands)')}`.padEnd(62) + chalk.green('║'));
-  console.log(chalk.green('  ║') + `  🧰  ${chalk.cyan('memory/')} ${chalk.dim('(15 design memory files)')}`.padEnd(62) + chalk.green('║'));
+  console.log(chalk.green('  ║') + `  🧰  ${chalk.cyan('memory/')} ${chalk.dim('(18 design memory files)')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ║') + `  🎨  ${chalk.cyan('templates/')} ${chalk.dim('(8 CSS foundation templates)')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ║') + `  🤖  ${chalk.cyan('.claude-skill/')} ${chalk.dim('(Claude Code wrapper)')}`.padEnd(62) + chalk.green('║'));
   console.log(chalk.green('  ║') + `  📄  ${chalk.cyan('AGENTS.md')} ${chalk.dim('(Workspace rules & routing table)')}`.padEnd(62) + chalk.green('║'));

@@ -14,7 +14,7 @@
 | **CLI Execution Command** | `npx @alwkala/tidyfactor-design` or `npx tidyfactor-design` |
 | **Skill Injection Command** | `npx @alwkala/tidyfactor-design add-skill` or `npx tidyfactor-design add-skill` |
 | **GitHub Repository** | [alwkala/tidyfactor-design](https://github.com/alwkala/tidyfactor-design) |
-| **Version** | `1.3.2` |
+| **Version** | `1.3.3` |
 | **Category** | Full UI Design Lifecycle & Prototyping Engine |
 | **Output** | Code-native interactive HTML/CSS/JS prototype system |
 | **Commercial Partner** | [Alwkala](https://alwkala.com) |

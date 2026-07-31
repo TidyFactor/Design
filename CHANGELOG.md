@@ -5,6 +5,23 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.3] - 2026-08-01
+
+### 🛠️ Critical CLI & Template Scaffolding Upgrade
+- **Fixed CLI Template Auto-Cleanup Bug**: Replaced stub `.template.` files with a production starter suite in `templates/` to prevent scaffolding from leaving an empty directory.
+- **Created Production Template Suite (`templates/`)**:
+  - `design-system/tokens.css`: Dual-theme CSS custom properties (colors, typography, spacing, radius, shadows).
+  - `design-system/base.css`: Reset, typography inheritance, logical properties, smooth scrolling.
+  - `design-system/components.css`: Button suite, cards, bento grids, badges, navbar pills, hero sections.
+  - `design-system/utilities.css`: Spatial layout helpers and accessibility utilities.
+  - `design-system/motion.js`: Scroll reveals, entrance choreography, reduced-motion fallbacks.
+  - `design-system/interactions.js`: Theme toggle (light/dark) and direction toggle (RTL/LTR).
+  - `index.html`: Responsive, accessible starter prototype landing page.
+  - `proto-nav.js`: Dev-only floating prototype toolbar with `🎨 TF Design` badge.
+- **Auto-Injection in `create-kit.js`**: Scaffolding a new project via `npx @alwkala/tidyfactor-design` now automatically injects `.agents/`, `.claude-skill/`, `memory/`, and `AGENTS.md` in a single pass.
+- **Fixed CLI Argument Parsing**: Improved positional argument handling so space-separated target paths (e.g., `npx @alwkala/tidyfactor-design "TidyFactor Website"`) scaffold directly into the target directory.
+- **Windows Console Encoding Fix**: Fixed `sys.stdout` UTF-8 re-encoding in `scripts/extract_palette.py` for Windows consoles.
+
 ## [1.3.2] - 2026-08-01
 
 ### 🧠 Major Upgrade: Design Decision Engine Architecture

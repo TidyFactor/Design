@@ -77,12 +77,11 @@ const FOUNDATIONS = [
 ];
 
 const SCHOOLS = ['minimalist', 'brutalism', 'glassmorphism', 'neumorphism', 'swiss', 'luxury'];
-
 const FOUNDATION_BY_NAME = new Map(FOUNDATIONS.map(f => [f.name, f]));
 
 function parseCliArgs() {
   const args = process.argv.slice(2);
-  let targetDirArg = null;
+  const positionalArgs = [];
   let flags = {
     foundation: undefined,
     school: undefined,
@@ -105,10 +104,12 @@ function parseCliArgs() {
       flags.palette = arg.split('=')[1];
     } else if (arg === '--yes' || arg === '-y') {
       flags.yes = true;
-    } else if (!arg.startsWith('--') && !targetDirArg) {
-      targetDirArg = arg;
+    } else if (!arg.startsWith('--')) {
+      positionalArgs.push(arg);
     }
   }
+
+  const targetDirArg = positionalArgs.length > 0 ? positionalArgs.join(' ') : null;
 
   return { targetDirArg, flags };
 }
@@ -136,16 +137,6 @@ function printHelp() {
   console.log(`    ${chalk.cyan('-y, --yes')}           Accept all defaults non-interactively`);
   console.log(`    ${chalk.cyan('-v, --version')}       Display version number`);
   console.log(`    ${chalk.cyan('-h, --help')}          Display this help message\n`);
-  console.log(`  ${chalk.bold('CSS Foundations:')}\n`);
-  for (const f of FOUNDATIONS) {
-    const padName = f.name.padEnd(10);
-    console.log(`    ${chalk.cyan(padName)} ${f.emoji}  ${chalk.bold(f.label)} — ${chalk.dim(f.desc)}`);
-  }
-  console.log('');
-  console.log(`  ${chalk.bold('Examples:')}`);
-  console.log(`    $ npx @alwkala/tidyfactor-design my-proto --foundation=native --school=luxury`);
-  console.log(`    $ npx @alwkala/tidyfactor-design my-app --palette=assets/logo.png`);
-  console.log(`    $ npx @alwkala/tidyfactor-design --yes    # CI / Agent mode\n`);
 }
 
 function copyDirectory(src, dest) {
@@ -199,18 +190,32 @@ function main() {
 
   fs.mkdirSync(targetPath, { recursive: true });
 
+  // 1. Copy design system & prototype templates
   const templatesDir = path.join(PACKAGE_ROOT, 'templates');
   if (fs.existsSync(templatesDir)) {
     copyDirectory(templatesDir, targetPath);
   }
 
+  // 2. Copy brand.json v2
   const defaultBrand = path.join(PACKAGE_ROOT, 'brand.json');
   const targetBrand = path.join(targetPath, 'brand.json');
   if (fs.existsSync(defaultBrand) && !fs.existsSync(targetBrand)) {
     fs.copyFileSync(defaultBrand, targetBrand);
   }
 
-  // Handle --palette extraction if provided
+  // 3. Auto-inject AI Agent Skill & Rules (.agents, .claude-skill, memory, AGENTS.md)
+  console.log(chalk.cyan('  🤖 Auto-injecting AI Agent Skill & Design Decision Engine...'));
+  copyDirectory(path.join(PACKAGE_ROOT, '.agents'), path.join(targetPath, '.agents'));
+  copyDirectory(path.join(PACKAGE_ROOT, '.claude-skill'), path.join(targetPath, '.claude-skill'));
+  copyDirectory(path.join(PACKAGE_ROOT, 'memory'), path.join(targetPath, 'memory'));
+  
+  const agentsMdSrc = path.join(PACKAGE_ROOT, 'AGENTS.md');
+  const agentsMdDest = path.join(targetPath, 'AGENTS.md');
+  if (fs.existsSync(agentsMdSrc) && !fs.existsSync(agentsMdDest)) {
+    fs.copyFileSync(agentsMdSrc, agentsMdDest);
+  }
+
+  // 4. Handle --palette extraction if provided
   if (flags.palette && fs.existsSync(flags.palette)) {
     console.log(chalk.cyan(`  🎨 Extracting color palette from ${flags.palette}...`));
     const extractScript = path.join(PACKAGE_ROOT, 'scripts', 'extract_palette.py');
@@ -221,23 +226,13 @@ function main() {
     }
   }
 
-  // Auto-cleanup leftover .template.* stubs from target root
-  try {
-    for (const file of fs.readdirSync(targetPath)) {
-      if (file.includes('.template.')) {
-        fs.unlinkSync(path.join(targetPath, file));
-      }
-    }
-  } catch (e) {}
-
-  console.log(chalk.green('\n  ✅ Project scaffolded successfully!'));
+  console.log(chalk.green('\n  ✅ Project & AI Skill scaffolded successfully!'));
   console.log('');
   console.log(`  ${chalk.bold('Next Steps:')}`);
   if (targetDir !== '.') {
-    console.log(`    $ cd ${targetDir}`);
+    console.log(`    $ cd "${targetDir}"`);
   }
-  console.log(`    $ npx @alwkala/tidyfactor-design add-skill    # Inject AI Agent skill & rules`);
-  console.log(`    $ python -m http.server 8123                  # Preview prototype in browser\n`);
+  console.log(`    $ python -m http.server 8123                  # Preview interactive prototype in browser\n`);
 }
 
 main();
