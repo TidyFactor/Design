@@ -1,12 +1,13 @@
 {
   "name": "@alwkala/tidyfactor-design",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "description": "Code-native UI design lifecycle engine and anti-slop design system suite (Figma alternative)",
   "main": "bin/create-kit.js",
   "bin": {
     "tidyfactor-design": "bin/create-kit.js",
     "create-design-kit": "bin/create-kit.js",
-    "add-design-skill": "bin/add-skill.js"
+    "add-design-skill": "bin/add-skill.js",
+    "remove-design-skill": "bin/remove-skill.js"
   },
   "scripts": {
     "test": "node ./bin/create-kit.js --help",

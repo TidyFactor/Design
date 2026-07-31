@@ -20,10 +20,18 @@ const pkg = require(path.join(PACKAGE_ROOT, 'package.json'));
 
 /* Subcommand delegation */
 const firstArg = process.argv[2];
-const SUBCOMMANDS_SKILL = new Set(['add-skill', 'add-design-skill', 'skill', 'install-skill']);
-if (firstArg && SUBCOMMANDS_SKILL.has(firstArg.toLowerCase())) {
+const SUBCOMMANDS_ADD = new Set(['add-skill', 'add-design-skill', 'skill', 'install-skill']);
+const SUBCOMMANDS_REMOVE = new Set(['remove-skill', 'remove-design-skill', 'uninstall-skill', 'clean-skill']);
+
+if (firstArg && SUBCOMMANDS_ADD.has(firstArg.toLowerCase())) {
   process.argv.splice(2, 1);
   require('./add-skill.js');
+  process.exit(0);
+}
+
+if (firstArg && SUBCOMMANDS_REMOVE.has(firstArg.toLowerCase())) {
+  process.argv.splice(2, 1);
+  require('./remove-skill.js');
   process.exit(0);
 }
 

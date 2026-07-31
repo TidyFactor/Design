@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 TidyFactor Design `v1.3.6`
+# 🎨 TidyFactor Design `v1.3.7`
 ### Code-Native UI Design Lifecycle Engine & Anti-Slop Design System Suite
 
 **The official UI design & interactive prototyping foundation for the TidyFactor Ecosystem.**

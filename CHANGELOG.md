@@ -5,6 +5,15 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.7] - 2026-08-01
+
+### 🗑️ New CLI Subcommand: `remove-skill` / `remove-design-skill`
+- **Skill Uninstaller Script (`bin/remove-skill.js`)**:
+  - Added dedicated uninstaller script allowing developers to cleanly remove injected agent skills and design system rules.
+  - Subcommands supported: `npx @alwkala/tidyfactor-design remove-skill`, `remove-design-skill`, `uninstall-skill`, `clean-skill`.
+  - Registered `"remove-design-skill": "bin/remove-skill.js"` in `package.json` `bin` map.
+  - Safely removes `.agents/skills/tidyfactor-design/`, `.claude-skill/`, `memory/`, and generated `AGENTS.md` rules with clear terminal feedback.
+
 ## [1.3.6] - 2026-08-01
 
 ### 📦 Automated Versioned `.skill` Archive Build Pipeline

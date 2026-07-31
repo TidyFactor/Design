@@ -1,6 +1,6 @@
 ---
 name: tidyfactor-design
-version: 1.3.6
+version: 1.3.7
 description: TidyFactor Design track — code-native UI design lifecycle engine (Figma alternative). Supports all 7 stages of UI design (Discovery, Foundation, Architecture, Components, Motion, Quality, Delivery) with zero per-page CSS/JS and zero build step. Pluggable CSS foundations (Native, Tailwind utility-first, daisyUI, Hybrid, shadcn, Pico, Bootstrap, Alpine) and full Arabic/RTL support (El Messiri/Tajawal, never Amiri above 24px). Trigger on commands "study", "brief", "init", "brand", "typography", "school", "tokens", "palette", "assets", "layout", "nav-footer", "components", "page", "dashboard", "motion", "states", "flow", "i18n", "perf", "audit", "clone", "retrofit", "handoff", "deploy", or requests like "build a design system", "UI design lifecycle", "prototype this website", "Figma alternative", "نموذج أولي تفاعلي", "صمّم لوحة تحكم".
 ---
 
