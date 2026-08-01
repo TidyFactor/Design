@@ -4,7 +4,7 @@
   <img src="assets/github-social-preview.png" alt="TidyFactor Design Social Preview Banner" width="100%" style="max-width: 880px; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.3);">
 </p>
 
-# 🎨 TidyFactor Design `v1.3.7`
+# 🎨 TidyFactor Design `v1.3.8`
 ### محرك دورة حياة تصميم الواجهات ومحرك النماذج التفاعلية المناهض للتكرار
 
 **البداية الرسمية لبناء نظام التصميم والدورة الكاملة لتصميم الواجهات التفاعلية ضمن منظومة TidyFactor Ecosystem.**

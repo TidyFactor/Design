@@ -53,6 +53,19 @@ Before handing back any output, score the artifact on 6 axes:
 - **Re-Drawn Fake Chrome**: Fake CSS browser window frames (red/yellow/green traffic lights wrapping an iframe) or fake IDE title bars.
 - **Fake Div Screenshots**: Using `<div>` rectangles to fake product UI instead of real images or real component previews.
 
+## ⛔ 11 Explicit Codex & AI-Slop Defect Bans
+1. **Ghost Cards**: Pairing 1px border with soft wide drop shadows `box-shadow: 0 Npx Mpx ...` (M ≥ 16px). Pick a solid border OR a shadow under 8px blur, never both as decoration.
+2. **Over-Rounding (32px+)**: Applying `border-radius: 24px/32px/40px` to rectangular cards and sections. Cards top out at 12–16px radius (pills strictly for tags/buttons).
+3. **Decorative Grid Background Overlays**: Adding two-axis `linear-gradient(... 1px, transparent 1px)` grid background patterns unless the page is an actual map, blueprint, canvas, or measurement tool.
+4. **Side-Stripe Accent Borders**: Colored `border-left` or `border-right` > 1px as a card/alert callout crutch. Rewrite with solid borders or subtle background tinting.
+5. **Warm Cream / Sand Saturated Neutral Default**: Defaulting all body backgrounds to warm beige/sand (`#F5F2EB` or token names like `--sand`, `--cream`, `--paper`). Pick a true neutral or brand-derived hue tint.
+6. **Side-by-Side Saturated Text Gradients**: Applying `background-clip: text` gradients for emphasis. Use weight, size, or solid accent color.
+7. **Reflexive Glassmorphism**: Adding decorative blurs and glass cards without clear spatial/layering purpose.
+8. **Numbered Section Markers on Non-Sequences**: Prefixing non-sequential sections with `01 / 02 / 03`. Sequence numbers earn their place only on real multi-step processes or timelines.
+9. **Sketchy SVG Illustrations**: Using crude 5-30 path SVG illustrations or doodle filters as fallback graphics.
+10. **Diagonal Stripe Background Overlays**: Using `repeating-linear-gradient(...)` stripe overlays in hero/section backgrounds.
+11. **Disjointed Display Heading Letter-Spacing**: Using letter-spacing tighter than `-0.04em` on H1 display headings causing characters to collide.
+
 ## Optical Alignment & Typography Hygiene
 - **Data Table Numbers**: Multi-digit metrics or numbers missing `font-variant-numeric: tabular-nums` or monospace font alignment.
 - **Orphaned Headline Words**: Single hanging words on display headers missing `text-wrap: balance` or `text-wrap: pretty`.

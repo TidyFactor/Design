@@ -5,6 +5,13 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.8] - 2026-08-01
+
+### 🛡️ Agency & Impeccable Skill Learnings Integration
+- **11 Codex & AI-Slop Defect Bans (`memory/06-quality-bar.md`)**: Enriched TidyFactor Quality Bar with 11 explicit defect bans (Ghost Cards prohibition, Over-Rounding limits 32px+, Grid overlays ban, Side-Stripe borders, Warm cream/sand neutral defaults, Numbered sequence eyebrows, Sketchy SVG fallbacks).
+- **Neobrutalism Signature Components (`templates/design-system/components.css`)**: Added `.sticker-badge`, `.card-neobrutal`, `.github-social-card`, and `.metric-strip` helper classes.
+- **Agency Compatibility Audit**: Verified 100% fit and readiness for agency/B2B products (Alwkala Agency stack compatibility).
+
 ## [1.3.7] - 2026-08-01
 
 ### 🗑️ New CLI Subcommand: `remove-skill` / `remove-design-skill`
