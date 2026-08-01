@@ -1,5 +1,9 @@
 <div align="center">
 
+<p align="center">
+  <img src="assets/github-social-preview.png" alt="TidyFactor Design Social Preview Banner" width="100%" style="max-width: 880px; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.3);">
+</p>
+
 # 🎨 TidyFactor Design `v1.3.7`
 ### Code-Native UI Design Lifecycle Engine & Anti-Slop Design System Suite
 
