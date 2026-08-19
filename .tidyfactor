@@ -4,14 +4,48 @@
   "name": "tidyfactor-design",
   "version": "1.1.0",
   "npmPackage": "@alwkala/tidyfactor-design",
-  "github": "https://github.com/alwkala/tidyfactor-design",
+  "github": "https://github.com/TidyFactor/Design",
   "skillFile": "../tidyfactor-design.skill",
   "category": "design-system",
   "type": "interactive-prototyping",
-  "outputs": ["design-system/", "pages/"],
-  "foundations": ["native", "tailwind", "daisyui", "hybrid"],
-  "commands": ["init", "school", "tokens", "palette", "assets", "components", "page", "dashboard", "motion", "states", "flow", "i18n", "audit", "clone", "retrofit", "deploy"],
+  "outputs": [
+    "design-system/",
+    "pages/"
+  ],
+  "foundations": [
+    "native",
+    "tailwind",
+    "daisyui",
+    "hybrid"
+  ],
+  "commands": [
+    "init",
+    "school",
+    "tokens",
+    "palette",
+    "assets",
+    "components",
+    "page",
+    "dashboard",
+    "motion",
+    "states",
+    "flow",
+    "i18n",
+    "audit",
+    "clone",
+    "retrofit",
+    "deploy"
+  ],
   "visionRef": "../TidyFactor-VISION.md",
-  "sibling": ["tidyfactor-html", "tidyfactor-php", "tidyfactor-js", "tidyfactor-htmx", "tidyfactor-cinematic"],
-  "commercialPartner": "alwkala"
+  "sibling": [
+    "tidyfactor-html",
+    "tidyfactor-php",
+    "tidyfactor-js",
+    "tidyfactor-htmx",
+    "tidyfactor-cinematic"
+  ],
+  "commercialPartner": "alwkala",
+  "website": "https://tidyfactor.com",
+  "docs": "https://tidyfactor.com/documentation",
+  "license": "Apache-2.0"
 }
