@@ -4,13 +4,13 @@
   <img src="assets/github-social-preview.png" alt="TidyFactor Design Social Preview Banner" width="100%" style="max-width: 880px; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,0.3);">
 </p>
 
-# 🎨 TidyFactor Design `v1.3.8`
+# 🎨 TidyFactor Design `v1.3.9`
 ### Code-Native UI Design Lifecycle Engine & Anti-Slop Design System Suite
 
 **The official UI design & interactive prototyping foundation for the TidyFactor Ecosystem.**
 
 [![npm version](https://img.shields.io/npm/v/@alwkala/tidyfactor-design.svg?style=for-the-badge&color=4F46E5)](https://www.npmjs.com/package/@alwkala/tidyfactor-design)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![RTL Ready](https://img.shields.io/badge/RTL-Native%20Arabic-emerald.svg?style=for-the-badge)](README.ar.md)
 [![Anti-Slop Certified](https://img.shields.io/badge/Anti--Slop-Certified-amber.svg?style=for-the-badge)](#-anti-slop-governance--quality-bar-rule-8)
 [![Architect Score](https://img.shields.io/badge/Architect%20Score-8%2F8%20Pass%20(100%25)-green.svg?style=for-the-badge)](#-license--governance)

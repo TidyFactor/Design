@@ -5,6 +5,14 @@ All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.9] - 2026-08-23
+
+### 📜 License & Ecosystem Parity Synchronization
+- **Apache-2.0 License Standardization**: Synchronized license badge in `README.md` and `README.ar.md` to `Apache-2.0`, aligning with `package.json`, `.tidyfactor`, and `LICENSE`.
+- **Ecosystem Architecture Alignment**: Synchronized metadata and versioning across `.tidyfactor`, `brand.json`, and NPM packaging pipelines.
+
+---
+
 ## [1.3.8] - 2026-08-01
 
 ### 🛡️ Agency & Impeccable Skill Learnings Integration

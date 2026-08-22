@@ -1,7 +1,7 @@
 {
   "name": "@alwkala/tidyfactor-design",
-  "version": "1.3.8",
-  "description": "TidyFactor Design \u2014 Interactive Code-Native UI Design Lifecycle Engine \u2014 Production-Grade Figma Alternative",
+  "version": "1.3.9",
+  "description": "TidyFactor Design — Interactive Code-Native UI Design Lifecycle Engine — Production-Grade Figma Alternative",
   "main": "bin/create-kit.js",
   "bin": {
     "tidyfactor-design": "bin/create-kit.js",
