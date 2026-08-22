@@ -40,20 +40,27 @@
   "homepage": "https://tidyfactor.com",
   "dependencies": {},
   "files": [
-    ".agents/",
-    ".claude-skill/",
-    "bin/",
-    "memory/",
-    "templates/",
-    "references/",
-    "tools/",
-    "AGENTS.md",
-    "VISION.md",
-    "SKILL-REGISTRY.md",
-    ".tidyfactor",
+    "SKILL.md",
+    "references",
+    "memory",
+    "templates",
+    "scripts",
+    "tools",
+    "assets",
+    "bin",
     "brand.json",
-    "LICENSE",
+    ".tidyfactor",
+    "AGENTS.md",
+    "SKILL-REGISTRY.md",
+    "VISION.md",
     "README.md",
-    "README.ar.md"
-  ]
+    "README.ar.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    ".agents",
+    ".claude-skill"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
