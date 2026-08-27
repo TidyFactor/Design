@@ -1,8 +1,7 @@
 ---
 name: tidyfactor-design
-description: "TidyFactor Design track — code-native UI design lifecycle engine (Figma alternative) with Contextual Decision Layer (CDL). Supports all 7 stages of UI design with zero per-page CSS/JS and zero build step. Pluggable CSS foundations (Native, Tailwind, daisyUI, Pico, Hybrid) and luxury Arabic/RTL support. Trigger on commands 'brief', 'study', 'init', 'brand', 'typography', 'school', 'tokens', 'palette', 'assets', 'layout', 'nav-footer', 'components', 'page', 'dashboard', 'motion', 'states', 'flow', 'i18n', 'perf', 'audit', 'clone', 'retrofit', 'handoff', 'deploy', or requests like 'build a design system', 'UI design lifecycle', 'prototype this website', 'Figma alternative', 'نموذج أولي تفاعلي'. Anti-triggers: Do NOT use for production database schemas or backend APIs."
+description: "Code-native UI design lifecycle engine (Figma alternative) with Contextual Decision Layer (CDL). Supports all 7 design stages with zero per-page CSS/JS and pluggable CSS foundations (Native, Tailwind, daisyUI, Pico, Hybrid). Trigger on commands 'brief', 'study', 'init', 'brand', 'tokens', 'palette', 'layout', 'components', 'page', 'dashboard', 'motion', 'i18n', 'audit', 'deploy', or design system requests."
 ---
-
 # TidyFactor Design (Code-Native UI Design Lifecycle Engine)
 
 A command dispatcher supporting the full UI design lifecycle—from discovery through developer handoff—with zero build steps and complete design system consistency.
