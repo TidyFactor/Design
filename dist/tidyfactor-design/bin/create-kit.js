@@ -162,7 +162,7 @@ function printBanner() {
 function printHelp() {
   printBanner();
   console.log(`  ${chalk.bold('Usage:')}`);
-  console.log(`    $ npx @alwkala/tidyfactor-design [project-dir] [options]\n`);
+  console.log(`    $ npx @tidyfactor/cli-design [project-dir] [options]\n`);
   console.log(`  ${chalk.bold('Subcommands:')}`);
   console.log(`    ${chalk.cyan('add-skill')}       Inject Agent Skill, rules & memory into an existing workspace\n`);
   console.log(`  ${chalk.bold('Options:')}`);

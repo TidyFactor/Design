@@ -9,7 +9,7 @@
 
 **البداية الرسمية لبناء نظام التصميم والدورة الكاملة لتصميم الواجهات التفاعلية ضمن منظومة TidyFactor Ecosystem.**
 
-[![npm version](https://img.shields.io/npm/v/@alwkala/tidyfactor-design.svg?style=for-the-badge&color=4F46E5)](https://www.npmjs.com/package/@alwkala/tidyfactor-design)
+[![npm version](https://img.shields.io/npm/v/@tidyfactor/design.svg?style=for-the-badge&color=4F46E5)](https://www.npmjs.com/package/@tidyfactor/design)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![RTL Ready](https://img.shields.io/badge/RTL-يدعم%20العربية%20بالكامل-emerald.svg?style=for-the-badge)](README.ar.md)
 [![Anti-Slop Certified](https://img.shields.io/badge/Anti--Slop-مستوفٍ%20للمعايير-amber.svg?style=for-the-badge)](#-معايير-الجودة-ومناهضة-التكرار-rule-8)
@@ -264,25 +264,25 @@ my-prototype/
 
 ## 🚀 البداية السريعة وأوامر CLI
 
-موزع على NPM باسم [**`@alwkala/tidyfactor-design`**](https://www.npmjs.com/package/@alwkala/tidyfactor-design).
+موزع على NPM باسم [**`@tidyfactor/design`**](https://www.npmjs.com/package/@tidyfactor/design).
 
 ### 1. إنشاء مشروع جديد تفاعلي:
 
 ```bash
 # إنشاء بيئة نموذج أولي جديدة
-npx @alwkala/tidyfactor-design my-proto
+npx @tidyfactor/cli-design my-proto
 
 # تحديد القاعدة التصميمية والمدرسة البصرية
-npx @alwkala/tidyfactor-design my-app --foundation=native --school=luxury
+npx @tidyfactor/cli-design my-app --foundation=native --school=luxury
 
 # وضع التثبيت التلقائي لوكلاء الذكاء الاصطناعي (بدون أسئلة)
-npx @alwkala/tidyfactor-design my-design-system --yes
+npx @tidyfactor/cli-design my-design-system --yes
 ```
 
 ### 2. حقن المهارة في مشروع قائم:
 
 ```bash
-npx @alwkala/tidyfactor-design add-skill
+npx @tidyfactor/cli-design add-skill
 ```
 *يحقن `.agents/skills/tidyfactor-design/`, `.claude-skill/`, `memory/`, `templates/`, و `AGENTS.md` مباشرة في مشروعك القائم.*
 
@@ -368,15 +368,15 @@ python -m http.server 8123
 
 | المسار البرمجي | الفئة | مستودع GitHub | مهارة الوكيل | حزمة NPM |
 | :--- | :--- | :--- | :--- | :--- |
-| **Cinematic** | التصميم | [`TidyFactor/Cinematic`](https://github.com/TidyFactor/Cinematic) | `tidyfactor-cinematic` | [`@alwkala/create-cinematic-kit`](https://www.npmjs.com/package/@alwkala/create-cinematic-kit) |
-| **Design** | التصميم | [`TidyFactor/Design`](https://github.com/TidyFactor/Design) | `tidyfactor-design` | [`@alwkala/tidyfactor-design`](https://www.npmjs.com/package/@alwkala/tidyfactor-design) |
-| **Styler** | التصميم | [`TidyFactor/Styler`](https://github.com/TidyFactor/Styler) | `tidyfactor-styler` | [`@alwkala/tidyfactor-styler`](https://www.npmjs.com/package/@alwkala/tidyfactor-styler) |
-| **Next** | التطوير | [`TidyFactor/Next`](https://github.com/TidyFactor/Next) | `tidyfactor-next` | [`@alwkala/tidyfactor-next`](https://www.npmjs.com/package/@alwkala/tidyfactor-next) |
-| **HTML** | التطوير | [`TidyFactor/HTML`](https://github.com/TidyFactor/HTML) | `tidyfactor-html` | [`@alwkala/tidyfactor-html`](https://www.npmjs.com/package/@alwkala/tidyfactor-html) |
-| **HTMX** | التطوير | [`TidyFactor/HTMX`](https://github.com/TidyFactor/HTMX) | `tidyfactor-htmx` | [`@alwkala/tidyfactor-htmx`](https://www.npmjs.com/package/@alwkala/tidyfactor-htmx) |
-| **JS** | التطوير | [`TidyFactor/JS`](https://github.com/TidyFactor/JS) | `tidyfactor-js` | [`@alwkala/tidyfactor-js`](https://www.npmjs.com/package/@alwkala/tidyfactor-js) |
-| **PHP** | التطوير | [`TidyFactor/PHP`](https://github.com/TidyFactor/PHP) | `tidyfactor-php` | [`@alwkala/tidyfactor-php`](https://www.npmjs.com/package/@alwkala/tidyfactor-php) |
-| **Marketing** | النمو | [`TidyFactor/Marketing`](https://github.com/TidyFactor/Marketing) | `tidyfactor-marketing` | [`@alwkala/tidyfactor-marketing`](https://www.npmjs.com/package/@alwkala/tidyfactor-marketing) |
+| **Cinematic** | التصميم | [`TidyFactor/Cinematic`](https://github.com/TidyFactor/Cinematic) | `tidyfactor-cinematic` | [`@tidyfactor/cinematic`](https://www.npmjs.com/package/@tidyfactor/cinematic) |
+| **Design** | التصميم | [`TidyFactor/Design`](https://github.com/TidyFactor/Design) | `tidyfactor-design` | [`@tidyfactor/design`](https://www.npmjs.com/package/@tidyfactor/design) |
+| **Styler** | التصميم | [`TidyFactor/Styler`](https://github.com/TidyFactor/Styler) | `tidyfactor-styler` | [`@tidyfactor/styler`](https://www.npmjs.com/package/@tidyfactor/styler) |
+| **Next** | التطوير | [`TidyFactor/Next`](https://github.com/TidyFactor/Next) | `tidyfactor-next` | [`@tidyfactor/next`](https://www.npmjs.com/package/@tidyfactor/next) |
+| **HTML** | التطوير | [`TidyFactor/HTML`](https://github.com/TidyFactor/HTML) | `tidyfactor-html` | [`@tidyfactor/html`](https://www.npmjs.com/package/@tidyfactor/html) |
+| **HTMX** | التطوير | [`TidyFactor/HTMX`](https://github.com/TidyFactor/HTMX) | `tidyfactor-htmx` | [`@tidyfactor/htmx`](https://www.npmjs.com/package/@tidyfactor/htmx) |
+| **JS** | التطوير | [`TidyFactor/JS`](https://github.com/TidyFactor/JS) | `tidyfactor-js` | [`@tidyfactor/js`](https://www.npmjs.com/package/@tidyfactor/js) |
+| **PHP** | التطوير | [`TidyFactor/PHP`](https://github.com/TidyFactor/PHP) | `tidyfactor-php` | [`@tidyfactor/php`](https://www.npmjs.com/package/@tidyfactor/php) |
+| **Marketing** | النمو | [`TidyFactor/Marketing`](https://github.com/TidyFactor/Marketing) | `tidyfactor-marketing` | [`@tidyfactor/marketing`](https://www.npmjs.com/package/@tidyfactor/marketing) |
 
 ---
 

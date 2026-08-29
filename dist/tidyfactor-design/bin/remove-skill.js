@@ -50,7 +50,7 @@ function printBanner() {
 function printHelp() {
   printBanner();
   console.log(`  ${chalk.bold('Usage:')}`);
-  console.log(`    $ npx @alwkala/tidyfactor-design remove-skill [options]\n`);
+  console.log(`    $ npx @tidyfactor/cli-design remove-skill [options]\n`);
   console.log(`  ${chalk.bold('Options:')}`);
   console.log(`    ${chalk.cyan('-y, --yes')}         Accept uninstallation steps non-interactively`);
   console.log(`    ${chalk.cyan('-v, --version')}     Display uninstaller version number`);

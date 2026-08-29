@@ -1,5 +1,5 @@
 {
-  "name": "@alwkala/tidyfactor-design",
+  "name": "@tidyfactor/design",
   "version": "1.5.0",
   "description": "TidyFactor Design track — code-native UI design lifecycle engine (Figma alternative) with Contextual Decision Layer (CDL)",
   "main": "SKILL.md",
@@ -22,7 +22,7 @@
     "claude-code",
     "cursor"
   ],
-  "author": "TidyFactor & Alwkala <hello@tidyfactor.com> (https://alwkala.com)",
+  "author": "TidyFactor <hello@tidyfactor.com> (https://tidyfactor.com)",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
