@@ -4,7 +4,7 @@
 
 **Code-Native UI-Design-Lifecycle & Interaktive Prototyping Engine für KI-Coding-Agenten**
 
-[![npm version](https://img.shields.io/npm/v/@alwkala/tidyfactor-design.svg?style=for-the-badge&color=0284C7)](https://www.npmjs.com/package/@alwkala/tidyfactor-design)
+[![npm version](https://img.shields.io/npm/v/@tidyfactor/design.svg?style=for-the-badge&color=0284C7)](https://www.npmjs.com/package/@tidyfactor/design)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
 
 [ English ](README.md) • [ العربية ](README.ar.md) • [ فارسی ](README.fa.md) • [ Español ](README.es.md) • [ Português ](README.pt.md) • [ 简体中文 ](README.zh.md) • [ Deutsch ](README.de.md) • [ Français ](README.fr.md)
@@ -17,7 +17,7 @@
 
 ```bash
 # Installation & Direktaufruf via NPX
-npx @alwkala/tidyfactor-design
+npx @tidyfactor/cli-design
 ```
 
 Oder direkt in Ihrem KI-Assistenten aufrufen (*Google Antigravity, Claude Code, Cursor, Codex*):

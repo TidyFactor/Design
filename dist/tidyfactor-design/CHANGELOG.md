@@ -1,6 +1,6 @@
 # Changelog - TidyFactor Design
 
-All notable changes to the **[@alwkala/tidyfactor-design](https://www.npmjs.com/package/@alwkala/tidyfactor-design)** package will be documented in this file.
+All notable changes to the **[@tidyfactor/design](https://www.npmjs.com/package/@tidyfactor/design)** package will be documented in this file.
 
 ## [1.5.0] - 2026-08-29
 
@@ -44,7 +44,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### 🗑️ New CLI Subcommand: `remove-skill` / `remove-design-skill`
 - **Skill Uninstaller Script (`bin/remove-skill.js`)**:
   - Added dedicated uninstaller script allowing developers to cleanly remove injected agent skills and design system rules.
-  - Subcommands supported: `npx @alwkala/tidyfactor-design remove-skill`, `remove-design-skill`, `uninstall-skill`, `clean-skill`.
+  - Subcommands supported: `npx @tidyfactor/cli-design remove-skill`, `remove-design-skill`, `uninstall-skill`, `clean-skill`.
   - Registered `"remove-design-skill": "bin/remove-skill.js"` in `package.json` `bin` map.
   - Safely removes `.agents/skills/tidyfactor-design/`, `.claude-skill/`, `memory/`, and generated `AGENTS.md` rules with clear terminal feedback.
 
@@ -69,7 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 🧙 Upgrade: Dual-Mode Interactive CLI Wizard & Agent Detection
 - **Added Human Terminal Interactive Wizard (`bin/create-kit.js`)**:
-  - Automatically triggers an interactive `readline` terminal wizard when running `npx @alwkala/tidyfactor-design` in a live human TTY terminal.
+  - Automatically triggers an interactive `readline` terminal wizard when running `npx @tidyfactor/cli-design` in a live human TTY terminal.
   - Interactively prompts for: Target Directory, CSS Foundation (8 options), Visual Design School (12 options), and optional Brand Image Color Extraction path.
 - **Added Non-Interactive Agent & CI Detection (`isInteractiveTerminal()`)**:
   - Bypasses terminal prompts instantly when AI Agent mode (`AGENT_MODE=1`), CI pipelines (`CI=1`), non-interactive TTY, or CLI flags (`--foundation=...`, `--school=...`, `-y`, `--yes`) are detected.
@@ -88,8 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `design-system/interactions.js`: Theme toggle (light/dark) and direction toggle (RTL/LTR).
   - `index.html`: Responsive, accessible starter prototype landing page.
   - `proto-nav.js`: Dev-only floating prototype toolbar with `🎨 TF Design` badge.
-- **Auto-Injection in `create-kit.js`**: Scaffolding a new project via `npx @alwkala/tidyfactor-design` now automatically injects `.agents/`, `.claude-skill/`, `memory/`, and `AGENTS.md` in a single pass.
-- **Fixed CLI Argument Parsing**: Improved positional argument handling so space-separated target paths (e.g., `npx @alwkala/tidyfactor-design "TidyFactor Website"`) scaffold directly into the target directory.
+- **Auto-Injection in `create-kit.js`**: Scaffolding a new project via `npx @tidyfactor/cli-design` now automatically injects `.agents/`, `.claude-skill/`, `memory/`, and `AGENTS.md` in a single pass.
+- **Fixed CLI Argument Parsing**: Improved positional argument handling so space-separated target paths (e.g., `npx @tidyfactor/cli-design "TidyFactor Website"`) scaffold directly into the target directory.
 - **Windows Console Encoding Fix**: Fixed `sys.stdout` UTF-8 re-encoding in `scripts/extract_palette.py` for Windows consoles.
 
 ## [1.3.2] - 2026-08-01

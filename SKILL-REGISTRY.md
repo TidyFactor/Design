@@ -10,9 +10,9 @@
 | Field | Value |
 |---|---|
 | **Unified Tool Name** | `tidyfactor-design` |
-| **NPM Package** | [`@alwkala/tidyfactor-design`](https://www.npmjs.com/package/@alwkala/tidyfactor-design) |
-| **CLI Execution Command** | `npx @alwkala/tidyfactor-design` or `npx tidyfactor-design` |
-| **Skill Injection Command** | `npx @alwkala/tidyfactor-design add-skill` or `npx tidyfactor-design add-skill` |
+| **NPM Package** | [`@tidyfactor/design`](https://www.npmjs.com/package/@tidyfactor/design) |
+| **CLI Execution Command** | `npx @tidyfactor/cli-design` or `npx tidyfactor-design` |
+| **Skill Injection Command** | `npx @tidyfactor/cli-design add-skill` or `npx tidyfactor-design add-skill` |
 | **GitHub Repository** | [alwkala/tidyfactor-design](https://github.com/alwkala/tidyfactor-design) |
 | **Version** | `1.3.8` |
 | **Category** | Full UI Design Lifecycle & Prototyping Engine |

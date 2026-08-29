@@ -4,7 +4,7 @@
 
 **面向 AI 智能体的代码原生 UI 设计生命周期与高保真交互原型引擎**
 
-[![npm version](https://img.shields.io/npm/v/@alwkala/tidyfactor-design.svg?style=for-the-badge&color=0284C7)](https://www.npmjs.com/package/@alwkala/tidyfactor-design)
+[![npm version](https://img.shields.io/npm/v/@tidyfactor/design.svg?style=for-the-badge&color=0284C7)](https://www.npmjs.com/package/@tidyfactor/design)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
 
 [ English ](README.md) • [ العربية ](README.ar.md) • [ فارسی ](README.fa.md) • [ Español ](README.es.md) • [ Português ](README.pt.md) • [ 简体中文 ](README.zh.md) • [ Deutsch ](README.de.md) • [ Français ](README.fr.md)
@@ -17,7 +17,7 @@
 
 ```bash
 # 通过 NPX 快速运行
-npx @alwkala/tidyfactor-design
+npx @tidyfactor/cli-design
 ```
 
 或在 AI 编码助手 (*Google Antigravity, Claude Code, Cursor, Codex*) 中调用：
