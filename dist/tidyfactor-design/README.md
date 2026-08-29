@@ -4,7 +4,7 @@
   <img src="assets/hero-banner.png" alt="TidyFactor Design Hero Banner" width="100%">
 </p>
 
-# 🎨 TidyFactor Design `v1.3.9`
+# 🎨 TidyFactor Design `v1.5.0`
 ### Code-Native UI Design Lifecycle Engine & Anti-Slop Design System Suite
 
 **The official UI design & interactive prototyping foundation for the TidyFactor Ecosystem.**

@@ -1,6 +1,6 @@
 {
   "name": "@alwkala/tidyfactor-design",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "TidyFactor Design track — code-native UI design lifecycle engine (Figma alternative) with Contextual Decision Layer (CDL)",
   "main": "SKILL.md",
   "bin": {
@@ -37,22 +37,28 @@
     "access": "public"
   },
   "files": [
+    ".tidyfactor",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.ar.md",
+    "README.de.md",
+    "README.es.md",
+    "README.fa.md",
+    "README.fr.md",
+    "README.md",
+    "README.pt.md",
+    "README.zh.md",
+    "SKILL-REGISTRY.md",
     "SKILL.md",
-    "references",
-    "memory",
-    "templates",
-    "scripts",
-    "tools",
+    "VISION.md",
     "assets",
     "bin",
     "brand.json",
-    ".tidyfactor",
-    "AGENTS.md",
-    "SKILL-REGISTRY.md",
-    "VISION.md",
-    "README.md",
-    "README.ar.md",
-    "LICENSE",
-    "CHANGELOG.md"
+    "memory",
+    "references",
+    "scripts",
+    "templates",
+    "tools"
   ]
 }
