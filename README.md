@@ -13,7 +13,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![RTL Ready](https://img.shields.io/badge/RTL-Native%20Arabic-emerald.svg?style=for-the-badge)](README.ar.md)
 [![Anti-Slop Certified](https://img.shields.io/badge/Anti--Slop-Certified-amber.svg?style=for-the-badge)](#-anti-slop-governance--quality-bar-rule-8)
-[![Architect Score](https://img.shields.io/badge/Architect%20Score-8%2F8%20Pass%20(100%25)-green.svg?style=for-the-badge)](#-license--governance)
+[![Architect Score](https://img.shields.io/badge/Architect%20Score-13%2F13%20Pass%20(100%25)-green.svg?style=for-the-badge)](#-license--governance)
 
 [✨ Live Demo](https://alwkala.com/tidyfactor-design/) • [🖼️ Visual Showcase](#%EF%B8%8F-visual-showcase--surface-demos) • [⚡ 24 Slash Commands](#-the-7-ui-design-lifecycle-stages--24-command-registry) • [🎨 8 CSS Foundations](#-8-pluggable-css-foundations) • [🛡️ Anti-Slop Rules](#-anti-slop-governance--quality-bar-rule-8) • [📖 بالعربية](README.ar.md)
 
