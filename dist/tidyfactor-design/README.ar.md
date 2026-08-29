@@ -4,7 +4,7 @@
   <img src="assets/hero-banner.png" alt="TidyFactor Design Hero Banner" width="100%">
 </p>
 
-# 🎨 TidyFactor Design `v1.3.9`
+# 🎨 TidyFactor Design `v1.5.0`
 ### محرك دورة حياة تصميم الواجهات ومحرك النماذج التفاعلية المناهض للتكرار
 
 **البداية الرسمية لبناء نظام التصميم والدورة الكاملة لتصميم الواجهات التفاعلية ضمن منظومة TidyFactor Ecosystem.**
