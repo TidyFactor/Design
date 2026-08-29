@@ -13,7 +13,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
 [![RTL Ready](https://img.shields.io/badge/RTL-يدعم%20العربية%20بالكامل-emerald.svg?style=for-the-badge)](README.ar.md)
 [![Anti-Slop Certified](https://img.shields.io/badge/Anti--Slop-مستوفٍ%20للمعايير-amber.svg?style=for-the-badge)](#-معايير-الجودة-ومناهضة-التكرار-rule-8)
-[![Architect Score](https://img.shields.io/badge/Architect%20Score-8%2F8%20Pass%20(100%25)-green.svg?style=for-the-badge)](#-الترخيص-والحوكمة)
+[![Architect Score](https://img.shields.io/badge/Architect%20Score-13%2F13%20Pass%20(100%25)-green.svg?style=for-the-badge)](#-الترخيص-والحوكمة)
 
 [✨ العرض المباشر](https://alwkala.com/tidyfactor-design/) • [🖼️ المعرض البصري](#%EF%B8%8F-المعرض-البصري-ونماذج-الواجهات) • [⚡ 24 أمرًا ذكياً](#-مراحل-دورة-حياة-التصميم-الـ-7-وسجل-الأوامر-الـ-24) • [🎨 8 قواعد تصميمية](#-8-قواعد-تصميمية-مرنة-css-foundations) • [🛡️ معايير الجودة](#-معايير-الجودة-ومناهضة-التكرار-rule-8) • [📖 Read in English](README.md)
 
