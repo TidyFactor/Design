@@ -1,54 +1,42 @@
-# Arabic & Bilingual Design — Reference for `i18n`
+# Arabic & Bilingual Design — Reference for `i18n` & RTL Engineering
+<!-- last-verified: 2026-09-01 -->
 
-Conventions carried consistently across Alwkala's production work and the
-rest of the TidyFactor ecosystem (`tidyfactor-html`, `tidyfactor-cinematic`)
-— not generic RTL advice.
+Conventions carried consistently across Alwkala's production work and the rest of the TidyFactor ecosystem (`tidyfactor-design`, `tidyfactor-styler`, `tidyfactor-html`, `tidyfactor-cinematic`) — not generic RTL advice.
 
-## Typography
-- Headings: **El Messiri** — modern, geometric-leaning, reads as
-  contemporary rather than traditional/calligraphic.
-- Body: **Tajawal** — high legibility at small sizes, wide weight range.
-- **Never Amiri** for UI/display purposes — it's a naskh-style text face
-  suited to long-form literary/religious typesetting, not product/marketing
-  UI; it reads as the wrong register for almost every brief this skill
-  serves.
-- Arabic type generally needs slightly larger sizes and more line-height
-  than the Latin equivalent at the same visual weight — don't reuse the
-  Latin type scale unchanged.
+---
 
-## Layout mirroring
-- Mirrors: navigation order, breadcrumbs, form label alignment, icon
-  direction for directional affordances (back/next arrows), the reading
-  flow of card grids.
-- Does NOT mirror: numerals (Arabic numerals in most modern digital
-  products are written left-to-right even inside RTL text), embedded Latin
-  brand names/wordmarks, code or tabular data blocks.
-- Use `unicode-bidi: isolate` (or `dir="ltr"` spans) around any LTR content
-  embedded inside RTL flow to prevent bidi algorithm artifacts (numbers or
-  Latin words appearing in the wrong order).
+## 1. Typography & Hierarchy Rules
+- **Display / Headings**: **El Messiri** or **Noto Kufi Arabic** — modern, geometric-leaning, high visual presence without breaking script joining.
+- **Body / Editorial**: **Tajawal** or **Noto Naskh Arabic** — high legibility at small sizes, wide weight range.
+- **Never Amiri for UI/display purposes**: It's a naskh-style text face suited to long-form literary/religious typesetting, not product/marketing UI.
+- **Arabic Line Heights**: Display headings need `1.15–1.25`; body text needs `1.65–1.85`.
+- **Zero Tracking Deformation**: Never apply negative `letter-spacing` to Arabic headings; it breaks cursive connections and destroys word silhouettes.
 
-## Logo & identity
-Logo/wordmark stays pixel-identical and unmirrored across locales — brand
-identity doesn't flip with the reading direction, even when everything
-around it does.
+---
 
-## Bilingual site patterns
-- **Separate localized pages** — clean, works with every command
-  unchanged, best when content structure genuinely differs by locale.
-- **Single page, dual-tree toggle** — both language trees present in one
-  file, toggled via `proto-nav.js` — best for fast side-by-side prototype
-  review with a client, worse for a real production site (both trees ship
-  to every visitor).
-Pick one per project and record it in `brand.json`; don't mix within a
-project.
+## 2. Strict Bidi & Logical Properties Contract
+- **`<bdi>` Isolation (Mandatory)**: Always wrap embedded LTR content (phone numbers, email addresses, prices, Latin product codes, URLs) in `<bdi dir="ltr">` or `<bdi lang="en">` inside Arabic prose.
+- **Tabular Numerals**: Apply `font-variant-numeric: tabular-nums;` and `font-feature-settings: "tnum" 1;` on all metrics, counters, and data tables.
+- **Logical CSS Properties**:
+  ```css
+  /* Required Logical Properties */
+  .card {
+    padding-inline: var(--space-6);
+    margin-inline-start: var(--space-4);
+    border-inline-start: 4px solid var(--primary);
+    inset-inline-end: 0;
+  }
+  ```
+- **Mirroring Rules**:
+  - Mirrors: navigation order, breadcrumbs, form label alignment, directional affordances (back/next arrows).
+  - Does NOT mirror: numerals, embedded Latin brand marks, media controls, clocks, and universal marks.
 
-## Voice & tone
-If `brand.json`'s `voice.*` block has a localized Arabic register, apply it
-directly — a good Arabic UI voice is not a literal translation of the
-English one; register, formality, and idiom differ by convention.
+---
 
-## Interaction states in RTL
-Re-check, don't just assume: dropdown/menu open-direction, modal
-close-button position, tooltip anchor side, and any icon implying
-directionality — all need a considered RTL equivalent, not just a global
-`transform: scaleX(-1)`.
+## 3. 6 Hero Architectures for Arabic Mode
+1. **The Arabic Typographic Monument**: One short Arabic phrase occupies 45–70% of the viewport with a low-contrast heritage material behind it.
+2. **The Inscription Aperture**: Content framed through a geometric or vaulted aperture mask.
+3. **The Bilingual Editorial Split**: Arabic owns the dominant side with compact Latin metadata opposite.
+4. **The Heritage Material Close-Up**: Macro textural study (papyrus, carved relief, woven wool, alabaster) as focal hero image.
+5. **The Horizontal Journey**: RTL timeline or cinematic strip traveling from right to left.
+6. **The Contemporary Data Constellation**: Maps, coordinates, and telemetry with Arabic typography and tabular numbers.

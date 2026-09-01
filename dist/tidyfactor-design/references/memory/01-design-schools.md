@@ -1,13 +1,46 @@
-# Design Schools & Movements — Quick Calibration Index
+# Design Schools & Movements — Unified Calibration Index
+<!-- last-verified: 2026-09-01 -->
 
-For complete operational rules, visual tokens, typography pairings, color systems, CSS rules, shadow styles, and anti-patterns across all 20 visual aesthetics, see:
-👉 **[`memory/16-design-movements-guide.md`](16-design-movements-guide.md)** (All 20 Visual Movements & Design Tokens)  
-👉 **[`memory/17-storytelling-industries-ux.md`](17-storytelling-industries-ux.md)** (4 Storytelling Archetypes, 8 Industry Registers, 8 UX Philosophies)  
+A complete working index of design aesthetics, universal movements, and regional heritage art-direction lanes across all TidyFactor design engines.
+
+👉 **[`memory/16-design-movements-guide.md`](16-design-movements-guide.md)** (All 20 Universal Visual Movements)  
+👉 **[`memory/19-heritage-lanes-atmosphere.md`](19-heritage-lanes-atmosphere.md)** (5 Egyptian & Regional Heritage Lanes)  
+👉 **[`memory/17-storytelling-industries-ux.md`](17-storytelling-industries-ux.md)** (Storytelling Archetypes & Industry Registers)  
 👉 **[`memory/18-design-decision-engine.md`](18-design-decision-engine.md)** (9-Step Decision Tree & Anti-Design-Soup Constraint)
 
 ---
 
-## 🎨 20 Visual Aesthetics At-A-Glance Index
+## 🏛️ 5 Regional & Egyptian Heritage Art-Direction Lanes
+
+1. **Nilotic Wadj & Sacred Lotus (أصالة النيل ولوتس مصر العليا)**:
+   - *DNA*: Upper Egyptian heritage (Qena, Dendera, Thebes, Aswan), Sacred Lotus (`Sesen`), mineral green (`Wadj`), Nile terracotta (`Khem`), Royal Lapis (`Khesbed`), Sun Gold (`Nebu`).
+   - *Grammar*: Ascending registers, shallow stone deboss (`Low-Relief`), tactile papyrus & alabaster light texture (`Subtle Noise`).
+   - *Fits*: Community development, educational leadership, inclusive education, scholarly platforms, Upper Egyptian institutions.
+
+2. **Egyptian Nubian Folk & Earth Vaults (النوبة المصرية والعمارة الطينية)**:
+   - *DNA*: Aswan & West Suhail mud-brick vaulted architecture (Hassan Fathy), geometric chevron & zigzag bands, vibrant folk warmth.
+   - *Grammar*: Stepped triangles, Nubian vaulted card tops, sunny ochre, turquoise cataracts, terracotta clay, white lime plaster.
+   - *Fits*: Cultural platforms, eco-tourism, community initiatives, youth & child development.
+
+3. **Sinai Bedouin & Stitched Craft (البادية والتطريز السيناوي المصري)**:
+   - *DNA*: Authentic Sinai Bedouin cross-stitch embroidery (North & South Sinai), St. Catherine granite mountains, wild flora.
+   - *Grammar*: Pixelated cross-stitch geometric rails, embroidered dividers, madder red, wild rose magenta, deep Sinai night indigo, raw wool ivory.
+   - *Fits*: Heritage crafts, environmental foundations, field campaigns, national culture.
+
+4. **Al-Muqarnas & Girih Geometry (التوريق والمقرنصات الهندسية)**:
+   - *DNA*: Historic Cairo (Fatimid & Mamluk), Andalusian & Maghrebi architecture, mashrabiya woodwork, mathematical astronomy.
+   - *Grammar*: 4/6/8-fold repeat geometry, architectural aperture masks, perforated shadows (`Perforated Shadowing`), cobalt lapis, turquoise glaze, antique ochre.
+   - *Fits*: Cultural foundations, academic conferences, endowment platforms, classical Islamic arts.
+
+5. **Kufic Modernity & Luminescent Noor (العمارة الحروفية والنور المعاصر)**:
+   - *DNA*: Contemporary regional minimalism led by monumental Arabic typography and generous spatial purity.
+   - *Grammar*: Monumental Arabic wordmark/phrase hero, polished terrazzo, limestone, brushed bronze, single vibrant accent.
+   - *Fits*: Technology, sovereign wealth, venture studios, knowledge economy, international consulting.
+
+---
+
+## 🎨 20 Universal Visual Movements At-A-Glance Index
+
 1. **Swiss Style**: Objective 12-column grid, sans-serif, high contrast.
 2. **Flat Design**: 2D vector, zero shadows, vibrant color blocks.
 3. **Material Design**: Paper/ink depth, elevation shadows, touch ripples.
@@ -29,57 +62,16 @@ For complete operational rules, visual tokens, typography pairings, color system
 19. **Organic / Amorphous UI**: Fluid blob shapes (`border-radius: 60% 40% ...`), natural tones.
 20. **Frutiger Aero & Y2K**: Glossy glass buttons, lens flares, vibrant sky blue/lime gradients.
 
-## Bauhaus
-Geometric shapes as structural/decorative elements, primary-plus-black
-palettes, function-follows-form typography. Fits: education, design tools,
-brands wanting to signal craft/foundational thinking. Avoid: costume-party
-Bauhaus (circles+triangles as decoration with no structural logic).
+---
 
-## Brutalism (web)
-Raw, unstyled-looking HTML elements used deliberately, harsh contrast,
-visible grid lines, monospace accents, intentionally "undesigned". Fits:
-developer tools, portfolios, brands wanting to signal authenticity/anti-
-polish. Avoid: actual unstyled defaults mistaken for the aesthetic —
-brutalism is a considered choice, not the absence of one.
+## 🏆 Award-Winning Regional Reference Evidence
+Treat award galleries as evidence of interaction and composition patterns:
+- **Webook (Riyadh Season)**: Immersive event storytelling, WebGL and sound.
+- **Masar Destination**: Saudi destination storytelling with responsive WebGL.
+- **IoT Squared**: Sovereign technology positioning via animation & parallax without heritage cliches.
+- **Kode**: New Cairo sports brand using bold color, animation, and WebGL.
+- **Ali Ali**: Cairo creative portfolio driven by minimal typography and film.
+- **Sivik Atelier**: Dubai studio portfolio using grid, parallax, and minimal typography.
+- **Jazean Coffee**: Saudi heritage framed as interactive scroll storytelling.
 
-## Editorial / Broadsheet
-Hairline rules, dense multi-column text, serif display, byline/dateline
-conventions borrowed from print journalism. Fits: publications, long-form
-content, thought-leadership brands. Avoid: applying hairline-column density
-to a page that has nothing to say at that density (see `frontend-design`'s
-warning on this as an overused AI-design default).
-
-## Minimalism
-Extreme restraint, one accent color maximum, huge whitespace, type doing
-almost all the work. Fits: luxury, premium single-product brands. Avoid:
-minimalism as an excuse for lack of a real design decision — every
-remaining element must be precisely placed.
-
-## Glassmorphism
-Frosted-glass translucent panels, soft shadows, layered depth over a
-blurred background. Fits: modern consumer apps, dashboards wanting a soft/
-approachable data-density feel. Avoid: layering glass panels on glass
-panels — contrast and legibility break down fast.
-
-## Material-influenced
-Elevation via shadow, clear touch targets, motion as spatial logic (things
-move the way physical objects would). Fits: cross-platform app UI,
-utilitarian dashboards. Avoid: importing Material's specific component
-shapes wholesale when the brand wants its own identity — take the
-principles, not the skin.
-
-## Modern SaaS (Vercel/Linear-influenced)
-Near-black or pure-white grounds, one saturated accent, monospace for data/
-code, tight type scale, subtle gradient accents, generous but efficient
-spacing. Fits: developer tools, B2B SaaS, technical dashboards. Avoid:
-defaulting here just because the brief is "a SaaS product" — this look is
-common enough now to read as generic if the brand has no other point of
-view.
-
-## Calibration: defaults to avoid unless the brief asks for them
-Per `frontend-design`'s own calibration: warm-cream + terracotta-serif,
-near-black + single acid-green/vermilion accent, and broadsheet-hairline-
-columns applied regardless of subject are the three most common AI-design
-tells right now. Choosing one deliberately because it fits the brief is
-fine; landing on one by default is the failure mode `school` exists to
-prevent.
+*Rule: Establish a contemporary editorial system first, then use one culturally meaningful material, narrative, or spatial idea as the signature.*

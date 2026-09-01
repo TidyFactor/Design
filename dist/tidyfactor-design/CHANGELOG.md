@@ -2,6 +2,15 @@
 
 All notable changes to the **[@tidyfactor/design](https://www.npmjs.com/package/@tidyfactor/design)** package will be documented in this file.
 
+## [1.6.0] - 2026-09-01
+
+### Added - Runtime Tooling Manifest & Egyptian Heritage Design Lanes
+- **Rule 10 Runtime Tooling Contract (`manifest.json`)**: Declared portable `audit_design`, `extract_palette`, and `optimize_media` executable tooling with schema validation.
+- **Automated Design Quality Auditor (`scripts/audit_design.py`)**: Standalone and MCP-compatible CLI engine scanning HTML/CSS for unicode emojis, inline styles, untokenized colors, and the 16 AI anti-patterns with UTF-8 support.
+- **Output JSON Schema (`references/schemas/audit_design.output.schema.json`)**: Standard schema defining structured quality audit reports and pre-emit critique stamps.
+- **Egyptian & Regional Heritage Lanes (`references/memory/19-heritage-lanes-atmosphere.md`)**: Operational design grammar covering Nilotic Wadj & Lotus, Egyptian Nubian Folk & Earth Vaults, Sinai Bedouin Craft, Al-Muqarnas Geometry, and Kufic Modernity.
+- **Bilingual & Responsive Enhancements**: Refined `01-design-schools.md`, `04-motion-principles.md`, `05-component-anatomy.md`, and `08-arabic-bilingual.md`.
+
 ## [1.5.0] - 2026-08-29
 
 ### Added - Global Multi-Tier & Multi-Language Documentation Architecture

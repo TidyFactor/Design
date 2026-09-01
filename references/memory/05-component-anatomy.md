@@ -1,34 +1,31 @@
 # Component Anatomy — Reference for `components`/`states`
+<!-- last-verified: 2026-09-01 -->
 
-## Atomic hierarchy (Atomic Design, adapted)
-- **Atoms** — button, input, label, icon, badge. The smallest named unit;
-  never composed of other named components.
-- **Molecules** — a form field (label + input + error text), a stat
-  (label + value + trend), a nav item (icon + label + active state).
-- **Organisms** — a card, a data table, a navbar, a pricing tile, a modal.
-  Composed from atoms/molecules, still a single reusable named unit.
-- **Templates** (this skill's `page`/`dashboard` output) — organisms
-  arranged into a page's actual layout. This is the one level that's
-  allowed to be page-specific — it's arrangement, not new styling.
+## 1. Atomic Hierarchy (Atomic Design, Adapted)
+- **Atoms**: Button, input, label, icon, badge, watermark stamp.
+- **Molecules**: Form field, stat counter, nav item, floating verification badge.
+- **Organisms**: Card, data table, navbar, 3D book/exhibition card, timeline, modal.
+- **Templates**: Organisms arranged into page layout with zero per-page CSS.
 
-A new visual need almost always belongs at the atom/molecule/organism
-level, added once to `components.css`/the foundation library — not
-invented at the template level.
+---
 
-## The full state matrix (apply per interactive component)
-`default → hover → focus-visible → active/pressed → disabled`, plus where
-relevant: `loading`, `empty`, `error`, `success`. A component "supports"
-these states means each has an intentional look, not that the browser
-default happens to apply.
+## 2. Advanced Specialized Organisms & Molecules
 
-## Naming discipline
-One canonical name per real pattern. A "featured pricing card" and a
-"testimonial card" that share 90% of their structure should be one `.card`
-component with modifiers (`.card--featured`), not two components that will
-quietly diverge over time.
+### A. Watermark Stamp & Media Protection (`.watermark-stamp`)
+- Floating glassmorphic pill badge positioned over showcase media (e.g. `bottom: 12px; inset-inline-start: 12px;`).
+- Visuals: `background: rgba(8, 7, 5, 0.85); backdrop-filter: blur(8px); border: 1px solid var(--border-gold);`.
+- Protection: Non-draggable images (`-webkit-user-drag: none; user-select: none;`).
 
-## When something looks like it needs a new component but doesn't
-If the only difference from an existing component is a token value (a
-different accent color, a different size) — that's a modifier class or a
-data attribute, not a new component. New components are for genuinely
-different structure/behavior, not restyled instances.
+### B. 3D Exhibition & Editorial Book Showcase Card (`.book-card`)
+- Layout: Asymmetric split (Cover viewport on one side, editorial hierarchy on the other).
+- Visuals: Multi-layered spine shadow (`box-shadow: -8px 10px 24px rgba(0,0,0,0.25)`), dynamic hover lift (`translateY(-4px)`), and category badge.
+
+---
+
+## 3. The Full 8-State Matrix (Apply per Interactive Component)
+`default → hover → focus-visible → active/pressed → disabled`, plus: `loading` (spinner/skeleton), `empty` (illustrated container), `error`, and `success`.
+
+---
+
+## 4. Naming Discipline
+One canonical name per real pattern. Use BEM modifiers (`.card--featured`, `.badge--accent`) or data attributes (`[data-theme]`, `[data-filter]`) rather than creating duplicate component structures.

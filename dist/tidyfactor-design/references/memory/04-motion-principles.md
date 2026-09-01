@@ -1,44 +1,29 @@
 # Motion Principles — Reference for `motion`
+<!-- last-verified: 2026-09-01 -->
 
-Adapted from the classic animation principles, applied to UI motion rather
-than character animation.
+Adapted from classic animation principles, applied to UI motion rather than character animation.
 
-## Staging
-One focal change communicated at a time. A section revealing five cards
-simultaneously reads as noise; the same five staggered by ~60-80ms each
-read as a considered sequence.
+---
 
-## Anticipation
-A small pre-state before a bigger change helps the eye track what's about
-to happen (a button's subtle scale-down before a bigger transition, a
-skeleton before content pops in) — used sparingly, not on every
-interaction.
+## 1. Core Principles
+- **Staging**: One focal change communicated at a time. Stagger card reveals by ~60-80ms.
+- **Anticipation**: Small pre-state before a bigger change helps the eye track what's about to happen.
+- **Ease-out for entrances, ease-in for exits**: Natural deceleration on entry, acceleration on exit.
+- **Secondary motion**: Delayed subtle trail (e.g. shadow settling a beat later).
+- **Restraint**: An orchestrated single moment lands harder than scattered effects everywhere.
 
-## Ease-out for entrances, ease-in for exits
-Things entering the screen should decelerate into place (ease-out);
-things leaving should accelerate away (ease-in). Using the same easing
-for both reads as mechanical rather than natural.
+---
 
-## Follow-through / slight overshoot
-A very small overshoot-and-settle on an entrance (a card that slightly
-overshoots its final position before settling) reads as more alive than a
-purely linear arrival — use subtly, it's easy to overdo into "bouncy" and
-undermine a restrained direction like Minimalism or Swiss.
+## 2. Cursor Spotlight & Ambient Glow Engine (Interactive Depth)
+- **Per-Card Cursor Spotlight**:
+  - Dynamically track `--mouse-x` and `--mouse-y` via `getBoundingClientRect()` on `.bento-card`, `.card`, and showcase tiles.
+  - Reveal a subtle `radial-gradient` (350-400px radius) in dark mode to illuminate surface borders and textures.
+- **Viewport Ambient Spotlight**:
+  - Desktop-only (`min-width: 992px`), single fixed layer driven by `requestAnimationFrame` and `translate3d(x, y, 0)`.
+  - Illuminates the underlying papyrus, granite, or obsidian texture with zero layout thrashing.
+  - Must automatically disable under `prefers-reduced-motion: reduce`.
 
-## Secondary motion
-A primary element moving (e.g. a hero image entering) can carry a small,
-delayed secondary motion (a shadow settling a beat later, an accent
-element trailing slightly) — this is what separates "orchestrated" motion
-from "everything moves in lockstep".
+---
 
-## Restraint is a choice, not an absence
-Per `frontend-design`: an orchestrated single moment usually lands harder
-than scattered effects everywhere, and excess ambient animation is one of
-the strongest tells that a design is AI-generated. `school`'s chosen
-direction should determine how much motion is appropriate — Minimalism and
-Swiss call for very little; Modern SaaS and Glassmorphism can carry more.
-
-## Non-negotiable: `prefers-reduced-motion`
-Every entrance/scroll/parallax effect in `motion.js` must check this media
-query and fall back to instant or opacity-only transitions — applied
-globally in the shared file, not per page.
+## 3. Non-negotiable: `prefers-reduced-motion`
+Every entrance, scroll, parallax, or ambient spotlight effect in `motion.js` must check `window.matchMedia('(prefers-reduced-motion: reduce)')` and fall back to instant or opacity-only transitions globally.

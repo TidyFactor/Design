@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tidyfactor.dev/schemas/audit_design.output.schema.json",
+  "title": "Audit Design Output Schema",
+  "type": "object",
+  "required": ["status", "critique_stamp", "scores", "violations", "stats"],
+  "properties": {
+    "status": { "type": "string", "enum": ["PASS", "FAIL", "WARNING"] },
+    "critique_stamp": { "type": "string", "description": "e.g. /* Pre-emit critique: P5 H5 E5 S5 R5 V5 D5 */" },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "P": { "type": "integer" },
+        "H": { "type": "integer" },
+        "E": { "type": "integer" },
+        "S": { "type": "integer" },
+        "R": { "type": "integer" },
+        "V": { "type": "integer" },
+        "D": { "type": "integer" }
+      }
+    },
+    "violations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "rule", "message", "file"],
+        "properties": {
+          "severity": { "type": "string", "enum": ["ERROR", "WARNING", "INFO"] },
+          "rule": { "type": "string" },
+          "file": { "type": "string" },
+          "line": { "type": "integer" },
+          "snippet": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      }
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "emojis_count": { "type": "integer" },
+        "inline_styles_count": { "type": "integer" },
+        "untokenized_colors_count": { "type": "integer" },
+        "total_files_audited": { "type": "integer" }
+      }
+    }
+  }
+}
