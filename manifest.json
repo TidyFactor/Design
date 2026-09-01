@@ -1,0 +1,59 @@
+{
+  "manifest_schema_version": "1.0.0",
+  "skill_id": "tidyfactor-design",
+  "skill_root_anchor": "self",
+  "tools": [
+    {
+      "name": "audit_design",
+      "description": "Scans index.html and design-system/*.css for emoji, inline styles, off-token colors, and the 16 AI anti-patterns.",
+      "entrypoint": { "runtime": "python3", "script": "scripts/audit_design.py" },
+      "invocation": {
+        "cli_pattern": "{runtime} \"{skill_root}/{script}\" --target \"{target_path}\" {flags}",
+        "args": [
+          { "name": "target_path", "type": "path", "required": true, "description": "Absolute path to the client project being audited" },
+          { "name": "fix", "type": "boolean", "required": false, "default": false, "flag": "--fix", "description": "Auto-fix violations where safe" }
+        ]
+      },
+      "output": {
+        "format": "json",
+        "channel": "stdout",
+        "schema_ref": "references/schemas/audit_design.output.schema.json"
+      },
+      "runtime_requirements": { "isolation_recommended": false, "dependencies": [] },
+      "invoked_by_commands": ["audit", "perf"]
+    },
+    {
+      "name": "extract_palette",
+      "description": "Computes WCAG AAA contrast ratios and generates tokens.css + brand.json from source colors.",
+      "entrypoint": { "runtime": "python3", "script": "scripts/extract_palette.py" },
+      "invocation": {
+        "cli_pattern": "{runtime} \"{skill_root}/{script}\" --target \"{target_path}\" {flags}",
+        "args": [
+          { "name": "target_path", "type": "path", "required": true, "description": "Absolute path to the client project" },
+          { "name": "source", "type": "string", "required": false, "flag": "--source", "description": "Hex seed color or image path to derive the palette from" }
+        ]
+      },
+      "output": { "format": "json", "channel": "stdout" },
+      "runtime_requirements": { "isolation_recommended": false, "dependencies": [] },
+      "invoked_by_commands": ["tokens", "palette", "init"]
+    },
+    {
+      "name": "optimize_media",
+      "description": "Compresses images, removes backgrounds, and generates WebP variants.",
+      "entrypoint": { "runtime": "python3", "script": "scripts/optimize_assets.py" },
+      "invocation": {
+        "cli_pattern": "{runtime} \"{skill_root}/{script}\" --target \"{target_path}\" {flags}",
+        "args": [
+          { "name": "target_path", "type": "path", "required": true, "description": "Absolute path to the client project" },
+          { "name": "remove_bg", "type": "boolean", "required": false, "default": false, "flag": "--remove-bg" }
+        ]
+      },
+      "output": { "format": "json", "channel": "stdout" },
+      "runtime_requirements": {
+        "isolation_recommended": true,
+        "dependencies": ["Pillow", "rembg", "onnxruntime"]
+      },
+      "invoked_by_commands": ["assets"]
+    }
+  ]
+}
