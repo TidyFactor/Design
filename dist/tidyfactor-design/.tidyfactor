@@ -2,10 +2,10 @@
   "ecosystem": "tidyfactor",
   "track": "design",
   "name": "tidyfactor-design",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "npmPackage": "@alwkala/tidyfactor-design",
   "github": "https://github.com/TidyFactor/Design",
-  "skillFile": "../tidyfactor-design-v1.6.0.skill",
+  "skillFile": "../tidyfactor-design-v1.7.0.skill",
   "category": "design-system",
   "type": "interactive-prototyping",
   "outputs": [

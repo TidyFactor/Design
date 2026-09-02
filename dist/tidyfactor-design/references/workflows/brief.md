@@ -6,20 +6,26 @@ Discovers and records core design system baselines (Foundation, School, Typograp
 
 ## Steps
 
-1. **Check Existing State**:
-   - Inspect `brand.json` and `.tidyfactor/design-brief.md` for existing tokens and school choices.
+1. **Check Existing State (Local Auto-Sensing First)**:
+   - Scan workspace for `BRAND-GUIDELINES.md`, `brand.json`, and `.tidyfactor/design-brief.md`.
+   - If present, immediately extract tokens, typography, and palette baselines without prompting.
 
-2. **Conduct Structured Discovery (Max 3 Questions)**:
-   - If not specified, ask:
-     1. **CSS Foundation (D1)**: Native CSS, Tailwind, or DaisyUI?
-     2. **Design School (D2)**: Swiss Clean, Neo-Brutalist, Luxury Glassmorphic, or Warm Editorial?
-     3. **Layout Archetype (D4)**: L1 Landing Story, L2 Split Screen, or L3 Dashboard?
+2. **Check Active MCP Acceleration (Fail-Open Fallback)**:
+   - If local files do not exist AND `search_knowledge_base` is available in active agent tools:
+     Query `search_knowledge_base(query="design tokens", scope="project")` for existing project baselines.
+   - If MCP is unavailable, empty, or returns error: Silently proceed to Step 3 with 0ms delay.
 
-3. **Record Decisions**:
-   - Save `.tidyfactor/design-brief.md` with confirmed parameters.
+3. **Conduct Structured Discovery (Max 3 Questions)**:
+   - If parameters remain unresolved, present at most 3 concise multiple-choice options:
+     1. **CSS Foundation (D1)**: (A) Native CSS (Default), (B) Tailwind CSS, (C) daisyUI, (D) Pico CSS.
+     2. **Design School (D2)**: (A) Swiss Modern, (B) Neo-Brutalism, (C) Editorial Luxury, (D) Egyptian / Regional Heritage.
+     3. **Layout Archetype (D4)**: (A) Split Hero Canvas, (B) Narrative Editorial, (C) Command Dashboard.
 
-4. **Report Summary**:
-   - Confirm baseline parameters and prompt user to invoke `/init` or `/components`.
+4. **Record Decisions**:
+   - Persist confirmed parameters into `.tidyfactor/design-brief.md`.
+
+5. **Report Summary**:
+   - Present a concise baseline summary and suggest next action (`/init`, `/tokens`, `/components`).
 
 ---
 

@@ -29,9 +29,14 @@ the palette, not pure black).
 (ease-out for entrances, ease-in for exits, a signature easing curve for
 the brand's characteristic motion if `school` calls for one).
 
+**Decorative Patterns & Friezes** — continuous horizontal ribbons, architectural
+friezes, and cultural repeating motifs. Defined via SVG `<pattern>` tokens with
+exact waveform bounding boxes (`patternUnits="userSpaceOnUse"`) to guarantee 0px gap
+interlocking across 100% viewport width without manual DOM duplication or layout shifts.
+
 ## Naming convention
 `--color-*`, `--font-*`, `--space-*`, `--radius-*`, `--shadow-*`,
-`--ease-*`/`--duration-*` — consistent prefixing so any command (or a human
+`--ease-*`/`--duration-*`, `--pattern-*`, `--motif-*` — consistent prefixing so any command (or a human
 reading the CSS) can immediately tell a value's category.
 
 ## Contrast policy

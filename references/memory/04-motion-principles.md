@@ -25,5 +25,18 @@ Adapted from classic animation principles, applied to UI motion rather than char
 
 ---
 
-## 3. Non-negotiable: `prefers-reduced-motion`
+## 3. SVG Stroke Dash & Parallax Choreography
+
+### A. SVG Stroke Dash Tracing (`.lotus-stroke-animated`)
+- For cultural emblems, watermarks, and architectural line art, set `strokeDasharray` and `strokeDashoffset` equal to the total path perimeter (e.g. `1200-1600px` or `.getTotalLength()`).
+- Animate `strokeDashoffset: 0` using GSAP timeline `power2.inOut` with micro-staggers (100-150ms) across petals/lines during initial page load.
+
+### B. Interactive Parallax with Optical Counter-Movement (Desktop $\ge 992px$)
+- Foreground hero visual frames receive soft directional tilt (`xOffset * 0.5`, `yOffset * 0.5`).
+- Deep background watermarks and particles receive inverted counter-movement (`-xOffset * 0.8`, `-yOffset * 0.8`) with longer easing durations (1.2s vs 0.8s) to establish multi-plane spatial depth.
+- On `mouseleave`, smoothly tween all planes back to origin `(0, 0)` via `power2.out`.
+
+---
+
+## 4. Non-negotiable: `prefers-reduced-motion`
 Every entrance, scroll, parallax, or ambient spotlight effect in `motion.js` must check `window.matchMedia('(prefers-reduced-motion: reduce)')` and fall back to instant or opacity-only transitions globally.

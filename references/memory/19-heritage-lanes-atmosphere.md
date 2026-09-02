@@ -16,10 +16,13 @@ Complete operational grammar, palettes, atmospheric textures, and anti-patterns 
   - `papyrus-bg`: `#FAF8F2` (Sacred Papyrus)
 * **Atmosphere & Texture**:
   - Fine Papyrus grain overlay (`feTurbulence` with 0.035 opacity).
+  - Continuous Full-Width Frieze Ribbon (`.lotus-frieze-fullwidth` with SVG `<pattern>` repeat).
+  - 4-Corner Lotus Filigree Brackets (`.corner-bracket`) framing key academic and authority portraits.
   - Shallow stone relief deboss on cards (`Low-Relief`).
   - Warm sunlit alabaster ambient glow.
 * **Anti-Patterns**:
   - Never use stock pyramids, pharaonic tourist masks, or fake pseudo-hieroglyphs.
+  - Never create segmented image dividers that break or produce seams on wide viewports (always use SVG `<pattern>`).
 
 ---
 
