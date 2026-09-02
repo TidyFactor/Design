@@ -20,6 +20,25 @@
 - Layout: Asymmetric split (Cover viewport on one side, editorial hierarchy on the other).
 - Visuals: Multi-layered spine shadow (`box-shadow: -8px 10px 24px rgba(0,0,0,0.25)`), dynamic hover lift (`translateY(-4px)`), and category badge.
 
+### C. Continuous Architectural Friezes & Motifs (`.lotus-frieze-fullwidth`)
+- Layout: Full-width continuous ribbon utilizing SVG `<pattern patternUnits="userSpaceOnUse">` tiled over a single `<rect width="100%" />` element with zero gap.
+- Break Pattern: Optional centered floating medallion (`.lotus-frieze-center-emblem`) with subtle border elevation and micro-rotation on hover.
+
+### D. Royal Cartouche & Shenu Ribbon Badges (`.section-eyebrow`, `.badge`)
+- Styling: Dual-tone background gradients, gold border (`rgba(201, 136, 24, 0.45)`), inset highlight glow, and authentic cultural iconography.
+
+### E. Responsive Positioning Protocol for Floating Badges & Frame Elements
+- Desktop (`min-width: 992px`): Positioned absolutely outside frame boundaries (`position: absolute; inset-inline-end: -8px;`).
+- Mobile (`max-width: 768px`): Must convert to centered static blocks (`position: relative; inset: auto; width: 100%; justify-content: center;`) to eliminate mobile horizontal scrolling and layout clipping.
+
+### F. Header & Navigation Bar (`.navbar`)
+- Layout: Single-line sticky frosted glass island with gold rim (`white-space: nowrap`).
+- Brand Lockup: Logo emblem medallion (`.brand-emblem`) + Bold title (`.brand-title`) + Micro pedigree (`.brand-pedigree`).
+- Prohibition: Zero emojis anywhere in the navigation bar. Use crisp inline SVGs (`currentColor`).
+
+### G. Mobile Navigation Drawer (`.mobile-drawer`)
+- Structure: Full-height frosted overlay (`backdrop-filter: blur(20px)`), body scroll lock, $\ge 44\times 44\text{px}$ touch targets, and docked bottom action buttons.
+
 ---
 
 ## 3. The Full 8-State Matrix (Apply per Interactive Component)

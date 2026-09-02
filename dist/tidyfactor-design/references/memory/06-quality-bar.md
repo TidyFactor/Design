@@ -66,6 +66,15 @@ Before handing back any output, score the artifact on 6 axes:
 10. **Diagonal Stripe Background Overlays**: Using `repeating-linear-gradient(...)` stripe overlays in hero/section backgrounds.
 11. **Disjointed Display Heading Letter-Spacing**: Using letter-spacing tighter than `-0.04em` on H1 display headings causing characters to collide.
 
+---
+
+## 🚫 5 Header & Navigation Anti-Pattern Traps (Auto-Reject)
+1. **Vertical Text-Wrapping Link Trap**: Link labels breaking/wrapping into 2 stacked lines inside a single link container (e.g. `المبادرات \n والتدريب` or `المؤلفات \n والأبحاث`). Navigation items must strictly stay 1–2 words and enforce `white-space: nowrap;`.
+2. **The Escaping Action Overflow Trap**: Primary CTA buttons or action toggles spilling outside the navbar pill container due to link congestion or missing container boundaries. Header items must never cause horizontal clipping or overflow.
+3. **Compound Title Congestion**: Cramming 6+ verbose compound phrases side-by-side (`المؤهلات والأكاديميا`, `المؤلفات والأبحاث`, `المسيرة المهنية`, `الأثر الميداني`, `المبادرات والتدريب`). When links exceed 5–6 items, mandatory escalation to Submenu/Mega Menu applies.
+4. **Duplicate Primary CTA Intent**: Duplicating the conversion action in both the menu links and the header button (e.g. having `حجز استشارة` in the nav links right next to `تواصل مباشر` on the CTA button). The CTA is the single primary conversion button.
+5. **Amateur Avatar & Emoji Trap**: Using plain circular placeholder avatars with raw single letters (e.g. a teal circle with a plain letter "ش") or emoji labels (`🌙 ليلي`). Always use authentic SVG royal emblems, cartouches, or clean linear SVG icons.
+
 ## Optical Alignment & Typography Hygiene
 - **Data Table Numbers**: Multi-digit metrics or numbers missing `font-variant-numeric: tabular-nums` or monospace font alignment.
 - **Orphaned Headline Words**: Single hanging words on display headers missing `text-wrap: balance` or `text-wrap: pretty`.

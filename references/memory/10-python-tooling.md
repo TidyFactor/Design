@@ -1,18 +1,19 @@
+<!-- last-verified: 2026-09-02 -->
 # 10 · Python Tooling & Asset Refinement Guide
 
 The **TidyFactor Design** skill includes a lightweight Python tooling suite in `scripts/` to provide AI Agents with local media manipulation, palette extraction, background removal, and image optimization capabilities.
 
 ---
 
-## 🛠️ Tooling Suite Inventory
+## 🛠️ Tooling Suite Inventory & Latency Classes
 
-| Script | Primary Responsibility | Dependencies | Command Trigger |
-|---|---|---|---|
-| **`scripts/extract_palette.py`** | Image color quantization, WCAG 2.1 AA contrast check, `brand.json` & `tokens.css` sync | `Pillow` | `palette`, `tokens`, `init`, `clone` |
-| **`scripts/remove_backgrounds.py`** | AI background removal (`rembg`) for transparent PNG logos, product shots, & cutouts | `rembg`, `Pillow` | `init`, `components`, `page`, `retrofit` |
-| **`scripts/optimize_assets.py`** | Resizes heavy assets to design token bounds (heroes max 1200px, cards 400px, logos 240px) | `Pillow` | `deploy`, `audit` |
-| **`scripts/minify_assets.py`** | Bundles & minifies CSS/JS for presentation deployment | Standard Python | `deploy` |
-| **`scripts/inspect_images.py`** | Inspects image dimensions, color channels, and alpha channel status | Standard Python | `audit` |
+| Script | Responsibility | Latency Class | Isolation Scope | Invoked By |
+|---|---|---|---|---|
+| **`scripts/audit_design.py`** | Anti-pattern & token compliance auditor | Sub-second (<100ms) | In-process stdlib | `audit`, `perf` |
+| **`scripts/extract_palette.py`** | WCAG 2.1 AAA contrast & palette derivation | Sub-second (<150ms) | `Pillow` (stdlib fallback) | `tokens`, `palette`, `init` |
+| **`scripts/optimize_assets.py`** | Neural bg removal & WebP image optimization | Async Batch (2–8s) | `isolation_recommended: true` (`rembg`, `onnxruntime`) | `assets`, `deploy` |
+| **`scripts/minify_assets.py`** | CSS/JS minification | Sub-second (<100ms) | Standard Python | `deploy` |
+
 
 ---
 

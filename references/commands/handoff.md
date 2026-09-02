@@ -44,6 +44,10 @@ For each shared component in `design-system/components.css`:
 - Cubic-bezier curves and duration values
 - Reduced-motion fallback rules (`prefers-reduced-motion: reduce`)
 
+### 5. Optional Brain MCP Sync (`--sync-brain`)
+When invoked with `--sync-brain`, the command packages the Design System Baseline into an Atomic Knowledge Item (KI) per `20-brain-baas-integration.md` and exports it to the active project's Brain MCP storage via `extract_knowledge_item`.
+- **Fail-Open Policy**: If Brain MCP is unavailable or offline, silently skip KI export and complete the local `docs/handoff/` generation.
+
 ## Checklist
 
 - [ ] Complete token mapping table generated

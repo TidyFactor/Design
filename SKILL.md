@@ -44,3 +44,11 @@ Read only the command file that matches the request. Do not load all commands si
 3. **Single CSS Foundation**: Lock Native, Tailwind, daisyUI, Pico, or Hybrid once per project; never mix foundations.
 4. **Typography Discipline**: Arabic display headings use El Messiri, body copy uses Tajawal. Never use Amiri for headings above 24px.
 5. **7-Axis Pre-Emit Critique**: All components and layouts must be evaluated with `/* Pre-emit critique: P5 H5 E5 S5 R5 V5 D5 */`.
+
+## Tooling Scope (Rule 10)
+
+- **Languages**: Python 3 (stdlib, Pillow/rembg for asset optimization)
+- **Mutations**: Read-only audits (`audit_design`), file creation (`extract_palette`), image processing (`optimize_assets`)
+- **Network**: None required
+- **Companion MCP**: Invocable via `tidyfactor-brain`'s `run_skill_tool(skill_id="tidyfactor-design", ...)`
+

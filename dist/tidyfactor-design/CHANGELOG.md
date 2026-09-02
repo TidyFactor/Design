@@ -2,6 +2,16 @@
 
 All notable changes to the **[@tidyfactor/design](https://www.npmjs.com/package/@tidyfactor/design)** package will be documented in this file.
 
+## [1.7.0] - 2026-09-02
+
+### 🧠 Added — Sovereign Brain MCP Integration & Deterministic Fail-Open Protocol
+- **Brain Integration Contract (`references/memory/20-brain-baas-integration.md`)**: Operational specification codifying the sovereign self-hosted architecture, tenant isolation within local/agency SQLite databases, Design System Knowledge Item (KI) payload schemas, and tool latency classes.
+- **Fail-Open Resolution Protocol (`references/workflows/brief.md`)**: Embedded deterministic context discovery: (1) Local workspace auto-sensing first, (2) Optional Brain MCP context acceleration (`search_knowledge_base`) when active, (3) Instant 0ms silent fallback to 3-question CDL interview if MCP is absent or offline.
+- **Optional Knowledge Item Sync (`references/commands/handoff.md`)**: Added explicit `--sync-brain` flag to export verified Design System Baselines and token maps to local Brain MCP storage.
+- **Tooling Scope & Latency Declarations**: Enriched `SKILL.md` with explicit Rule 10 Tooling Scope and updated `10-python-tooling.md` with execution latency classifications (sub-second AST audits vs async batch media inference).
+
+---
+
 ## [1.6.0] - 2026-09-01
 
 ### Added - Runtime Tooling Manifest & Egyptian Heritage Design Lanes
