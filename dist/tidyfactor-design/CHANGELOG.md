@@ -2,6 +2,17 @@
 
 All notable changes to the **[@tidyfactor/design](https://www.npmjs.com/package/@tidyfactor/design)** package will be documented in this file.
 
+## [1.8.0] - 2026-09-02
+
+### ⚡ Added — Declarative Decision Gates, Staleness Tracking & Manifest v1.1.0
+- **Declarative `decision_gates[]` Contract (`manifest.json`)**: Formally declared Required Decisions (`audience_mode`, `surface_type`, `tone_school`), priority ranks, discovery sources, and conservative fallbacks conforming to `skill-manifest.decision-gates.schema.json`.
+- **Mechanical Context Delta Resolution (`workflows/brief.md`)**: Replaced heuristic agent arbitration with a deterministic set-difference algorithm: $\text{Unknowns} = \text{Required Decisions} - (\text{Discovered Facts} \cup \text{Brain KIs})$.
+- **Local Staleness Tracking (`track_staleness: true`)**: Implemented local hash checking on `brand.json` within `.tidyfactor/design-brief.snapshot.json`—re-opening modified parameters into `Unknowns` without network or MCP round-trips.
+- **SSOT Single-Direction Push Architecture**: Enforced local snapshot as the sole immutable source of truth, with Brain MCP persistence acting strictly as an outbound replica via `--sync-brain`.
+- **Tooling Consolidation**: Unified media optimization under `scripts/optimize_images.py` across `manifest.json`, `assets.md`, and documentation.
+
+---
+
 ## [1.7.0] - 2026-09-02
 
 ### 🧠 Added — Sovereign Brain MCP Integration & Deterministic Fail-Open Protocol
