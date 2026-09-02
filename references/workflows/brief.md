@@ -1,36 +1,56 @@
 # Workflow: brief
 
-Discovers and records core design system baselines (Foundation, School, Typography, Archetype) using the Contextual Decision Layer (CDL).
+Discovers and records core design system baselines (Audience Mode, Surface Type, Tone School) using declarative Context Delta Resolution.
 
 ---
 
-## Steps
+## 📋 Step 0: Mechanical Context Delta Resolution
 
-1. **Check Existing State (Local Auto-Sensing First)**:
-   - Scan workspace for `BRAND-GUIDELINES.md`, `brand.json`, and `.tidyfactor/design-brief.md`.
-   - If present, immediately extract tokens, typography, and palette baselines without prompting.
+Evaluate the declared decision contract in `manifest.json["decision_gates"]["brief"]`:
 
-2. **Check Active MCP Acceleration (Fail-Open Fallback)**:
-   - If local files do not exist AND `search_knowledge_base` is available in active agent tools:
-     Query `search_knowledge_base(query="design tokens", scope="project")` for existing project baselines.
-   - If MCP is unavailable, empty, or returns error: Silently proceed to Step 3 with 0ms delay.
+$$\text{Unknowns} = \text{Required Decisions} - (\text{Discovered Facts} \cup \text{Brain KIs})$$
 
-3. **Conduct Structured Discovery (Max 3 Questions)**:
-   - If parameters remain unresolved, present at most 3 concise multiple-choice options:
-     1. **CSS Foundation (D1)**: (A) Native CSS (Default), (B) Tailwind CSS, (C) daisyUI, (D) Pico CSS.
-     2. **Design School (D2)**: (A) Swiss Modern, (B) Neo-Brutalism, (C) Editorial Luxury, (D) Egyptian / Regional Heritage.
-     3. **Layout Archetype (D4)**: (A) Split Hero Canvas, (B) Narrative Editorial, (C) Command Dashboard.
+1. **Local Discovery & Staleness Check**:
+   - Check `.tidyfactor/design-brief.snapshot.json` and `brand.json`.
+   - If `brand.json` has changed since the snapshot was saved (`track_staleness: true`), invalidate the cached value and mark `surface_type` / `tone_school` as `Unknown`.
+2. **Optional Brain MCP Lookup (Fail-Open)**:
+   - If decisions remain Unknown and `search_knowledge_base` is active, query `search_knowledge_base(query="design context", scope="project")`.
+   - If absent or empty, proceed with 0ms silent bypass.
+3. **Delta Evaluation**:
+   - If $\text{Unknowns} = \emptyset$: Skip all questioning immediately and emit confirmed baseline.
+   - If $\text{Unknowns} \neq \emptyset$: Proceed to Step 1 for **only the missing keys**.
 
-4. **Record Decisions**:
-   - Persist confirmed parameters into `.tidyfactor/design-brief.md`.
+---
 
-5. **Report Summary**:
-   - Present a concise baseline summary and suggest next action (`/init`, `/tokens`, `/components`).
+## 💬 Step 1: Surgical Micro-Discovery (Only for Unknown Decisions)
+
+> **Anti-Bot Constraint**: Never greet the user or ask for facts already resolved on disk. Present at most `max_interactive_questions` (3) sorted by priority:
+
+- **Audience Mode (Priority 1)**: `(A) act` (Default), `(B) inspire`, `(C) evaluate`, `(D) learn`.
+- **Surface Type (Priority 2)**: `(A) landing` (Default), `(B) dashboard`, `(C) product`, `(D) editorial`, `(E) interface`, `(F) minimal`.
+- **Tone School (Priority 3)**: `(A) minimal` (Default), `(B) neo-brutalism`, `(C) luxury`, `(D) swiss`, `(E) bento`, `(F) heritage-nilotic`, `(G) heritage-kufic`.
+
+---
+
+## 💾 Step 2: SSOT Local Persistence & Outbound Push
+
+1. **Write Local SSOT**: Persist resolved choices + source file hashes to `.tidyfactor/design-brief.snapshot.json` and `.tidyfactor/design-brief.md`.
+2. **Outbound Push to Brain (`--sync-brain`)**:
+   - If and ONLY IF invoked with `--sync-brain`, push the resolved `design_context` KI via `extract_knowledge_item`.
+   - The local snapshot remains the immutable source of truth.
+
+---
+
+## 🎯 Step 3: Summary & Actionable Handoff
+
+Display a concise 4-line baseline summary and suggest next action (`/tokens`, `/layout`, `/components`).
 
 ---
 
 ## Validation checklist
 
-- [ ] `.tidyfactor/design-brief.md` exists and contains confirmed values for D1–D5.
-- [ ] No more than 3 questions were asked in a single round.
-- [ ] Design baseline conforms to `references/memory/quality-bar.md`.
+- [ ] Evaluated Context Delta Resolution against `manifest.json["decision_gates"]`.
+- [ ] Only truly Unknown decisions were surfaced to the user.
+- [ ] `.tidyfactor/design-brief.snapshot.json` and `.tidyfactor/design-brief.md` written as local SSOT.
+- [ ] If `--sync-brain` was passed, outbound push was executed without blocking local output.
+- [ ] Baseline conforms to `references/memory/quality-bar.md`.

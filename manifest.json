@@ -1,5 +1,5 @@
 {
-  "manifest_schema_version": "1.0.0",
+  "manifest_schema_version": "1.1.0",
   "skill_id": "tidyfactor-design",
   "skill_root_anchor": "self",
   "tools": [
@@ -40,7 +40,7 @@
     {
       "name": "optimize_media",
       "description": "Compresses images, removes backgrounds, and generates WebP variants.",
-      "entrypoint": { "runtime": "python3", "script": "scripts/optimize_assets.py" },
+      "entrypoint": { "runtime": "python3", "script": "scripts/optimize_images.py" },
       "invocation": {
         "cli_pattern": "{runtime} \"{skill_root}/{script}\" --target \"{target_path}\" {flags}",
         "args": [
@@ -54,6 +54,79 @@
         "dependencies": ["Pillow", "rembg", "onnxruntime"]
       },
       "invoked_by_commands": ["assets"]
+    }
+  ],
+  "decision_gates": [
+    {
+      "command": "brief",
+      "description": "Design Context Gate — determines audience mode, surface type, and design school before scaffolding.",
+      "max_interactive_questions": 3,
+      "decisions": [
+        {
+          "key": "audience_mode",
+          "description": "What should this surface primarily do for the visitor?",
+          "type": "enum",
+          "options": ["inspire", "evaluate", "act", "learn"],
+          "default": "act",
+          "priority": 1,
+          "discovery": [
+            { "source": "local_file", "path": ".tidyfactor/design-brief.snapshot.json", "field": "audience_mode" },
+            { "source": "brain_ki", "ki_type": "design_context", "field": "audience_mode" }
+          ],
+          "persist_to": {
+            "local": { "path": ".tidyfactor/design-brief.snapshot.json", "field": "audience_mode" },
+            "brain_ki": {
+              "ki_type": "design_context",
+              "field": "audience_mode",
+              "sync_direction": "outbound_push_only",
+              "requires_flag": "--sync-brain"
+            }
+          }
+        },
+        {
+          "key": "surface_type",
+          "description": "What kind of layout archetype is this surface?",
+          "type": "enum",
+          "options": ["landing", "dashboard", "product", "editorial", "interface", "minimal", "spatial", "auto"],
+          "default": "landing",
+          "priority": 2,
+          "discovery": [
+            { "source": "local_file", "path": "brand.json", "field": "surfaceType", "track_staleness": true },
+            { "source": "workspace_scan", "path": "pages/", "field": "dominant_page_type" },
+            { "source": "brain_ki", "ki_type": "design_context", "field": "surface_type" }
+          ],
+          "persist_to": {
+            "local": { "path": ".tidyfactor/design-brief.snapshot.json", "field": "surface_type" },
+            "brain_ki": {
+              "ki_type": "design_context",
+              "field": "surface_type",
+              "sync_direction": "outbound_push_only",
+              "requires_flag": "--sync-brain"
+            }
+          }
+        },
+        {
+          "key": "tone_school",
+          "description": "What aesthetic design school should visual styling follow?",
+          "type": "enum",
+          "options": ["minimal", "neo-brutalism", "luxury", "swiss", "bento", "heritage-nilotic", "heritage-kufic", "corporate"],
+          "default": "minimal",
+          "priority": 3,
+          "discovery": [
+            { "source": "local_file", "path": "brand.json", "field": "voice", "track_staleness": true },
+            { "source": "brain_ki", "ki_type": "design_context", "field": "tone_school" }
+          ],
+          "persist_to": {
+            "local": { "path": ".tidyfactor/design-brief.snapshot.json", "field": "tone_school" },
+            "brain_ki": {
+              "ki_type": "design_context",
+              "field": "tone_school",
+              "sync_direction": "outbound_push_only",
+              "requires_flag": "--sync-brain"
+            }
+          }
+        }
+      ]
     }
   ]
 }

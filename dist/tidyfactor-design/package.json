@@ -1,6 +1,6 @@
 {
   "name": "@tidyfactor/design",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "TidyFactor Design track — code-native UI design lifecycle engine (Figma alternative) with Contextual Decision Layer (CDL)",
   "main": "SKILL.md",
   "bin": {

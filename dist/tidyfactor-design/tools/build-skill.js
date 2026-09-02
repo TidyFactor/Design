@@ -68,6 +68,7 @@ function build() {
   log('staging single-source-of-truth files from repo root...');
   const whitelist = [
     'SKILL.md',
+    'manifest.json',
     'references',
     'memory',
     'templates',
