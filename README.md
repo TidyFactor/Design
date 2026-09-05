@@ -108,16 +108,30 @@ $$\text{TidyFactor Design: } \text{Design Brief} \longrightarrow \text{Rules} \l
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Installation & Quick Start
 
-### 1. Installation via NPM / NPX
-Install the skill into your local project workspace:
+Choose your preferred installation method:
+
+### Option A: Via TidyFactor CLI (Recommended)
+Install directly using the official ecosystem package runner into your active workspace:
 ```bash
-# Add to current workspace
-npx @tidyfactor/design add
+npx @tidyfactor/cli add design
+```
+*Or if you have the CLI installed globally (`npm i -g @tidyfactor/cli`):*
+```bash
+tidyfactor add design
+```
 
-# Or run the global CLI runner
-npx @tidyfactor/cli add tidyfactor-design
+### Option B: Via Open Agent Skills Ecosystem (skills.sh / Vercel Labs)
+Install using the universal multi-agent standard across all supported IDEs (Cursor, Antigravity, Claude Code, Windsurf, Trae, Codex):
+```bash
+npx skills add tidyfactor/design
+```
+
+### Option C: Standalone Zero-Dependency Runner (NPM Direct)
+Run the dedicated skill installer directly with automatic cache invalidation:
+```bash
+npx @tidyfactor/design@latest
 ```
 
 ### 2. Invocable in All Major AI Coding Agents

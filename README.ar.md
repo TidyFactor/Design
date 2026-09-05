@@ -109,16 +109,30 @@ $$\text{محرك TidyFactor الهندسي: } \text{Brief} \longrightarrow \text
 
 ---
 
-## 🚀 البداية السريعة (Quick Start)
+## 🚀 التثبيت والبدء السريع
 
-### 1. التثبيت عبر NPM / NPX
-أضف المهارة مباشرة إلى بيئة عمل مشروعك:
+اختر طريقة التثبيت المناسبة لمشروعك:
+
+### الخيار (أ): عبر TidyFactor CLI الرسمي (الموصى به)
+التثبيت الفوري دون الحاجة لتثبيت الأداة عالمياً في بيئة عملك النشطة:
 ```bash
-# تثبيت واستدعاء المهارة في المشروع
-npx @tidyfactor/design add
+npx @tidyfactor/cli add design
+```
+*أو في حال كانت الأداة مثبتة لديك عالمياً (`npm i -g @tidyfactor/cli`):*
+```bash
+tidyfactor add design
+```
 
-# أو عبر أداة CLI الشاملة
-npx @tidyfactor/cli add tidyfactor-design
+### الخيار (ب): عبر معيار مهارات الوكلاء المفتوح (skills.sh)
+التثبيت العالمي المتوافق مع كافة بيئات الوكلاء ومحررات الذكاء الاصطناعي (Antigravity, Cursor, Claude Code, Windsurf, Codex):
+```bash
+npx skills add tidyfactor/design
+```
+
+### الخيار (ج): التثبيت المباشر الفردي عبر NPM
+تشغيل مثبت المهارة المستقل مباشرة مع تجاوز الذاكرة المخبأة وضمان أحدث إصدار:
+```bash
+npx @tidyfactor/design@latest
 ```
 
 ### 2. الاستدعاء المباشر في وكلاء الذكاء الاصطناعي
