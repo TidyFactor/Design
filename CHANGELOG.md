@@ -2,6 +2,26 @@
 
 All notable changes to the **[@tidyfactor/design](https://www.npmjs.com/package/@tidyfactor/design)** package will be documented in this file.
 
+## [1.10.0] - 2026-09-05
+
+### 🛡️ Added — Expanded 66-Rule Anti-Slop Mechanical Quality Gate (9 Categories)
+- **Comprehensive UI/UX Governance & Lint Checklist (`references/memory/06-quality-bar.md`)**:
+  - Expanded the original 16 AI anti-pattern tells into an exhaustive **66-rule mechanical quality audit matrix** organized into 9 domain categories:
+    1. **Category I: Color & Surface (Rules 1–21)**: Bans Cream-and-Terracotta tropes (`#F4F1EA` + serif + `#D97757`), Near-Black-and-Acid-Accent tropes, Tinted-Black as pure black, Dark mode as pure naive inversion, and Low-contrast text-on-image without scrims.
+    2. **Category II: Typography (Rules 22–28)**: Bans single-word headline accents, ubiquitous all-caps labels, unnecessary eyebrows, non-tabular monospace data labels, unjustified body rivers, flat serif/sans pairings without contrast, and lines exceeding 80 characters (`max-width: 65ch`).
+    3. **Category III: Layout & Composition (Rules 29–36)**: Bans numbered badges on non-sequential cards, middle-dot meta strings, em-dash label patterns, uniform unhierarchical border-radii, identical soft shadows under every card, default big-number-small-label hero crutches, broadsheet newspaper hairlines, and reflexive center-alignment.
+    4. **Category IV: Decoration & Motion (Rules 37–41)**: Bans repetitive fade-and-slide-up animations across consecutive sections, compulsive arrow-appended CTAs (`→`), decorative icon-heading soup, decorative gradient washes as fillers, and unmotivated motion without user interaction or state meaning.
+    5. **Category V: Interaction & State Design (Rules 42–47)**: Bans unstyled disabled states, missing loading/skeleton states, empty states left as blank voids, missing error states on forms, hover effects on non-interactive elements, and removal of focus rings without custom accessible replacements (`outline: none`).
+    6. **Category VI: Internationalization & Accessibility (Rules 48–53)**: Bans un-mirrored directional icons in RTL, color as the sole signal for status, contrast ratios below WCAG AA (4.5:1 body / 3:1 display), semantic div soup, ignored `prefers-reduced-motion` preferences, and un-localized date/number formats.
+    7. **Category VII: Performance & Technical Hygiene (Rules 54–58)**: Bans unset image dimensions causing CLS layout shifts, render-blocking `<script>` tags in `<head>`, eagerly loading below-the-fold media, CSS specificity wars, and missing system-font fallback chains.
+    8. **Category VIII: Content & Copy (Rules 59–63)**: Bans passive-voice generic CTAs ("Submit"), apologetic vague error copy, inconsistent action verb transitions across flows, placeholder `Lorem Ipsum` in delivered code, and actionable-less empty states.
+    9. **Category IX: AI-Generated "Tell" Patterns (Rules 64–66)**: Bans the template chrome combo (eyebrow + middle-dot + em-dash + arrow CTA), SaaS-card-kit sameness across unrelated domain briefs, and recycling single component libraries without adapting to the brand's vernacular.
+- **Documentation & Bilingual Synchronization**:
+  - Fully synchronized 9-category 66-rule quality gate into [`README.md`](README.md) and [`README.ar.md`](README.ar.md) with collapsible category drawers and bilingual definitions.
+  - Updated 7-Axis Quality Stamp criterion V to certify full 66-rule compliance.
+
+---
+
 ## [1.9.0] - 2026-09-05
 
 ### 🎨 Added — Core UI Component & Page Composition Library (Volume 01–03)
