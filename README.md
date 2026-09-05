@@ -203,32 +203,36 @@ graph LR
 
 ## ⚡ The 24-Command Registry
 
-| Lifecycle Stage | Slash Command | Purpose & User Intent | Injected Operational Memory | Primary Output |
-|---|---|---|---|---|
-| **1. Discovery** | `/brief` | Design context discovery & DM-DA protocol | `workflows/brief.md` + `memory/decision-points.md` | `.tidyfactor/brief.md` |
-| **1. Discovery** | `/study` | Extract visual DNA from reference URL/image | `commands/study.md` + `memory/01-design-schools.md` | Structured visual DNA report |
-| **2. Foundation** | `/init` | Scaffold new design system / prototype suite | `workflows/init-prototype.md` + `memory/architecture.md` | `design-system/` + semantic `index.html` |
-| **2. Foundation** | `/brand` | Scaffold and manage `brand.yaml` design tokens | `commands/brand.md` + `memory/11-brand-json-v2.md` | Authoritative `brand.yaml` SSOT |
-| **2. Foundation** | `/typography` | Mood-routed typography pairing (Latin + Arabic) | `commands/typography.md` + `memory/12-typography-matrix.md` | Font tokens + Google Fonts preconnect |
-| **2. Foundation** | `/school` | Lock visual movement (Minimal, Brutalist, Glass...) | `commands/school.md` + `memory/01-design-schools.md` | Visual school declared in `brand.yaml` |
-| **2. Foundation** | `/tokens` | Manage design tokens & CSS custom properties | `commands/tokens.md` + `memory/02-design-tokens.md` | Synchronized `tokens.css` |
-| **2. Foundation** | `/palette` | Extract color palette with WCAG AAA verification | `commands/palette.md` + `scripts/extract_palette.py` | Light & dark mode contrast tokens |
-| **2. Foundation** | `/assets` | Optimize images, convert to WebP, remove backgrounds | `commands/assets.md` + `scripts/optimize_images.py` | Sub-150KB WebP assets |
-| **3. Architecture** | `/layout` | Select macrostructure archetype (L1–L4) | `commands/layout.md` + `memory/13-layout-archetypes.md` | Scaffolded grid layout shell |
-| **3. Architecture** | `/nav-footer` | Wire navigation (N1–N9) & footer (Ft1–Ft8) | `commands/nav-footer.md` + `memory/14-nav-footer-catalog.md` | Production nav and footer components |
-| **3. Architecture** | `/page` | Assemble content or marketing page | `workflows/init-prototype.md` + `memory/05-component-anatomy.md` | Markup-only `pages/<name>.html` |
-| **3. Architecture** | `/dashboard` | Assemble data-dense admin or app dashboard | `workflows/init-prototype.md` + `memory/05-component-anatomy.md` | KPI card grids, sidebar rail & data tables |
-| **4. Components** | `/components` | Scaffold UI components adhering to anatomy | `commands/components.md` + `memory/05-component-anatomy.md` | `components.css` component definitions |
-| **4. Components** | `/states` | Enforce 8-state interactive wrappers | `commands/states.md` + `memory/05-component-anatomy.md` | Idle, hover, focus, active, disabled states |
-| **5. Motion** | `/motion` | Physics-based easing & animation recipes | `commands/motion.md` + `memory/04-motion-principles.md` | `motion.js` with GSAP / CSS fallbacks |
-| **5. Motion** | `/flow` | Wire client-side interactive prototype navigation | `commands/flow.md` + `memory/09-prototype-flow.md` | Single-page prototype transitions |
-| **5. Motion** | `/i18n` | Arabic/RTL localization & bidirectional UI | `commands/i18n.md` + `memory/08-arabic-bilingual.md` | Mirrored layout + Arabic typography |
-| **6. Quality** | `/perf` | Audit performance budget & page weight | `commands/perf.md` + `memory/15-performance-budget.md` | Sub-500KB total page weight report |
-| **6. Quality** | `/audit` | Structural consistency audit & quality bar | `workflows/audit-prototype.md` + `memory/06-quality-bar.md` | 7-Axis Quality Stamp (`P5 H5 E5 S5 R5 V5 D5`) |
-| **6. Quality** | `/clone` | Reverse-engineer design system from external URL | `workflows/clone-prototype.md` + `memory/03-narrative-conversion.md` | Clean reconstructed tokens |
-| **6. Quality** | `/retrofit` | Unify drifted prototype under design system | `workflows/retrofit-prototype.md` + `memory/07-consistency-contract.md` | Inline styles eliminated & mapped to tokens |
-| **7. Delivery** | `/handoff` | Export developer specs & CSS variable map | `commands/handoff.md` + `memory/11-brand-json-v2.md` | Developer handoff tables & documentation |
-| **7. Delivery** | `/deploy` | Live local preview server & zero-build deploy | `commands/deploy.md` + `memory/06-quality-bar.md` | Static preview on local or hosting server |
+> [!TIP]
+> **Complete Technical Reference & Output Artifacts**:  
+> For full execution details, injected operational memory files, and deliverable artifacts for each command, see the dedicated [Technical Commands Reference (docs/COMMANDS.md)](docs/COMMANDS.md).
+
+| Command | Purpose & User Intent | Stage |
+|:---|:---|:---:|
+| [`/brief`](docs/COMMANDS.md#brief) | Establish strategic design context via DM-DA protocol (Smart 3-Round or Debate) | `Discovery` |
+| [`/study`](docs/COMMANDS.md#study) | Reverse-engineer visual DNA, colors, and rhythm from reference URL or image | `Discovery` |
+| [`/init`](docs/COMMANDS.md#init) | Scaffold zero-build design system repository & semantic HTML foundation | `Foundation` |
+| [`/brand`](docs/COMMANDS.md#brand) | Scaffold, audit, and manage `brand.yaml` design token SSOT | `Foundation` |
+| [`/typography`](docs/COMMANDS.md#typography) | Mood-routed typography pairing (Latin + Arabic) with modular ratio scales | `Foundation` |
+| [`/school`](docs/COMMANDS.md#school) | Lock visual movement (Minimalist, Brutalist, Glass, Editorial, Playful) | `Foundation` |
+| [`/tokens`](docs/COMMANDS.md#tokens) | Generate, audit, and synchronize CSS custom properties in `tokens.css` | `Foundation` |
+| [`/palette`](docs/COMMANDS.md#palette) | Extract color palette with computed WCAG 2.1 AAA contrast tokens | `Foundation` |
+| [`/assets`](docs/COMMANDS.md#assets) | Optimize images, convert to WebP (<150KB), and remove backgrounds | `Foundation` |
+| [`/layout`](docs/COMMANDS.md#layout) | Scaffold responsive macrostructure shell archetype (L1 to L4) | `Architecture` |
+| [`/nav-footer`](docs/COMMANDS.md#nav-footer) | Wire production navigation shells (N1–N9) & footers (Ft1–Ft8) | `Architecture` |
+| [`/page`](docs/COMMANDS.md#page) | Assemble token-disciplined marketing or content page (`pages/<name>.html`) | `Architecture` |
+| [`/dashboard`](docs/COMMANDS.md#dashboard) | Assemble data-dense admin or app screen with KPI cards & data tables | `Architecture` |
+| [`/components`](docs/COMMANDS.md#components) | Scaffold UI primitives with strict component anatomy in `components.css` | `Components` |
+| [`/states`](docs/COMMANDS.md#states) | Enforce 8-state interactive wrappers (idle, hover, active, focus, disabled...) | `Components` |
+| [`/motion`](docs/COMMANDS.md#motion) | Physics-based easing curves, scroll choreography & GSAP transitions | `Motion` |
+| [`/flow`](docs/COMMANDS.md#flow) | Wire client-side interactive prototype transitions between screens | `Motion` |
+| [`/i18n`](docs/COMMANDS.md#i18n) | Bi-directional RTL layout mirroring & tailored Arabic typography | `Motion` |
+| [`/perf`](docs/COMMANDS.md#perf) | Audit asset performance budget (<500KB total page weight) | `Quality` |
+| [`/audit`](docs/COMMANDS.md#audit) | Structural AST audit, anti-slop scan & 7-Axis Quality Stamp (`P5 H5 E5 S5 R5 V5 D5`) | `Quality` |
+| [`/clone`](docs/COMMANDS.md#clone) | Reverse-engineer clean design tokens from external production URL | `Quality` |
+| [`/retrofit`](docs/COMMANDS.md#retrofit) | Eradicate inline CSS styles and re-map drifted pages to shared tokens | `Quality` |
+| [`/handoff`](docs/COMMANDS.md#handoff) | Export developer handoff specification & CSS variable mapping tables | `Delivery` |
+| [`/deploy`](docs/COMMANDS.md#deploy) | Launch local zero-build preview server and static hosting deployment | `Delivery` |
 
 ---
 

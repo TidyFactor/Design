@@ -201,34 +201,38 @@ graph LR
 
 ---
 
-## ⚡ سجل الأوامر الـ 24 (24 Slash Commands Registry)
+## ⚡ سجل الأوامر الـ 24 (24 Commands Registry)
 
-| المرحلة | الأمر (Command) | الهدف وقصد المستخدم | الذاكرة التشغيلية المحقونة | المخرج الأساسي |
-|---|---|---|---|---|
-| **1. الاستكشاف** | `/brief` | استكشاف السياق عبر بروتوكول DM-DA المزدوج | `workflows/brief.md` + `memory/decision-points.md` | `.tidyfactor/brief.md` |
-| **1. الاستكشاف** | `/study` | استخراج الـ DNA البصري من موقع مرجعي أو صورة | `commands/study.md` + `memory/01-design-schools.md` | تقرير تحليلي للهوية البصرية |
-| **2. التأسيس** | `/init` | بدء نظام تصميم ونموذج أولي جديد | `workflows/init-prototype.md` + `memory/architecture.md` | مجلد `design-system/` وملف `index.html` |
-| **2. التأسيس** | `/brand` | إدارة رموز التصميم في ملف `brand.yaml` | `commands/brand.md` + `memory/11-brand-json-v2.md` | ملف `brand.yaml` المعتمد |
-| **2. التأسيس** | `/typography` | توليد أزواج الخطوط العربية واللاتينية بدقة | `commands/typography.md` + `memory/12-typography-matrix.md` | رموز الخطوط وربط Google Fonts |
-| **2. التأسيس** | `/school` | تحديد المدرسة البصرية (Minimal, Brutalist...) | `commands/school.md` + `memory/01-design-schools.md` | تثبيت المدرسة في `brand.yaml` |
-| **2. التأسيس** | `/tokens` | توليد ومزامنة متغيرات CSS المشتركة | `commands/tokens.md` + `memory/02-design-tokens.md` | ملف `design-system/tokens.css` |
-| **2. التأسيس** | `/palette` | استخراج لوحة الألوان وحساب تباين WCAG AAA | `commands/palette.md` + `scripts/extract_palette.py` | رموز الألوان للوضعين الفاتح والداكن |
-| **2. التأسيس** | `/assets` | تحسين الصور والتحويل إلى WebP وإزالة الخلفيات | `commands/assets.md` + `scripts/optimize_images.py` | أصول بصرية خفيفة دون 150KB |
-| **3. الهيكلية** | `/layout` | اختيار النموذج الهيكلي العام (L1 إلى L4) | `commands/layout.md` + `memory/13-layout-archetypes.md` | هيكل شبكي متجاوب ومدروس |
-| **3. الهيكلية** | `/nav-footer` | ربط أشرطة التنقل والتذييل من الكتالوج | `commands/nav-footer.md` + `memory/14-nav-footer-catalog.md` | مكونات الهيدر والفوتر المتجاوبة |
-| **3. الهيكلية** | `/page` | تجميع صفحة تسويقية أو محتوى كاملة | `workflows/init-prototype.md` + `memory/05-component-anatomy.md` | صفحة HTML نقية تقرأ الرموز العامة |
-| **3. الهيكلية** | `/dashboard` | تجميع لوحة تحكم وتطبيقات كثيفة البيانات | `workflows/init-prototype.md` + `memory/05-component-anatomy.md` | بطاقات KPI، جداول، وشريط جانبي |
-| **4. المكونات** | `/components` | بناء مكونات الواجهة وفق مصفوفات التشريح | `commands/components.md` + `memory/05-component-anatomy.md` | ملف `components.css` المنظم |
-| **4. المكونات** | `/states` | إلزام المكونات بالحالات التفاعلية الـ 8 | `commands/states.md` + `memory/05-component-anatomy.md` | حالات (الخمول، التحويم، التركيز، التعطيل...) |
-| **5. الحركة** | `/motion` | تطبيق منحنيات التسارع الفيزيائية والحركة | `commands/motion.md` + `memory/04-motion-principles.md` | ملف `motion.js` المعتمد على GSAP/CSS |
-| **5. الحركة** | `/flow` | ربط التنقل والتفاعل بين صفحات النموذج الأولي | `commands/flow.md` + `memory/09-prototype-flow.md` | مسارات التنقل السلسة بالمتصفح |
-| **5. الحركة** | `/i18n` | دعم العربية والمحاذاة التلقائية RTL | `commands/i18n.md` + `memory/08-arabic-bilingual.md` | واجهة ثنائية الاتجاه مع خطوط عربية دقيقة |
-| **6. الجودة** | `/perf` | فحص ميزانية الأداء وأحجام الملفات | `commands/perf.md` + `memory/15-performance-budget.md` | تقرير التحقق من بقاء الصفحة دون 500KB |
-| **6. الجودة** | `/audit` | التدقيق الهيكلي الميكانيكي وختم الجودة | `workflows/audit-prototype.md` + `memory/06-quality-bar.md` | ختم الجودة ذو المحاور الـ 7 (`P5 H5...`) |
-| **6. الجودة** | `/clone` | استخراج نظام التصميم هندسياً من رابط خارجي | `workflows/clone-prototype.md` + `memory/03-narrative-conversion.md` | رموز ومكونات نظيفة معاد بناؤها |
-| **6. الجودة** | `/retrofit` | توحيد الصفحات المشتتة تحت نظام تصميم مركزي | `workflows/retrofit-prototype.md` + `memory/07-consistency-contract.md` | إزالة التنسيقات الفردية وتوحيدها بالرموز |
-| **7. التسليم** | `/handoff` | استخراج مواصفات التسليم البرمجي للمطورين | `commands/handoff.md` + `memory/11-brand-json-v2.md` | جداول المتغيرات وتوثيق التسليم |
-| **7. التسليم** | `/deploy` | إطلاق خادم المعاينة المحلي والنشر الثابت | `commands/deploy.md` + `memory/06-quality-bar.md` | معاينة حية بدون خطوات بناء معقدة |
+> [!TIP]
+> **الدليل التقني الكامل لآلية عمل الأوامر**:  
+> للاطلاع على التفاصيل الهندسية الكاملة، والذاكرة التشغيلية المحقونة، ومخرجات كل أمر بدقة، راجع [دليل الأوامر التقني (docs/COMMANDS.ar.md)](docs/COMMANDS.ar.md).
+
+| الأمر (Command) | الهدف وقصد المستخدم (Purpose & User Intent) | المرحلة (Stage) |
+|:---|:---|:---:|
+| [`/brief`](docs/COMMANDS.ar.md#brief) | استكشاف سياق التصميم عبر بروتوكول DM-DA (الارتجال السريع أو المناظرة) | `الاستكشاف` |
+| [`/study`](docs/COMMANDS.ar.md#study) | استخراج الـ DNA البصري والألوان من موقع مرجعي أو صورة ملهمة | `الاستكشاف` |
+| [`/init`](docs/COMMANDS.ar.md#init) | تأسيس نظام التصميم ونموذج أولي برمجي أصيل بدون خطوات بناء معقدة | `التأسيس` |
+| [`/brand`](docs/COMMANDS.ar.md#brand) | إنشاء وتدقيق وإدارة رموز التصميم في ملف `brand.yaml` المعتمد | `التأسيس` |
+| [`/typography`](docs/COMMANDS.ar.md#typography) | توليد أزواج الخطوط العربية واللاتينية وفق الحالة النفسية بمقاييس نسبية | `التأسيس` |
+| [`/school`](docs/COMMANDS.ar.md#school) | تثبيت المدرسة البصرية المعتمدة (Minimalist, Brutalist, Glass...) | `التأسيس` |
+| [`/tokens`](docs/COMMANDS.ar.md#tokens) | توليد وتدقيق ومزامنة متغيرات CSS المركزية في `tokens.css` | `التأسيس` |
+| [`/palette`](docs/COMMANDS.ar.md#palette) | استخراج لوحة الألوان وضمان نسب التباين وفق معيار WCAG 2.1 AAA | `التأسيس` |
+| [`/assets`](docs/COMMANDS.ar.md#assets) | تحسين الصور والتحويل إلى WebP (<150KB) وتفريغ الخلفيات آلياً | `التأسيس` |
+| [`/layout`](docs/COMMANDS.ar.md#layout) | اختيار الهيكل الشبكي العام للصفحة (L1 إلى L4) وبناء الحاويات | `الهيكلية` |
+| [`/nav-footer`](docs/COMMANDS.ar.md#nav-footer) | ربط أشرطة التنقل الاحترافية (N1–N9) والتذييل المتجاوب (Ft1–Ft8) | `الهيكلية` |
+| [`/page`](docs/COMMANDS.ar.md#page) | تجميع صفحة تسويقية أو محتوى كاملة تقرأ الرموز العامة فقط | `الهيكلية` |
+| [`/dashboard`](docs/COMMANDS.ar.md#dashboard) | بناء لوحات تحكم وتطبيقات كثيفة البيانات ببطاقات KPI وجداول متقدمة | `الهيكلية` |
+| [`/components`](docs/COMMANDS.ar.md#components) | هندسة عناصر الواجهة وفق معايير التشريح في `components.css` | `المكونات` |
+| [`/states`](docs/COMMANDS.ar.md#states) | إلزام العناصر بالحالات التفاعلية الـ 8 (الخمول، التحويم، التركيز، التعطيل...) | `المكونات` |
+| [`/motion`](docs/COMMANDS.ar.md#motion) | تطبيق منحنيات التسارع الفيزيائية وانتقالات GSAP وانسيابية الحركة | `الحركة` |
+| [`/flow`](docs/COMMANDS.ar.md#flow) | ربط التفاعل والتنقل السلس بين صفحات وشاشات النموذج الأولي | `الحركة` |
+| [`/i18n`](docs/COMMANDS.ar.md#i18n) | دعم العربية وانعكاس الاتجاه RTL السلس وضبط خصائص الخط العربي | `الحركة` |
+| [`/perf`](docs/COMMANDS.ar.md#perf) | فحص ميزانية الأداء وضمان بقاء وزن الصفحة الإجمالي دون 500KB | `الجودة` |
+| [`/audit`](docs/COMMANDS.ar.md#audit) | التدقيق الهيكلي الميكانيكي، وفحص الرداءة، وختم الجودة السباعي (`P5...`) | `الجودة` |
+| [`/clone`](docs/COMMANDS.ar.md#clone) | استخراج نظام التصميم ومحاكاته برمجياً من رابط موقع خارجي | `الجودة` |
+| [`/retrofit`](docs/COMMANDS.ar.md#retrofit) | إزالة التنسيقات الفردية وتوحيد الصفحات المشتتة تحت الرموز المشتركة | `الجودة` |
+| [`/handoff`](docs/COMMANDS.ar.md#handoff) | تصدير مواصفات التسليم البرمجي وجداول متغيرات CSS للمطورين | `التسليم` |
+| [`/deploy`](docs/COMMANDS.ar.md#deploy) | إطلاق خادم المعاينة المحلي والنشر الفوري على استضافة ثابتة | `التسليم` |
 
 ---
 
