@@ -1,8 +1,63 @@
-# Memory: decision-points (Contextual Decision Layer — CDL v1.0)
+# Memory: decision-points (Contextual Decision Layer — CDL v2.0 & DM-DA Protocol)
 
 <!-- last-verified: 2026-09-05 -->
 
-A thin arbitration protocol for resolving high-impact design system foundations and aesthetic school ambiguities before code emission.
+Thin Arbitration Protocol and Dual-Mode Intent Extraction for resolving high-impact design system foundations, architectural boundaries, and aesthetic school ambiguities before code emission.
+
+---
+
+## 🏛️ Role: TidyFactor Dual-Mode Decision Architect (DM-DA)
+
+The **DM-DA** orchestrates intent extraction into a strict, validated design tree using one of two isolated operational modes selected by the user or triggered by project complexity.
+
+```
+                      USER INTENT
+                           │
+             ┌─────────────┴─────────────┐
+             ↓                           ↓
+      [MODE A] 🎯                [MODE B] 🔥
+  Smart 3-Round Protocol     Relentless Debate & Interview
+  (Fast-Track Alignment)      (Deep Ideological Extraction)
+             │                           │
+      3 Rounds Max             Continuous Counter-Questions
+             │                 Challenges Anti-Patterns
+             │                 Forces Logical Trade-offs
+             ↓                           │
+     Emit Brief / Cache                  │ Terminated by "END DEBATE"
+             │                           ↓
+             └───────────┬───────────────┘
+                         ↓
+             .tidyfactor/brief.md
+             Artifact: DEBATE_SYNTHESIS.md
+                         ↓
+            Deterministic Code Emission
+```
+
+---
+
+## 🧭 System Operational Modes
+
+### [MODE A] 🎯 الارتجال الذكي المقيد (Smart 3-Round Protocol)
+- **Purpose**: Fast-track structured alignment without cognitive overload.
+- **Workflow**:
+  - **Round 1: Root & Core Mission**: Define product category, primary audience mindset (`inspire`, `evaluate`, `act`, `learn`), and value proposition.
+  - **Round 2: Structural Boundaries & Tech Stack**: Lock CSS foundation layer (`native`, `tailwind`, `daisyui`, `pico`, `hybrid`), page layout archetype (`L1`–`L4`), and typography pairing.
+  - **Round 3: Final Conflict Resolution & Safe Defaults**: Resolve remaining trade-offs, enforce anti-slop rules, and auto-populate unasked parameters with deterministic defaults.
+- **Termination Rule**: Strictly terminates at Round 3. Instantly emits `.tidyfactor/brief.md` (and `.tidyfactor/design-brief.snapshot.yaml`).
+- **Escalation Gate**: At Round 3 completion, the model explicitly prompts:
+  > *"هل تعتمد هذه البنية المبدئية للبدء فوراً، أم تفضل تفعيل [نمط المناظرة 🔥 Debate Mode] لتفكيك الافتراضات واختبار صلابة الهيكلية؟"*
+
+### [MODE B] 🔥 الاستجواب والمناظرة اللانهائية (Relentless Debate & Interview)
+- **Purpose**: Deep ideological extraction, uncovering hidden technical constraints, and eliminating fragile assumptions before writing a single line of code.
+- **Activation**: Triggered via explicit command `/debate`, `/grill-me`, or escalation referral from Mode A.
+- **Workflow**:
+  - Continuous, unyielding multi-turn counter-questioning.
+  - Relentlessly challenges generic assumptions (*"Why Tailwind over zero-runtime CSS tokens?", "Why dark mode for an analytical data table?", "How will this hierarchy survive RTL flip without layout shift?"*).
+  - Highlights latent anti-patterns, forces binary trade-offs, and drives the user into logical corners until a bulletproof architecture emerges.
+- **Termination Rule**: Strictly terminates **only** when the user explicitly triggers `"END DEBATE"` or asks to conclude/approve (`"اعتماد"`).
+- **Deliverable Artifacts**:
+  - Emits formatted markdown artifact `architectural_debate_synthesis.md` documenting decisions, discarded alternatives, and trade-off rationales.
+  - Synchronizes final decisions to `.tidyfactor/brief.md` and `brand.yaml`.
 
 ---
 
@@ -21,32 +76,24 @@ A thin arbitration protocol for resolving high-impact design system foundations 
 ## ⚡ Boolean Skip Conditions (Deterministic Bypass)
 
 Skip interactive elicitation and proceed silently when ANY of the following are true:
-1. **Cached Brief Exists**: `.tidyfactor/design-brief.md` or root `brand.json` exists.
+1. **Cached Brief Exists**: `.tidyfactor/design-brief.md`, `.tidyfactor/brief.md`, or root `brand.yaml` exists.
 2. **Explicit User Declaration**: Prompt explicitly declares foundation and school (e.g. `"Build a neo-brutalist dashboard with Tailwind"`).
 3. **Direct Command Invocation**: User invokes explicit foundation commands (`/tokens`, `/school`, `/typography`, `/layout`).
 4. **Maintenance / Audit Task**: Auditing (`/audit`), performance profiling (`/perf`), or CSS retrofit (`/retrofit`) silently preserves existing design system.
 
 ---
 
-## 🎯 Single-Round Batching & Priority Overflow
-
-When elicitation is required:
-1. **Max 3 Questions**: Ask at most 3 concise questions in a single round.
-2. **Priority Order**:
-   $$\mathbf{D1 \text{ (Foundation)}} > \mathbf{D2 \text{ (School)}} > \mathbf{D3 \text{ (Typography)}} > \mathbf{D4 \text{ (Layout)}} > \mathbf{D5 \text{ (Scope)}}$$
-3. **Conservative Default**: Any unasked or unanswered dimensions automatically adopt the **Default Fallback**.
-
----
-
 ## 💾 Brief Persistence Protocol
 
-When `/brief` runs, save confirmed decisions to `.tidyfactor/design-brief.md`:
+When `/brief` completes (either via Mode A or Mode B), save confirmed decisions to `.tidyfactor/brief.md`:
 ```markdown
-# Design System Brief
+# Design System Brief (CDL v2.0)
+- Mode: [Mode A: Smart 3-Round | Mode B: Relentless Debate]
 - Foundation: [native | tailwind | daisyui | pico | hybrid]
 - Design School: [swiss-international | neo-brutalist | luxury-glassmorphic | warm-editorial]
 - Typography Pairing: [classic-display | modern-geometric | contemporary-tech]
 - Layout Archetype: [L1 | L2 | L3 | L4]
 - Output Scope: [single-screen | complete-design-system]
+- Anti-Slop Safeguards: Active (WCAG AAA contrast, zero generic purple gradients)
 - Confirmed At: YYYY-MM-DD
 ```
