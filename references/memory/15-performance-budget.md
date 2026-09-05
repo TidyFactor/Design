@@ -1,5 +1,7 @@
 # 15 · Performance Budget Specification
 
+<!-- last-verified: 2026-09-05 -->
+
 Mechanical performance budgets for asset weight and DOM performance across all prototypes in `tidyfactor-design`.
 
 ## Asset Class Budget Table

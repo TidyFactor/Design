@@ -1,5 +1,7 @@
 # 12 · Typography Matrix — Mood-Routed Font Pairings
 
+<!-- last-verified: 2026-09-05 -->
+
 This document defines the 7 mood-routed typography pairings for `tidyfactor-design`. 
 While the default pairing (`El Messiri` + `Tajawal` + `Cormorant Garamond`) remains safe and clean for general builds, brand personality often demands a distinctive font pairing matching the visual layout's emotional register.
 

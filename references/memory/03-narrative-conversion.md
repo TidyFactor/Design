@@ -1,5 +1,7 @@
 # Narrative & Conversion — Reference for `page`/`dashboard`
 
+<!-- last-verified: 2026-09-05 -->
+
 ## Hero as thesis
 The opening of any page states its single job immediately — a headline, a
 demo, a number, whatever form fits the subject. Never a generic "Welcome

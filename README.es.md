@@ -1,8 +1,8 @@
 <div align="center">
 
-# tidyfactor-design `v1.5.0`
+# tidyfactor-design `v1.9.0`
 
-**Motor de Ciclo de Vida de Diseño UI Nativo en Código y Prototipado Interactivo para Agentes de IA**
+**Motor de Ciclo de Vida de Diseño UI Nativo en Código y Suite de Diseño Anti-Slop para Agentes de IA**
 
 [![npm version](https://img.shields.io/npm/v/@tidyfactor/design.svg?style=for-the-badge&color=0284C7)](https://www.npmjs.com/package/@tidyfactor/design)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg?style=for-the-badge)](LICENSE)
@@ -13,32 +13,92 @@
 
 ---
 
-## ⚡ Inicio Rápido (Quickstart)
+## 💡 La Filosofía Central: Separación de la Inteligencia de Diseño de su Implementación
 
-```bash
-# Instalación e invocación vía NPX
-npx @tidyfactor/cli-design
+El pilar fundamental de **TidyFactor Design** radica en separar la **inteligencia y conocimiento de diseño** de la **ejecución técnica en código**:
+
+```
+                 DESIGN INTELLIGENCE
+                        │
+             ┌──────────┴──────────┐
+             ↓                     ↓
+       Operational Memory       Workflows
+             │                     │
+             └──────────┬──────────┘
+                        ↓
+                  AI Agent
+                        ↓
+                Design System
+                        ↓
+                  HTML/CSS/JS
+                        ↓
+                     Audit
+                        ↓
+                    Handoff
 ```
 
-O invócalo directamente dentro de tu asistente de IA (*Google Antigravity, Claude Code, Cursor, Codex*):
-```text
-/tidyfactor-design
-```
+Esta arquitectura convierte a la habilidad en un **Sistema Operativo de Ingeniería de Diseño** reutilizable, transferible y predecible entre diferentes proyectos. En lugar de limitarse a generar código mediante un simple prompt, el agente ejecuta un ciclo de diseño formal y estructurado.
 
 ---
 
-## 📋 Matriz de Comandos Principales
+## ⚖️ TidyFactor Design vs. Figma: La Alternativa Nativa en Código
 
-| Comando | Objetivo y Resultado | Flujo de Trabajo |
+TidyFactor Design no pretende ser una herramienta de dibujo vectorial tradicional en lienzo, sino una **alternativa de diseño nativa en código (Code-Native Alternative)**:
+
+| Característica | Figma | TidyFactor Design |
 |---|---|---|
-| `/brief` | Briefing de diseño y descubrimiento de marca | `workflows/brief.md` |
-| `/tokens` | Generación de design tokens y escalas | `workflows/tokens.md` |
-| `/components` | Prototipado interactivo de componentes UI | `workflows/components.md` |
-| `/page` | Montaje de páginas completas interactivas | `workflows/page.md` |
-| `/rtl` | Validación y soporte nativo RTL/Árabe | `workflows/rtl.md` |
+| **Paradigma** | Herramienta de diseño visual | Flujo de trabajo de diseño nativo en código |
+| **Entorno** | Centrado en el lienzo (Canvas-centric) | Centrado en código (Code-centric) |
+| **Audiencia** | Diseñadores visuales | Agente de IA + Desarrollador + Design Engineer |
+| **Bloques de construcción** | Componentes y variables visuales | Tokens + componentes + flujos deterministas |
+| **Prototipado** | Prototipos interactivos de pantalla | Prototipos reales en HTML/CSS/JS (cero build step) |
+| **Handoff** | Transferencia manual Diseñador → Dev | Diseño e implementación unificados |
+| **Gobernanza** | Inspección visual manual | Controles de calidad mecánicos y automatizados |
+| **Ámbito** | Creación de interfaces de usuario | Gestión del ciclo de vida de diseño completo |
 
 ---
 
-## 📖 Especificación Técnica Completa
+## 🧠 ¿Qué es la Memoria Operacional (Operational Memory)?
 
-Para la arquitectura profunda, esquemas JSON y documentación de herramientas nativas, consulta el [README Técnico en Inglés (README.md)](README.md).
+La memoria operacional (`references/memory/`) no consiste en teoría o artículos abstractos. Se compone de **estructuras de datos, matrices operativas, esquemas de diseño y restricciones ejecutables**:
+
+- **Matrices Tipográficas** (`01-typography-matrix.md`): Jerarquías y escalas sin arbitrariedad.
+- **Arquetipos de Layout** (`02-layout-archetypes.md`): Retículas y estructuras espaciales.
+- **Principios de Movimiento** (`03-motion-principles.md`): Física de curvas de animación, tiempos y GSAP.
+- **Anatomía de Componentes** (`04-component-anatomy.md`): Reglas de estructura de componentes.
+- **Barrera de Calidad** (`06-quality-bar.md`): Verificación mecánica en 7 ejes (`P5 H5 E5 S5 R5 V5 D5`).
+- **Reglas RTL y Árabe** (`14-arabic-rtl-matrix.md`): Tipografía y composición bidireccional nativa.
+
+El agente de IA no necesita improvisar o reinventar las bases en cada proyecto; cuenta con una base de reglas operativas precisas y estandarizadas.
+
+---
+
+## 🚫 Gobernanza Anti-Slop: Calidad Mecánica Comprobable
+
+A diferencia de los asistentes genéricos que generan interfaces predecibles, repetitivas y saturadas de patrones artificiales, TidyFactor Design impone **barreras de calidad mecánicas y comprobables**:
+
+- ❌ **Prohibición de Slop de IA**: Adiós a *Purple Gradients*, *Inter Everywhere*, rejillas idénticas de 3 columnas, tarjetas anidadas sin jerarquía (*Card-in-card*) y orbes flotantes (*Floating orbs*).
+- 🎨 **Sistemas de Diseño Específicos**: Paletas cromáticas con ratios de contraste WCAG AAA y superficies con profundidad real.
+- ⚡ **Primacía YAML (Regla 15)**: Almacenamiento de tokens de marca en `brand.yaml`, ahorrando entre 35% y 50% de tokens de contexto para el LLM.
+
+---
+
+## 🔄 Las 7 Fases del Ciclo de Vida y los 24 Comandos
+
+TidyFactor Design estructura el diseño en 7 etapas consecutivas gobernadas por un registro de **24 Slash Commands**:
+
+1. **Discovery**: `/study`, `/brief`
+2. **Foundation**: `/init`, `/brand`, `/typography`, `/school`, `/tokens`, `/palette`, `/assets`
+3. **Architecture**: `/layout`, `/nav-footer`, `/page`, `/dashboard`
+4. **Components**: `/components`, `/states`
+5. **Motion**: `/motion`, `/flow`, `/i18n`
+6. **Quality**: `/perf`, `/audit`, `/clone`, `/retrofit`
+7. **Delivery**: `/handoff`, `/deploy`
+
+---
+
+## 📚 Documentación y Guías
+
+- 📖 [Guía Exhaustiva de Ingeniería y Uso (docs/GUIDE.md)](docs/GUIDE.md)
+- 📖 [Guía de Ingeniería en Árabe (docs/GUIDE.ar.md)](docs/GUIDE.ar.md)
+- 📋 [Especificación Técnica Completa (README.md)](README.md)

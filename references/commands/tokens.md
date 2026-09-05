@@ -22,7 +22,7 @@ rebrand, a palette fix) is how a change propagates to every page at once.
 2. Write `design-system/tokens.css` as `:root` custom properties (Native/
    Hybrid), or the equivalent theme-config object (Tailwind), or the
    `[data-theme]` block (daisyUI) — per `references/foundations/<choice>.md`.
-3. Write/update `design-system/brand.json`: `meta.*`, `colors.*`,
+3. Write/update `design-system/brand.yaml` (and synced `brand.json`): `meta.*`, `colors.*`,
    `typography.*`, `spacing.*`, `voice.*` (copy tone/register), `cssFoundation`,
    `localization.*` (default locale, RTL locales — see `i18n`).
 4. **If tokens.css already exists and pages already reference it**: this is
@@ -33,7 +33,8 @@ rebrand, a palette fix) is how a change propagates to every page at once.
 ```
 design-system/
   tokens.css     ← :root custom properties (or foundation-equivalent)
-  brand.json     ← structured source; tokens.css is generated to match it
+  brand.yaml     ← primary structured source (Rule 15 YAML primacy)
+  brand.json     ← legacy compatibility mirror
 ```
 
 ## Checklist

@@ -111,19 +111,23 @@ def optimize_image(file_path, quality=85, convert_to_webp=False, replace=True, b
 
 def main():
     parser = argparse.ArgumentParser(description="Optimize assets in a folder using Pillow.")
-    parser.add_argument("directory", help="Path to the directory containing images (relative to project root)")
+    parser.add_argument("directory", nargs="?", default=None, help="Path to the directory containing images (relative to project root)")
+    parser.add_argument("--target", help="Target project path or directory to optimize")
     parser.add_argument("--quality", type=int, default=85, help="JPEG/WebP quality setting (0-100, default: 85)")
     parser.add_argument("--webp", action="store_true", help="Convert JPEGs and PNGs to WebP format")
+    parser.add_argument("--remove-bg", action="store_true", help="Remove background from PNG/JPG assets")
     parser.add_argument("--no-backup", action="store_true", help="Do not keep backups of replaced images")
     
     args = parser.parse_args()
     
-    target_dir = PROJECT_ROOT / args.directory
+    dir_input = args.target or args.directory or "assets"
+    p = Path(dir_input)
+    target_dir = p if p.is_absolute() else (PROJECT_ROOT / p)
     if not target_dir.exists() or not target_dir.is_dir():
         print(f"Error: '{target_dir}' is not a valid directory.")
         sys.exit(1)
 
-    print(f"Scanning '{target_dir.relative_to(PROJECT_ROOT)}' for images...")
+    print(f"Scanning '{target_dir}' for images...")
     
     supported_extensions = {".png", ".jpg", ".jpeg", ".webp"}
     image_files = []

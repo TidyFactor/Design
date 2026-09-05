@@ -1,5 +1,7 @@
 # Memory: foundations (Pluggable CSS Foundations Catalog)
 
+<!-- last-verified: 2026-09-05 -->
+
 Operational rules and tokens for each pluggable CSS foundation layer.
 
 ---

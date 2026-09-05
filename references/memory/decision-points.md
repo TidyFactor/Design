@@ -1,5 +1,7 @@
 # Memory: decision-points (Contextual Decision Layer — CDL v1.0)
 
+<!-- last-verified: 2026-09-05 -->
+
 A thin arbitration protocol for resolving high-impact design system foundations and aesthetic school ambiguities before code emission.
 
 ---

@@ -11,8 +11,8 @@ Evaluate the declared decision contract in `manifest.json["decision_gates"]["bri
 $$\text{Unknowns} = \text{Required Decisions} - (\text{Discovered Facts} \cup \text{Brain KIs})$$
 
 1. **Local Discovery & Staleness Check**:
-   - Check `.tidyfactor/design-brief.snapshot.json` and `brand.json`.
-   - If `brand.json` has changed since the snapshot was saved (`track_staleness: true`), invalidate the cached value and mark `surface_type` / `tone_school` as `Unknown`.
+   - Check `.tidyfactor/design-brief.snapshot.yaml` (or `.json`) and `brand.yaml` (or `brand.json`).
+   - If `brand.yaml` / `brand.json` has changed since the snapshot was saved (`track_staleness: true`), invalidate the cached value and mark `surface_type` / `tone_school` as `Unknown`.
 2. **Optional Brain MCP Lookup (Fail-Open)**:
    - If decisions remain Unknown and `search_knowledge_base` is active, query `search_knowledge_base(query="design context", scope="project")`.
    - If absent or empty, proceed with 0ms silent bypass.
@@ -34,7 +34,7 @@ $$\text{Unknowns} = \text{Required Decisions} - (\text{Discovered Facts} \cup \t
 
 ## 💾 Step 2: SSOT Local Persistence & Outbound Push
 
-1. **Write Local SSOT**: Persist resolved choices + source file hashes to `.tidyfactor/design-brief.snapshot.json` and `.tidyfactor/design-brief.md`.
+1. **Write Local SSOT**: Persist resolved choices + source file hashes to `.tidyfactor/design-brief.snapshot.yaml` (or `.json`) and `.tidyfactor/design-brief.md`.
 2. **Outbound Push to Brain (`--sync-brain`)**:
    - If and ONLY IF invoked with `--sync-brain`, push the resolved `design_context` KI via `extract_knowledge_item`.
    - The local snapshot remains the immutable source of truth.
@@ -53,4 +53,4 @@ Display a concise 4-line baseline summary and suggest next action (`/tokens`, `/
 - [ ] Only truly Unknown decisions were surfaced to the user.
 - [ ] `.tidyfactor/design-brief.snapshot.json` and `.tidyfactor/design-brief.md` written as local SSOT.
 - [ ] If `--sync-brain` was passed, outbound push was executed without blocking local output.
-- [ ] Baseline conforms to `references/memory/quality-bar.md`.
+- [ ] Baseline conforms to `references/memory/06-quality-bar.md`.

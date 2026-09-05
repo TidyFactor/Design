@@ -1,5 +1,7 @@
 # Design Tokens — Reference for `tokens`
 
+<!-- last-verified: 2026-09-05 -->
+
 ## Categories and what belongs in each
 
 **Colors** — primary, secondary, accent; a light surface scale

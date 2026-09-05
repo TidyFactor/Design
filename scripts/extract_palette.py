@@ -60,6 +60,7 @@ def main():
     parser = argparse.ArgumentParser(description="Extract brand color palettes and WCAG contrast metrics.")
     parser.add_argument("input", help="Path to input image (logo, screenshot, brand photo)")
     parser.add_argument("--json", "-j", help="Output path for brand.json update")
+    parser.add_argument("--yaml", "-y", help="Output path for brand.yaml update")
     parser.add_argument("--css", "-c", help="Output path for tokens.css variables")
     
     args = parser.parse_args()
@@ -89,19 +90,26 @@ def main():
     print(f"  Secondary: {secondary}")
     print(f"  Accent:    {accent}")
     
-    if args.json:
+    # Update brand.yaml or brand.json
+    target_file = args.yaml or args.json
+    if target_file:
+        is_yaml = target_file.endswith(".yaml") or target_file.endswith(".yml") or bool(args.yaml)
         brand_data = {}
-        if os.path.exists(args.json):
+        if os.path.exists(target_file):
             try:
-                with open(args.json, "r", encoding="utf-8") as f:
-                    brand_data = json.load(f)
+                with open(target_file, "r", encoding="utf-8") as f:
+                    if is_yaml:
+                        import yaml
+                        brand_data = yaml.safe_load(f) or {}
+                    else:
+                        brand_data = json.load(f)
             except Exception:
                 brand_data = {}
 
         if "colors" not in brand_data or not isinstance(brand_data["colors"], dict):
             brand_data["colors"] = {}
 
-        # Handle brand.json v2 dual-mode schema if present
+        # Handle brand schema dual-mode schema if present
         if "light" in brand_data["colors"] and isinstance(brand_data["colors"]["light"], dict):
             brand_data["colors"]["light"]["primary"] = primary
             brand_data["colors"]["light"]["secondary"] = secondary
@@ -117,9 +125,13 @@ def main():
             brand_data["colors"]["neutralDark"] = dark_bg
             brand_data["colors"]["neutralLight"] = light_bg
 
-        with open(args.json, "w", encoding="utf-8") as f:
-            json.dump(brand_data, f, indent=2)
-        print(f"✓ Palette updated in: {args.json}")
+        with open(target_file, "w", encoding="utf-8") as f:
+            if is_yaml:
+                import yaml
+                yaml.dump(brand_data, f, sort_keys=False, allow_unicode=True, indent=2)
+            else:
+                json.dump(brand_data, f, indent=2)
+        print(f"✓ Palette updated in: {target_file}")
         
     if args.css:
         css_vars = f"""/* Auto-generated Design Tokens from {args.input} */

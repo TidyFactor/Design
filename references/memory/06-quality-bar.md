@@ -1,18 +1,25 @@
 # Quality Bar — Auto-Reject Checklist for `audit`
 
+<!-- last-verified: 2026-09-05 -->
+
 A prototype fails review if any of these are true, regardless of how good individual pages look in isolation.
 
-## Pre-Emit Self-Critique (1–5 Scores on 6 Axes)
-Before handing back any output, score the artifact on 6 axes:
-- **Philosophy (P)**: Opinionated stance vs generic template default.
-- **Hierarchy (H)**: Clear visual weight & focal structure.
-- **Execution (E)**: Clean layout alignment, zero inline overrides, valid tokens.
-- **Specificity (S)**: Customized specifically to the subject's world/materials.
-- **Restraint (R)**: Zero clutter, excess gradients, or fake cards.
-- **Variety (V)**: Non-repetitive section rhythm across project pages.
+## 🛡️ 7-Axis Pre-Emit Self-Critique Stamp
 
-*Any score < 3 triggers an automatic revision pass. Output must be stamped:*
-`/* Pre-emit critique: P5 H4 E5 S4 R5 V5 */`
+Every generated prototype component, token set, or layout must be stamped:
+`/* Pre-emit critique: P5 H5 E5 S5 R5 V5 D5 */`
+
+| Axis | Dimension | Score 1 (Slop / Reject) | Score 5 (Production Pass) |
+|:---:|---|---|---|
+| **P** | **Philosophy & School Authenticity** | Generic Bootstrap look; inconsistent corner radii and shadows. | Pure school adherence (Swiss, Neo-Brutalist, Luxury, Editorial). |
+| **H** | **Hierarchy & Layout Balance** | Crowded sections; poor whitespace ratio; no clear visual anchor. | Archetype-aligned macrostructure (L1–L4); strong focal hierarchy. |
+| **E** | **Encapsulation & Architecture** | Inline styles on elements (`style="..."`); per-page CSS files. | 100% tokens in `design-system/`; clean semantic HTML pages. |
+| **S** | **State Completeness** | Missing hover, focus, disabled, or loading states on inputs/buttons. | Complete 8-state wrappers across all interactive components. |
+| **R** | **RTL & Typography Rigor** | Broken flow on `dir="rtl"`; Amiri used on giant display headlines. | Curated Arabic typography (El Messiri display, Tajawal body); full RTL. |
+| **V** | **Velocity & Motion Polish** | Janky transitions; missing `prefers-reduced-motion` fallbacks. | Sub-200ms cubic-bezier easing curves; accessible reduced-motion rules. |
+| **D** | **Decision Alignment** | Inconsistent foundation; arbitrary colors ignoring `brand.yaml`/`brand.json`. | 100% synchronized with `.tidyfactor/design-brief.md` and `brand.yaml`. |
+
+*Any score < 3 triggers an automatic revision pass before emitting code to the user.*
 
 ## Compositing & Blend Rules
 - **The Blend Trap**: `mix-blend-mode` (multiply or screen) breaks on any element transformed by GSAP or CSS 3D transforms, creating a visible light/dark rectangle. Use background-removed transparent PNG cutouts (`rembg` + `Pillow`) for animated hero assets. Reserve `mix-blend-mode` strictly for static, untransformed imagery.

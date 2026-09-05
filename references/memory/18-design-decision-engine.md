@@ -1,5 +1,7 @@
 # 18 · Design Decision Engine Rules & Protocols
 
+<!-- last-verified: 2026-09-05 -->
+
 System operational rules for `tidyfactor-design` that transform visual references into deterministic, repeatable, and non-contradictory design decisions.
 
 ---
