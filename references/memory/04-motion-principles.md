@@ -15,9 +15,10 @@ Adapted from classic animation principles, applied to UI motion rather than char
 ---
 
 ## 2. Cursor Spotlight & Ambient Glow Engine (Interactive Depth)
-- **Per-Card Cursor Spotlight**:
-  - Dynamically track `--mouse-x` and `--mouse-y` via `getBoundingClientRect()` on `.bento-card`, `.card`, and showcase tiles.
-  - Reveal a subtle `radial-gradient` (350-400px radius) in dark mode to illuminate surface borders and textures.
+- **Per-Card Cursor Spotlight & 3D Perspective Tilt (120fps)**:
+  - Dynamically track `--mouse-x` and `--mouse-y` via `getBoundingClientRect()` on `.bento-card`, `.card`, `.book-card`, `.credential-card`.
+  - Reveal a subtle `radial-gradient` (350-420px radius) in both light mode (gold tint) and dark mode (emerald sheen).
+  - Apply physical 3D perspective tilt (`perspective(900px)`, `rotateX`, `rotateY`, `translateY(-4px)`) throttled via `requestAnimationFrame` with GSAP `overwrite: 'auto'` to ensure silky 120fps performance without layout thrashing.
 - **Viewport Ambient Spotlight**:
   - Desktop-only (`min-width: 992px`), single fixed layer driven by `requestAnimationFrame` and `translate3d(x, y, 0)`.
   - Illuminates the underlying papyrus, granite, or obsidian texture with zero layout thrashing.
@@ -38,5 +39,25 @@ Adapted from classic animation principles, applied to UI motion rather than char
 
 ---
 
-## 4. Non-negotiable: `prefers-reduced-motion`
+## 4. Page Preloader & Stage Synchronization
+- **Progressive Counter Engine**:
+  - Simulate progressive ramp from 0% to ~85% during initial parsing, finishing to 100% on `document.fonts.ready` + `window.load`.
+- **Curtain-Lift Transition**:
+  - On 100%, slide preloader upward (`transform: translateY(-100%)`) with `cubic-bezier(0.7, 0, 0.2, 1)`.
+- **Hero Kinetic Trigger**:
+  - Call `initSovereignHeroMotion()` strictly on preloader exit, ensuring hero title words rise and flourish paths draw right as the curtain clears the stage.
+- **Safety Fallback Guard**:
+  - Always enforce `setTimeout(finishPreloader, 2200)` to prevent trapping users under slow networks or blocked assets.
+
+---
+
+## 5. Critical Motion Anti-Patterns & Invariants
+1. **The `!important` Transform Trap**: Never add `transform: translateY(0) !important;` to `.is-revealed` classes. It permanently kills `:hover` lifts and 3D card tilt rotations. Use `clearProps: 'opacity,transform'` in GSAP instead.
+2. **Text Antialiasing Degradation**: Animated text remaining under CSS transform renders as a GPU texture with blurred subpixel edges. Always clear typography transforms with `onComplete: () => gsap.set(targets, { clearProps: 'transform' })`.
+3. **HTMX Dynamic Swap Amnesia**: Hypermedia-swapped elements lack event listeners and initial styles. Always wire an `htmx:afterSwap` event listener to run entrance timelines, re-bind 3D tilts, and refresh `ScrollTrigger`.
+4. **Transition-GSAP Fighting**: Never place CSS `transition: transform` on an element whose `x`, `y`, or rotation is driven by GSAP on `mousemove`. It creates severe frame lag and jitter.
+
+---
+
+## 6. Non-negotiable: `prefers-reduced-motion`
 Every entrance, scroll, parallax, or ambient spotlight effect in `motion.js` must check `window.matchMedia('(prefers-reduced-motion: reduce)')` and fall back to instant or opacity-only transitions globally.

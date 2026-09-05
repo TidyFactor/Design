@@ -40,3 +40,11 @@ Conventions carried consistently across Alwkala's production work and the rest o
 4. **The Heritage Material Close-Up**: Macro textural study (papyrus, carved relief, woven wool, alabaster) as focal hero image.
 5. **The Horizontal Journey**: RTL timeline or cinematic strip traveling from right to left.
 6. **The Contemporary Data Constellation**: Maps, coordinates, and telemetry with Arabic typography and tabular numbers.
+
+---
+
+## 4. Kinetic Typography for Arabic & RTL
+- **Word Split Rule (Zero Broken Ligatures)**: Arabic cursive text MUST NEVER be split by characters (`splitChars`). Disconnecting connected letterforms destroys typographic beauty and Arabic orthography.
+- **`splitWords()` Enforcement**: Always split by word boundaries. Ensure parent element maintains `aria-label="<full text>"` for screen readers and child spans carry `aria-hidden="true"`.
+- **Dignified Entrance Velocity**: Use subtle rotational tilt (`rotateZ: -2deg` rising to `0deg`) and gentle vertical rise (`y: 35px` to `0px`) with `back.out(1.4)` easing for an authoritative, dignified entrance.
+- **ClearProps Invariant**: Always execute `onComplete: () => gsap.set(wordSpans, { clearProps: 'transform' })` to release the browser's subpixel text antialiasing engine.
