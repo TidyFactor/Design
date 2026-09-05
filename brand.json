@@ -1,13 +1,13 @@
 {
   "name": "TidyFactor Design",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "schemaVersion": "brand-core-v2",
   "meta": {
     "product": "TidyFactor Design System",
     "tagline": "Code-Native Interactive Prototyping Engine",
     "description": "A zero-bundler, framework-free design system and UI prototyping engine with pluggable CSS foundations and full Arabic/RTL support.",
-    "version": "1.8.0",
-    "lastUpdated": "2026-09-02"
+    "version": "1.10.0",
+    "lastUpdated": "2026-09-05"
   },
   "identity": {
     "logo": {

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 TidyFactor Design `v1.9.0`
+# 🎨 TidyFactor Design `v1.10.0`
 ### The Code-Native UI Design Lifecycle Engine, Anti-Slop Design System Suite & Interactive Prototyping Architecture for AI Coding Agents
 
 Give **Google Antigravity, Claude Code, Cursor, OpenAI Codex, or Windsurf** a senior design engineer's brain that transforms raw intent into production-grade design systems and interactive prototypes — without Figma handoff friction, generic AI slop, or per-page CSS drift.
@@ -243,7 +243,7 @@ Operational memory (`references/memory/`) contains **pure technical constraints,
 - **01-design-schools.md**: Rules for 6 architectural design movements (Minimalist, Neo-Brutalist, Glassmorphic, Neo-Skeuomorphic, Warm Editorial, Playful).
 - **02-design-tokens.md**: Strict 8pt spacing grid, modular typography scales, and semantic surface colors.
 - **04-motion-principles.md**: Physics-based easing curves (`cubic-bezier(0.16, 1, 0.3, 1)`), duration brackets, and `@media (prefers-reduced-motion)` guards.
-- **06-quality-bar.md**: The 16 forbidden AI tells, 11 Codex defect bans, and the **7-Axis Pre-Emit Quality Stamp** (`P5 H5 E5 S5 R5 V5 D5`).
+- **06-quality-bar.md**: The 66-rule anti-slop quality matrix (9 categories), 11 Codex defect bans, and the **7-Axis Pre-Emit Quality Stamp** (`P5 H5 E5 S5 R5 V5 D5`).
 - **08-arabic-bilingual.md**: Bidirectional layout rules (El Messiri display, Tajawal body, never Amiri >24px).
 - **12-typography-matrix.md**: Exact Latin/Arabic pairings matched by emotional register.
 - **13-layout-archetypes.md**: L1 (Hero+Story), L2 (Split App), L3 (Sidebar Dashboard), L4 (Editorial Grid).
@@ -276,25 +276,120 @@ references/memory/
 
 ## 🛡️ Anti-Slop Governance & Mechanical Quality Gate
 
-TidyFactor Design enforces **automated, verifiable quality checks** on every emitted line of code.
+TidyFactor Design enforces **automated, verifiable quality checks** on every emitted line of code. Prototypes and components are audited against an exhaustive **66-rule mechanical quality matrix across 9 categories**:
 
-### 🚫 The 16 Forbidden AI Tells (Zero Tolerance)
-1. ❌ **Purple Gradient Hero**: Banned generic `#7928CA` to `#FF0080` or indigo radial glows.
-2. ❌ **Inter Everywhere**: Banned using Inter as a default for luxury, editorial, or cultural surfaces.
-3. ❌ **Generic 3-Column Feature Grid**: Banned identical 3-card grids without clear visual weight.
-4. ❌ **Card-in-Card Nesting**: Banned nesting bordered cards inside other bordered cards without contrast.
-5. ❌ **Aurora Blobs & Floating Orbs**: Banned unanchored, blurred colorful spheres floating randomly.
-6. ❌ **Pure Black/White (#000/#fff) Surfaces**: Banned harsh pure black without undertones or depth.
-7. ❌ **Gradient Text Headlines**: Banned unreadable multi-stop gradient headlines.
-8. ❌ **Side-Stripe Cards**: Banned arbitrary colored 4px left borders on feature boxes.
-9. ❌ **Missing Active/Focus States**: Banned interactive elements that only have basic `:hover`.
-10. ❌ **Broken RTL Directional Margins**: Banned `mr-*` or `ml-*` in bidirectional contexts.
-11. ❌ **Ragged Action Rows**: Banned cards without bottom-pinned CTA buttons.
-12. ❌ **Unconstrained Image Sizes**: Banned embedding raw multi-megabyte PNG/JPEG files.
-13. ❌ **Unhedged Font Flashes**: Banned missing `font-display: swap` or local font fallbacks.
-14. ❌ **Arbitrary Z-Index Soup**: Banned random `z-index: 99999` without defined token scales.
-15. ❌ **No-JavaScript Broken Fallback**: Banned prototypes that turn completely blank without JS.
-16. ❌ **Text Over Cluttered Motifs**: Banned placing body copy over busy geometric patterns.
+### 🚫 The 66-Rule Anti-Slop Quality Matrix (9 Categories)
+
+<details>
+<summary><b>Category I. Color & Surface (Rules 1–21)</b></summary>
+
+1. ❌ **Purple-Gradient Hero**: Banned generic `#7928CA` to `#FF0080` or indigo radial glows behind hero text.
+2. ❌ **Inter-Everywhere**: Banned using Inter as an unthinking default across display, body, and cultural surfaces.
+3. ❌ **Generic 3-Column Feature Grid**: Banned identical 3-card grids with icon above 2-line heading above 3-line body without focal hierarchy.
+4. ❌ **Card-in-Card Nesting**: Banned nesting bordered cards inside other bordered cards with no semantic structural contrast.
+5. ❌ **Gradient Text Headlines**: Banned unreadable multi-stop `background-clip: text` linear gradients on display typography.
+6. ❌ **Side-Stripe Accent Cards**: Banned arbitrary colored 4–6px left/right border accents on feature boxes.
+7. ❌ **Full-Viewport Centered Hero**: Banned reflexive `min-height: 100vh` centered short sentence + big CTA button crutch.
+8. ❌ **Pure Black / Pure White Surfaces**: Banned harsh `#000000` or `#ffffff` flat surfaces lacking depth or undertone tinting.
+9. ❌ **Default-Attractor Sameness**: Banned repeating the exact same macrostructure across distinct project briefs.
+10. ❌ **Specimen Fall-Through**: Banned defaulting to editorial `01 - HELLO` specimen cards for SaaS, commerce, or technical products.
+11. ❌ **The Cookie-Cutter AI Nav**: Banned reflexive wordmark-left, 4-links-center, CTA-right with 1px bottom border.
+12. ❌ **The Cookie-Cutter AI Footer**: Banned generic 4-column (Product, Company, Resources, Legal) grid with copyright line.
+13. ❌ **Aurora-Blob Backgrounds**: Banned flowing organic blurred mesh blobs in purple/cyan behind content.
+14. ❌ **Floating-Orb Decorations**: Banned blurred 3D spheres or colorful ambient circles drifting without interaction purpose.
+15. ❌ **Italic Single-Word Headers**: Banned flipping one word in a headline to italic (`Built to <em>think</em>`) to fake editorial depth.
+16. ❌ **Lazy-Loaded LCP Media**: Banned adding `loading="lazy"` to the main hero LCP image, degrading Core Web Vitals.
+17. ❌ **Cream-and-Terracotta Trope**: Banned `#F4F1EA` background + high-contrast serif + terracotta/clay accent (`~#D97757`) as a default "premium" look.
+18. ❌ **Near-Black-and-Acid-Accent Trope**: Banned near-black background with a single bright acid-green or vermilion accent as the default "techy" look.
+19. ❌ **Tinted-Black-as-True-Black**: Banned `#0B0B0B`/`#111` standing in for black without a stated reason.
+20. ❌ **Dark Mode as Pure Inversion**: Banned flipping light-mode values instead of designing a second palette with its own contrast logic.
+21. ❌ **Low-Contrast Text-on-Image**: Banned body copy laid directly on photography/gradients without a scrim or contrast-safe zone.
+</details>
+
+<details>
+<summary><b>Category II. Typography (Rules 22–28)</b></summary>
+
+22. ❌ **Single-Word Headline Accent**: Banned italicizing/coloring one word in a headline as the "clever" default.
+23. ❌ **All-Caps Labels**: Banned tracked-out ALL-CAPS for every small label regardless of brand voice.
+24. ❌ **Unnecessary Eyebrow Labels**: Banned adding a label above every heading whether or not it clarifies anything.
+25. ❌ **Monospace-for-Everything Data Labels**: Banned monospace fonts applied to non-tabular, non-code content just to look "technical."
+26. ❌ **Justified Body Copy**: Banned justified text without hyphenation control, producing rivers and uneven spacing.
+27. ❌ **Flat Serif/Sans Pairing**: Banned combining two typefaces at the same weight/contrast with no clear hierarchy between them.
+28. ❌ **Line Length Over 80 Characters**: Banned body text columns that force the eye to hunt for the next line (`max-width: 65ch` exceeded).
+</details>
+
+<details>
+<summary><b>Category III. Layout & Composition (Rules 29–36)</b></summary>
+
+29. ❌ **Numbered Markers on Non-Sequential Content**: Banned 01/02/03 badges on cards that aren't actually a sequence.
+30. ❌ **Middle-Dot Meta Strings**: Banned "A · B · C" metadata formatting as a default chrome pattern.
+31. ❌ **Em-Dash Label Pattern**: Banned "WORD — fragment" labeling used reflexively across unrelated sections.
+32. ❌ **Uniform Border-Radius Regardless of Hierarchy**: Banned one border-radius value applied to every element with no relationship to importance.
+33. ❌ **Identical Soft Shadow Under Every Card**: Banned the same `rgba(0,0,0,.1)` drop shadow as a universal card treatment.
+34. ❌ **Default Big-Number-Small-Label Hero**: Banned the "big stat + small caption + gradient accent" hero unless it's genuinely the strongest asset.
+35. ❌ **Broadsheet Hairline Overload**: Banned dense newspaper-style hairline rules and zero-radius columns as a default "editorial" look.
+36. ❌ **Everything Centered by Default**: Banned center-aligning all content without considering left/justified alternatives for readability.
+</details>
+
+<details>
+<summary><b>Category IV. Decoration & Motion (Rules 37–41)</b></summary>
+
+37. ❌ **Fade-and-Slide-Up on Every Section**: Banned the same scroll-reveal animation repeated on every block instead of one orchestrated moment.
+38. ❌ **Arrow-Appended CTA Text**: Banned tacking "→" onto every link and button label as a tic.
+39. ❌ **Icon-Before-Every-Heading Soup**: Banned decorative icons prefixed to headings that don't carry semantic weight.
+40. ❌ **Decorative Gradient Washes**: Banned gradient backgrounds used purely as filler texture with no relation to content.
+41. ❌ **Motion Without a Trigger or Meaning**: Banned animations that don't respond to a user action or communicate a state change.
+</details>
+
+<details>
+<summary><b>Category V. Interaction & State Design (Rules 42–47)</b></summary>
+
+42. ❌ **No Disabled State Styling**: Banned buttons/inputs that look identical whether enabled or disabled.
+43. ❌ **Missing Loading/Skeleton State**: Banned components that just blank out or jump-cut while data loads.
+44. ❌ **Missing Empty State Design**: Banned "no data" screens left as a blank void instead of a call to action.
+45. ❌ **Missing Error State Design**: Banned forms/components with no visual treatment for invalid or failed states.
+46. ❌ **Hover Effects on Non-Interactive Elements**: Banned hover styling on elements that don't do anything when clicked.
+47. ❌ **Focus Ring Removed Without Replacement**: Banned `outline: none` without a custom visible-focus alternative.
+</details>
+
+<details>
+<summary><b>Category VI. Internationalization & Accessibility (Rules 48–53)</b></summary>
+
+48. ❌ **Un-Mirrored Icons in RTL**: Banned directional icons (arrows, chevrons, back buttons) that don't flip in RTL layouts.
+49. ❌ **Color as the Only Signal**: Banned status/error indication that relies on color alone with no icon or text redundancy.
+50. ❌ **Contrast Ratio Below WCAG AA**: Banned text/background pairs that fail 4.5:1 (body) or 3:1 (large text).
+51. ❌ **Div Soup Instead of Semantic HTML**: Banned nav/button/heading elements built from unstyled `<div>`s, breaking screen readers.
+52. ❌ **Ignored prefers-reduced-motion**: Banned shipping motion with no reduced-motion fallback for users who've opted out.
+53. ❌ **Un-Localized Dates/Numbers**: Banned hardcoded date/number formatting that doesn't adapt to locale (e.g., Arabic-Indic numerals, DD/MM vs MM/DD).
+</details>
+
+<details>
+<summary><b>Category VII. Performance & Technical Hygiene (Rules 54–58)</b></summary>
+
+54. ❌ **Layout Shift from Unset Image Dimensions**: Banned `<img>` tags without explicit `width`/`height` causing Cumulative Layout Shift (CLS).
+55. ❌ **Render-Blocking Scripts in `<head>`**: Banned synchronous `<script>` tags with no `defer`/`async` blocking first paint.
+56. ❌ **No Lazy-Loading Below the Fold**: Banned eagerly loading every image regardless of viewport position.
+57. ❌ **CSS Specificity Wars**: Banned overlapping selectors (`.section` vs `.cta`) that silently cancel each other's spacing/padding.
+58. ❌ **Missing Fallback Font Stack**: Banned a single custom font with no system-font fallback chain.
+</details>
+
+<details>
+<summary><b>Category VIII. Content & Copy (Rules 59–63)</b></summary>
+
+59. ❌ **Passive-Voice CTAs**: Banned vague buttons like "Submit" instead of naming the action ("Save changes", "Create account").
+60. ❌ **Apologetic or Vague Error Copy**: Banned error messages that apologize without stating what happened or how to fix it.
+61. ❌ **Inconsistent Verb Naming Across a Flow**: Banned a button saying "Publish" that produces a toast saying "Uploaded."
+62. ❌ **Lorem Ipsum Shipped to Production**: Banned placeholder copy left in a delivered build.
+63. ❌ **Empty States With No Action**: Banned "Nothing here yet" screens with no next step offered.
+</details>
+
+<details>
+<summary><b>Category IX. AI-Generated "Tell" Patterns (Rules 64–66)</b></summary>
+
+64. ❌ **Template Chrome Combo**: Banned stacking eyebrow label + middle-dot meta + em-dash label + arrow-CTA together — the fingerprint of ungrounded generation.
+65. ❌ **SaaS-Card-Kit Sameness**: Banned identical rounded-card-plus-shadow treatment applied regardless of subject matter (a toy brand and a fintech dashboard shouldn't look related).
+66. ❌ **One Component Library, Every Brief**: Banned reusing the same button/card/hero shapes across unrelated projects without adapting to the brief's own vernacular.
+</details>
 
 ### 🏷️ The 7-Axis Pre-Emit Quality Stamp
 Before any code is delivered, the agent verifies and outputs the 7-Axis Quality Stamp:
