@@ -1,5 +1,7 @@
 # 16 · Design Movements & Aesthetics Knowledge Base
 
+<!-- last-verified: 2026-09-05 -->
+
 A comprehensive guide for AI coding agents (`tidyfactor-design`) declaring exact design tokens, visual decisions, CSS rules, typography pairings, color palettes, shadow styles, component behaviors, motion language, and executable signature elements for **all 20 Visual Aesthetics & Design Movements**.
 
 ---

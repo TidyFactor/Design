@@ -24,7 +24,7 @@
     },
     {
       "name": "extract_palette",
-      "description": "Computes WCAG AAA contrast ratios and generates tokens.css + brand.json from source colors.",
+      "description": "Computes WCAG AAA contrast ratios and generates tokens.css + brand.yaml/brand.json from source colors.",
       "entrypoint": { "runtime": "python3", "script": "scripts/extract_palette.py" },
       "invocation": {
         "cli_pattern": "{runtime} \"{skill_root}/{script}\" --target \"{target_path}\" {flags}",
@@ -91,6 +91,7 @@
           "default": "landing",
           "priority": 2,
           "discovery": [
+            { "source": "local_file", "path": "brand.yaml", "field": "surfaceType", "track_staleness": true },
             { "source": "local_file", "path": "brand.json", "field": "surfaceType", "track_staleness": true },
             { "source": "workspace_scan", "path": "pages/", "field": "dominant_page_type" },
             { "source": "brain_ki", "ki_type": "design_context", "field": "surface_type" }
@@ -113,6 +114,7 @@
           "default": "minimal",
           "priority": 3,
           "discovery": [
+            { "source": "local_file", "path": "brand.yaml", "field": "voice", "track_staleness": true },
             { "source": "local_file", "path": "brand.json", "field": "voice", "track_staleness": true },
             { "source": "brain_ki", "ki_type": "design_context", "field": "tone_school" }
           ],

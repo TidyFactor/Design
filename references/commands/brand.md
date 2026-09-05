@@ -1,12 +1,13 @@
 # Command: `brand` — Brand Identity Scaffolding & Extraction
 
-Runtime entry point for creating, extracting, or evolving `brand.json` v2. Part of the **Foundation** lifecycle phase.
+Runtime entry point for creating, extracting, or evolving `brand.yaml` (primary) and `brand.json` (fallback) v2. Part of the **Foundation** lifecycle phase.
 
 ## When to use
 
-- **New project** → scaffold `brand.json` from scratch with user interview
-- **Existing identity** → extract `brand.json` from a live site, PDF guidelines, or logo + reference photos (the `clone-brand` path)
-- **Schema upgrade** → migrate `brand.json` v1 to v2
+- **New project** → scaffold `brand.yaml` from scratch with user interview
+- **Existing identity** → extract `brand.yaml` from a live site, PDF guidelines, or logo + reference photos (the `clone-brand` path)
+- **Schema upgrade** → migrate legacy `brand.json` v1/v2 to optimized `brand.yaml` (Rule 15)
+
 
 ## Dispatch Steps
 
@@ -67,12 +68,13 @@ Load `memory/11-brand-json-v2.md` migration table and transform:
 
 ## Output Convention
 
-After any path, the final `brand.json` must:
-1. Pass JSON validation
-2. Have `$schema: "brand-core-v2"`
+After any path, the final `brand.yaml` (and synced `brand.json`) must:
+1. Pass YAML/JSON syntax validation
+2. Have `schemaVersion: "brand-core-v2"`
 3. Have all 16 tokens in both `colors.light` and `colors.dark`
 4. Have `motion.reducedMotion` policy stated
 5. Have `accessibility.minTouchTarget` ≥ 44px
+
 
 ## Checklist
 

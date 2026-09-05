@@ -93,3 +93,30 @@ Complete operational grammar, palettes, atmospheric textures, and anti-patterns 
 * **Anti-Patterns**:
   - Never resort to tacky "gold on black" luxury clichés.
   - Never squeeze Arabic letter tracking negatively.
+
+---
+
+## 🏛️ 6. ميثاق تفاصيل الأسطح والتراث (The Heritage Detailing Contract)
+
+1. **قاعدة عدم تداخل الزخارف الصارمة (Zero Motif Overlap Invariant)**:
+   - حظر كامل لوضع علامتين مائيتين أو رمزين فوق بعضهما في نفس الإحداثيات المكانية.
+   - علامة مائية واحدة فقط معزولة في الهامش الجانبي البعيد لكل قسم (`margin-inline-end` / `opacity: 0.04–0.06`).
+   - تفريغ كامل لخلفيات النصوص والبطاقات والنوافذ المنبثقة لضمان مقروئية 100% (WCAG AA).
+2. **شريط الإفريز الفاصل المتصل (Continuous Seamless Frieze Ribbon)**:
+   - منع استخدام الصور النقطية المتقطعة؛ الاعتماد الحصري على وحدة تكرار متجهية `SVG <pattern>` تمتد بعرض 100% دون أي فواصل أو تشوه على كافة الشاشات من الموبايل حتى شاشات 4K.
+3. **هندسة تفاصيل البطاقات (Card Micro-Architecture)**:
+   - خط تمييز علوي بلون الفئة (`border-top: 3px solid var(--primary)` أو `var(--gold)`).
+   - علامة مائية مجهرية وحيدة في الزاوية السفلية المعاكسة بنعومة فائقة (`opacity: 0.05–0.08`).
+   - ارتقاء ميكرو-تفاعلي عند التحويم (`transform: translateY(-4px)`).
+4. **محرك تلوين الرموز المتجه (CSS `mask-image` Engine)**:
+   - توظيف تقنية أقنعة CSS لتلوين الرموز عبر `currentColor` ومتغيرات السمة (`var(--gold)` / `var(--primary)`) دون الحاجة لطلب صور جديدة عند تبديل الوضع النهاري والليلي:
+   ```css
+   .heritage-icon {
+     background-color: currentColor;
+     mask-image: url('icon.svg');
+     mask-size: contain;
+     mask-repeat: no-repeat;
+     mask-position: center;
+   }
+   ```
+

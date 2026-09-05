@@ -1,5 +1,7 @@
 # 17 · Storytelling Archetypes, Industry Registers & UX Philosophies
 
+<!-- last-verified: 2026-09-05 -->
+
 Operational guide for `tidyfactor-design` establishing visual rules, layout structures, typography pairings, color systems, and execution constraints across **4 Storytelling Archetypes**, **8 Industry Registers**, and **8 UX Design Philosophies**.
 
 ---

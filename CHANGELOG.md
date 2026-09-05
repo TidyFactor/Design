@@ -2,6 +2,32 @@
 
 All notable changes to the **[@tidyfactor/design](https://www.npmjs.com/package/@tidyfactor/design)** package will be documented in this file.
 
+## [1.9.0] - 2026-09-05
+
+### 🎨 Added — Core UI Component & Page Composition Library (Volume 01–03)
+- **8 Authoritative Component Architecture Matrices (`references/memory/21-` through `28-`)**:
+  1. **`21-eyebrow-kicker-matrix.md`**: 16 micro-hierarchy kicker alternatives across 4 structural families with slot contracts.
+  2. **`22-hero-section-matrix.md`**: 8 GSAP ScrollTrigger + SVG motion architectures (Kinetic Split-Type, Scribble Signature, Text-Mask Scene, Organic Blob, Aurora Grain, Video Scrub, Split-Flap, Dimensional Isometric).
+  3. **`23-card-architecture-matrix.md`**: 16 modular card alternatives with explicit `flex-col`, `mt-auto` CTA anchoring, and solid borders.
+  4. **`24-button-cta-matrix.md`**: 16 button alternatives with full 8-state matrices (`idle`, `hover`, `active`, `focus`, `disabled`, `loading`, `success`, `error`).
+  5. **`25-divider-separator-matrix.md`**: Volume 03 Section Transitions & Seams with parametric SVG `wavePath` generation, 4-layer ownership mental model, and GSAP scroll morphing.
+  6. **`26-metrics-stat-matrix.md`**: 12 tabular stat cards with `font-variant-numeric: tabular-nums`, SVG progress rings, and `initCounters` trigger.
+  7. **`27-list-indicator-matrix.md`**: 12 trust bullet indicators (Status Rings, Dot Trackers, Milestone Trees) with zero emoji slop.
+  8. **`28-shared-motion-primitives.md`**: Shared GSAP/SVG foundations including easing curves, `prepDraw`/`drawIn` SVG strokes, `splitChars` kinetic typography, `initDepthParallax`, and `initScrollProgress`.
+- **Heritage Detailing Contract (`references/memory/19-heritage-lanes-atmosphere.md`)**:
+  - Added Section 6 codifying the **Zero Motif Overlap Invariant**: architectural motifs (mashrabiya, lotus, kufic) are isolated to section seams or watermarks via CSS `mask-image` and low opacity (≤0.08) with zero text collisions.
+- **Rule 15 Codification — Token Efficiency & Semantic Density Doctrine (YAML Primacy)**:
+  - Created canonical [`brand.yaml`](brand.yaml) reducing context load by ~40% (~1,290 vs ~2,180 tokens), eliminating trailing-comma syntax hazards.
+  - Maintained dual-engine backward compatibility with `brand.json`.
+- **Governance Audit Remediation & Rule 10/11 Compliance**:
+  - Added `tests/scenarios.md` with 3 test scenarios (happy-path, edge-case, negative anti-trigger).
+  - Consolidated divergent quality bars into `references/memory/06-quality-bar.md` with the 7-Axis Self-Critique Stamp (`P5 H5 E5 S5 R5 V5 D5`).
+  - Added `<!-- last-verified: 2026-09-05 -->` to all 31 operational memory files.
+  - Aligned `manifest.json` and `scripts/optimize_images.py` invocation contracts.
+  - Upgraded `tools/validate_skill.py` to full 13-check automated audit suite (100% pass).
+
+---
+
 ## [1.8.0] - 2026-09-02
 
 ### ⚡ Added — Declarative Decision Gates, Staleness Tracking & Manifest v1.1.0

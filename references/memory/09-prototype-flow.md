@@ -1,5 +1,7 @@
 # Prototype Flow & Present Mode — Reference for `flow`
 
+<!-- last-verified: 2026-09-05 -->
+
 ## What makes this a "prototype" rather than a set of pages
 A Figma prototype's core value isn't the individual frames — it's the
 click-through experience that lets a stakeholder feel the product before

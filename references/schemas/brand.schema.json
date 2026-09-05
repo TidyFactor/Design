@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tidyfactor.com/schemas/brand.schema.json",
+  "title": "TidyFactor Brand v2 Token Schema",
+  "description": "Authoritative schema for brand.yaml and brand.json v2 design tokens and metadata.",
+  "type": "object",
+  "required": ["name", "version", "colors"],
+  "properties": {
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "publisher": { "type": "string" },
+    "cssFoundation": {
+      "type": "string",
+      "enum": ["native", "tailwind", "daisyui", "hybrid", "shadcn", "pico", "bootstrap", "alpine"]
+    },
+    "school": {
+      "type": "string",
+      "enum": ["swiss-international", "neo-brutalist", "luxury-editorial", "technical-saas", "warm-organic", "dark-mode-first", "glassmorphic"]
+    },
+    "colors": {
+      "type": "object",
+      "properties": {
+        "light": { "type": "object" },
+        "dark": { "type": "object" }
+      }
+    },
+    "typography": { "type": "object" },
+    "motion": { "type": "object" },
+    "localization": { "type": "object" },
+    "components": { "type": "object" }
+  },
+  "additionalProperties": true
+}

@@ -1,5 +1,7 @@
 # Memory: architecture (Design System & Prototype Macrostructure)
 
+<!-- last-verified: 2026-09-05 -->
+
 Defines the zero-build design system file tree, component encapsulation, and 7 lifecycle stages.
 
 ---

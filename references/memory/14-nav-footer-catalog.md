@@ -1,5 +1,7 @@
 # 14 · Navigation & Footer Catalogs
 
+<!-- last-verified: 2026-09-05 -->
+
 Reference catalog for Navigation (N1–N9) and Footer (Ft1–Ft8) components.
 
 ## Navigation Archetypes

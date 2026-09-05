@@ -1,5 +1,7 @@
 # 13 · Layout Archetypes — Surface Blueprints
 
+<!-- last-verified: 2026-09-05 -->
+
 This document specifies the 8 macrostructure layout archetypes available in `tidyfactor-design`.
 
 ## Archetype Overview

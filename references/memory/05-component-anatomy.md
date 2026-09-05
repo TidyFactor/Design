@@ -48,3 +48,18 @@
 
 ## 4. Naming Discipline
 One canonical name per real pattern. Use BEM modifiers (`.card--featured`, `.badge--accent`) or data attributes (`[data-theme]`, `[data-filter]`) rather than creating duplicate component structures.
+
+---
+
+## 5. Master Component Pattern Matrices (Anti-Cliché Catalogs)
+When designing or refactoring any core component, consult its dedicated architectural matrix:
+- **Eyebrows & Kickers (16 variants)**: `21-eyebrow-kicker-matrix.md`
+- **Hero Motion Architectures (8 variants)**: `22-hero-section-matrix.md`
+- **Cards & Containers (16 variants)**: `23-card-architecture-matrix.md`
+- **Buttons & CTAs (16 variants + 8 states)**: `24-button-cta-matrix.md`
+- **Section Dividers & Transitions (12 variants)**: `25-divider-separator-matrix.md`
+- **Metrics & Stat Counters (12 variants)**: `26-metrics-stat-matrix.md`
+- **List Indicators & Trust Bullets (12 variants)**: `27-list-indicator-matrix.md`
+- **Shared Motion Primitives & Foundations**: `28-shared-motion-primitives.md`
+
+

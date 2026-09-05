@@ -1,14 +1,25 @@
-# 11 · brand.json v2 Schema Reference
+# 11 · brand.yaml / brand.json v2 Schema Reference
+
+<!-- last-verified: 2026-09-05 -->
 
 The single source of truth for brand identity across all TidyFactor surfaces. Every
 design-system file, component, and page reads tokens from this file — never hardcode
 a hex value or font name inline.
 
+## Format Primacy: `brand.yaml` over `brand.json` (Rule 15)
+
+In alignment with **Rule 15 (Token Efficiency & Semantic Density Doctrine)**, TidyFactor
+prioritizes **`brand.yaml`** as the canonical format:
+- **Token Efficiency**: Consumes ~40% fewer context tokens (~1,290 vs ~2,180 tokens) by eliminating quotes, commas, and curly braces.
+- **Zero Syntax Drift**: Eliminates LLM trailing-comma syntax errors during generation.
+- **Dual-Engine Resolution**: Tooling reads `brand.yaml` first, falling back to `brand.json` for legacy projects.
+
 ## Schema version
 
-`"schemaVersion": "brand-core-v2"` — the v2 schema adds dual-mode colors, shadows, radius,
+`schemaVersion: "brand-core-v2"` — the v2 schema adds dual-mode colors, shadows, radius,
 spacing scale, motion tokens, breakpoints, iconography, component token refs,
 localization, and accessibility floor.
+
 
 ## Required sections
 

@@ -1,5 +1,7 @@
 # The Consistency Contract — Why the Architecture Is Strict
 
+<!-- last-verified: 2026-09-05 -->
+
 This is the mechanism, stated once so every command can refer back to it
 instead of re-justifying it each time.
 
